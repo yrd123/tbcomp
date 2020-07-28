@@ -1,0 +1,301 @@
+html,body
+{
+    overflow-x: hidden; 
+}
+
+/*navbar*/
+
+.navbar-nav>li {
+  padding-left: 30px;
+  padding-right: 30px;
+  font-size: 1.1em;
+}
+
+.navbar-brand {
+  padding-left: 20px;
+  padding-right: 30px;
+  margin-bottom: 0;
+}
+
+.navbar {
+  background-color: rgb(0, 0, 0);
+  opacity: 0.88;
+  box-shadow: 0px 1px 50px #999;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+}
+
+.navbar-brand {
+  font-size: 1.5em;
+}
+
+.ml-auto .nav-link {
+  margin-right: 20px;
+}
+
+.glypicon {
+  padding-left: 10px;
+}
+
+.nav-link:hover {
+  background-color: #1a1a1a;
+  font-size: 19px;
+}
+
+.active .nav-link {
+  border-bottom: 2px solid #2d9cc2;
+}
+
+.underlinehover {
+  display: inline-block;
+}
+
+.underlinehover:after {
+  content: '';
+  display: block;
+  height: 1px;
+  width: 0;
+  background: transparent;
+  transition: width .5s ease, background-color .5s ease;
+}
+
+.underlinehover:hover:after {
+  width: 100%;
+  background: #2d9cc2;
+}
+
+/*navbar ends*/
+
+
+/* Register Form starts*/
+body {
+    background-color: #eaeaed;
+	background-repeat: no-repeat;	
+	background-attachment: fixed;
+	background-size: cover;
+}  
+#regForm {
+	background-color: #ffffff;
+	margin: 100px auto;
+	font-family: Raleway;
+	padding: 40px;
+	width: 50%;
+	min-width: 300px;
+	-webkit-box-shadow: 7px 7px 15px -1px rgba(103,103,103,0.99); 
+	box-shadow: 7px 7px 15px -1px rgba(103,103,103,0.99);
+	border-radius: 1%;
+}
+#emailAlert{
+    color:red;
+}
+#passwordAlert{
+	color:red;
+}
+.title{
+	color: black;
+	text-align: center;
+	font-size: 35px;
+	margin-top: 0;
+}
+.form-group {
+	margin-bottom: 20px;
+}
+.tab .form-control {
+	min-height: 38px;
+	padding-left: 5px;
+	box-shadow: none !important;
+	border-width: 0 0 1px 0;
+	border-radius: 0;
+}
+.tab2 .form-control {
+	min-height: 38px;
+	padding-left: 5px;
+	box-shadow: none !important;
+	border-width: 0 0 1px 0;
+	border-radius: 0;
+}
+input {
+	padding: 10px;
+	font-family: Raleway;
+}
+.tab .form-control {
+	min-height: 38px;
+	padding-left: 5px;
+	box-shadow: none !important;
+	border-width: 0 0 1px 0;
+	border-radius: 0;
+}
+.tab2 .form-control {
+	min-height: 38px;
+	padding-left: 5px;
+	box-shadow: none !important;
+	border-width: 0 0 1px 0;
+	border-radius: 0;
+}
+.tab .form-control:focus {
+	border-color: #ccc;
+}
+.tab2 .form-control:focus {
+	border-color: #ccc;
+}
+.form-control, .form-control:focus, .input-group-addon {
+	border-color: #e1e1e1;
+	border-radius: 0;
+	color: black;
+}
+.tab .input-group-addon {
+	max-width: 42px;
+	text-align: center;
+	background: none;
+	border-bottom: 1px solid #ced4da;
+	padding-right: 5px;
+	border-radius: 0;
+}
+  
+.tab2 .input-group-add-on {
+	max-width: 42px;
+	text-align: center;
+	background: none;
+	border-bottom: 1px solid #e1e1e1;
+	padding-left: 5px;
+}
+.tab .fa {
+	font-size: 21px;
+	position: relative;
+	top: 6px;
+}
+.tab2 .fa {
+	font-size: 21px;
+	position: relative;
+	top: 8px;
+}
+.tab2 .fa-check {
+	color: #fff;
+	left: 9px;
+	top: 18px;
+	font-size: 7px;
+	position: absolute;
+}
+.form-control, .form-control:focus, .input-group-add-on {
+	border-color: #e1e1e1;
+	border-radius: 0;
+	color: black;
+}
+
+select{
+	outline: none;
+	min-height: 38px;
+	box-shadow: none !important;
+	border-width: 0 0 1px 0;
+	border-radius: 0;
+	border-color: #e1e1e1;
+	color: black;
+}
+.input-group-grad-cap{
+
+	border-color: #e1e1e1;
+	border-radius: 0;
+	color: black;
+	max-width: 55px;
+	text-align: center;
+	background: none;
+	border-bottom: 1px solid #ced4da;
+	padding-bottom: 10px;
+}
+
+#message {
+	display:none;
+	padding: 5px;
+}
+#message p {
+	padding: 5px;
+} 
+/* Register form ends*/
+
+/*Security Question section Starts*/
+#SecurityForm{
+	background-color: #ffffff;
+	margin: 100px auto;
+	font-family: Raleway;
+	padding: 40px;
+	width: 40%;
+	min-width: 300px;
+}
+.security-section .hint-text {
+	float: right;
+	padding-top: 5px;
+	font-size: 13px;  
+}
+.security-section label {
+	font-weight: 500;
+	font-size: 20px;
+	color: black;
+}
+.security-section  .form-control {
+	min-height: 38px;	
+	box-shadow: none !important;
+	border-width: 0 0 1px 0;
+	border-radius: 0;
+}
+.security-section .form-control:focus {
+	  border-color: #ccc;
+}
+.security-section .input-group{
+	display: block;
+  	margin-right: auto;
+	margin-left: auto;
+	max-width: 300px;  
+}
+.form-row .alert{
+	display: block;
+  	margin-right: auto;
+	margin-left: auto;
+}
+#security-error-alert-message{
+	display: none;
+}
+#blank-alert-message{
+    display: none;
+}
+#collegeNameAlert{
+	color:red;
+}
+#confPasswordAlert{
+	color:red;
+}
+#studyYearAlert{
+	color:red;
+}
+.reset-button{
+	margin: 5px;  
+	padding: 3.5px 25px ;
+	font-size: 20px;
+	color:rgb(0, 0, 0);
+	background-color: white;
+	border: 1px solid black;
+	
+}
+.register-button{
+	margin:5px;
+	padding: 4px 14px;
+	font-size: 20px;
+	color:white;
+	background-color: rgb(0, 0, 0);
+}
+.register-button:hover {        
+	color: white;
+	background-color: rgb(0, 0, 0);
+}
+.reset-button:hover{
+	color: rgb(0, 0, 0);
+	background-color: #DCDCDC;	
+}
+@media screen and (min-width: 603px) {
+	.button-center-align{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	  }
+}	
+/*Security Question form Ends*/  

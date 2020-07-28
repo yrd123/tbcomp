@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Register</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">  
+<link rel="stylesheet" type="text/css" href="register.css">
+<script type="text/javascript" src="register.js"></script>
+
+</head>
+<body>
+	<!-- Navbar start -->
+	<nav class="navbar navbar-dark navbar-expand-lg">
+	<a class="navbar-brand" href="#">Inderjit Singh</a>
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+	<div class="collapse navbar-collapse" id="navbarSupportedContent">
+		<ul class="navbar-nav mr-auto">
+		<li class="nav-item underlinehover">
+			<a class="nav-link" href="..\homepage\index.html">Home <span class="fa fa-home"></span> <span class="sr-only">(current)</span></a>
+		</li>
+		<li class="nav-item underlinehover">
+			<a class="nav-link" href="../post-login/postlogin.html">Contact Us <span class="fa fa-phone"></span></a>
+		</li>
+		</ul>
+	
+		<ul class="navbar-nav ml-auto"> 
+			<li class="nav-item underlinehover "> 
+				<a class="nav-link " href="..\login\login.html">Login<span class="fa fa-sign-in"></span></a>    
+			</li> 
+			</ul>
+	</div>
+	</nav>
+	<!-- navbar ends -->
+	<!--Register forms begin-->
+	<form id="regForm" action="" name="RegisterForm" onsubmit="return RegisterValidation()"> 
+		<h4 class="title">Register</h4>
+		<div class="hint-text text-center text-muted">Create your account. It's free and only takes a minute.</div>
+		<div class="tab">
+			<div class="form-group">
+				<div class="input-group">
+					<span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+					  <input  type="email "class="form-control" placeholder="Email" name="emailId" required>
+				</div>
+			</div>
+				<small id="emailAlert" class="form-text"></small>
+			
+		</div>
+		<div class="tab2">
+			<div class="form-group">
+				<div class="input-group">
+					<span class="input-group-add-on"><i class="fa fa-lock"></i></span>
+					<input  type="password" class="form-control" placeholder="Password" id="registerPassword"name="registerPassword" required>
+				</div>
+				<div class="form-group">
+					<small id="passwordAlert" class="form-text"></small>
+				</div>
+				<div class="form-group text-muted"id="message">
+					<h6>Password must contain the following:</h6>
+					A lowercase letter<br>
+					A capital (uppercase) letter<br>
+					A number<br>
+					Minimum 8 characters</p>
+				</div>    		
+			</div>
+			<div class="form-group">
+				<div class="input-group">
+						<span class="input-group-add-on">
+							<i class="fa fa-lock"></i>
+							<i class="fa fa-check"></i>
+						</span>
+						<input type="password" class="form-control" placeholder="Confirm Password" name="confirmPassword" required>
+				</div>
+				<small id="confPasswordAlert" class="form-text"></small>
+			</div>
+		</div>
+		<div class="tab">
+			<div class="form-group">
+				<div class="input-group">
+					<span class="input-group-addon"><i class="fa fa-university"></i></span>
+					 <input type="text"  class="form-control" placeholder="Name of College/University" name="collegeName" required>
+				</div>
+				<div class="form-group">
+					<small id="collegeNameAlert" class="form-text"></small>
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="yearOfStudy">
+					<span class="input-group-grad-cap">
+						<i class="fa fa-graduation-cap"></i>
+					</span>
+				</label>	
+				<select class="year-select md-form" id="yearOfStudy" name="yearOfStudy" type="text">
+					<option value="none" selected disabled hidden>Year Of Study</option>
+					<option name="year" value="FY">FY</option>
+					<option name="year" value="SY">SY</option>
+					<option name="year" value="TY">TY</option>
+					<option name="year" value="LY">LY</option>
+				</select>
+				<div class="form-group">
+					<small id="studyYearAlert" class="form-text"></small>
+				</div>
+			</div>
+		</div>
+		<h4 class="title">Security Questions</h4>
+        <div class="form-row">
+            <div class="alert alert-primary" role="alert" id="alert-message">
+                Make sure you remember your respones
+            </div>
+            <div class="alert alert-danger text-center" role="alert" id="security-error-alert-message">
+                You must answer to two Security questions
+			</div>
+			<div class="alert alert-danger" role="alert" id="blank-alert-message">
+				Please fill out Security Questions
+			</div>
+        </div>
+		<div class="security-section ml-3">
+			<div class="form-group row" id="question1">
+                <label for="question2" id="firstQuestionLabel">What is your favorite Food?</label>
+				<div class="input-group">
+					<div class="form-row">
+						<input type="text" class="form-control" name="question1" id="firstQuestion" placeholder="Your Response" ></div>
+				</div>
+			</div>
+			<div class="form-group row" id="question2">
+                <label for="question2" id="secondQuestionLabel">What is your favorite Sport?</label><br>
+				<div class="input-group">
+					<div class="form-row"><input type="text" class="form-control" name="question2" id="secondQuestion" placeholder="Your Response"></div>
+				</div>
+			</div>
+			<div class="form-group row" id="question3">
+                <label for="question3" id="thirdQuestionLabel">What is your favorite Song?</label><br>
+				<div class="input-group">
+					<div class="form-row"><input type="text" class="form-control" name="question3" id="thirdQuestion" placeholder="Your Response"></div>
+				</div>
+			</div>
+		</div>
+		<div class="form-row button-center-align">
+			
+				<button type="reset" class="btn btn-secondary reset-button">Reset</button>
+				<button type="submit" class="btn register-button">Register</button>
+		
+		</div>
+		<div class="footer text-center">Already have an Account? <a href="..\login\login.html">Login Here</a></div>
+	  </form>
+	<!--Register forms ends-->
+	 
+	   <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+	   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+	   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+	   <script>
+        var pass_input=document.getElementById("registerPassword");
+            pass_input.onfocus = function() {
+            document.getElementById("message").style.display = "block";
+        }
+        // When the user clicks outside of the password field, hide the message box
+        pass_input.onblur = function() {
+        document.getElementById("message").style.display = "none";
+        }
+    </script>
+</body>
+</html>
