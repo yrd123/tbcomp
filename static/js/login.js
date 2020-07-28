@@ -89,7 +89,7 @@ function nameValidation(){
     {
         var loginForm = document.getElementById('main-login-form-section');
         loginForm.style.display = "none";
-        window.location.assign("ResetPassword.html");
+        window.location.assign("resetPassword.html");
         
         
     } 

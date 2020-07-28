@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,44 +8,51 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">  
-<link rel="stylesheet" type="text/css" href="signup.css">
-<script type="text/javascript" src="signup.js"></script>
+<link rel="stylesheet" type="text/css" href="{% static 'css/signup.css' %}">
+<script type="text/javascript" src="{% static 'js/signup.js' %}"></script>
 
 </head>
 <body>
 	<!-- Navbar start -->
 	<nav class="navbar navbar-dark navbar-expand-lg">
-	<a class="navbar-brand" href="#">Inderjit Singh</a>
+	<a class="navbar-brand" href="/">Inderjit Singh</a>
 	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 		<span class="navbar-toggler-icon"></span>
 	</button>
 	<div class="collapse navbar-collapse" id="navbarSupportedContent">
 		<ul class="navbar-nav mr-auto">
 		<li class="nav-item underlinehover">
-			<a class="nav-link" href="..\homepage\index.html">Home <span class="fa fa-home"></span> <span class="sr-only">(current)</span></a>
+			<a class="nav-link" href="/">Home <span class="fa fa-home"></span> <span class="sr-only">(current)</span></a>
 		</li>
 		<li class="nav-item underlinehover">
-			<a class="nav-link" href="../post-login/postlogin.html">Contact Us <span class="fa fa-phone"></span></a>
+			<a class="nav-link" href="/">Contact Us <span class="fa fa-phone"></span></a>
 		</li>
 		</ul>
 	
 		<ul class="navbar-nav ml-auto"> 
 			<li class="nav-item underlinehover "> 
-				<a class="nav-link " href="..\login\login.html">Login<span class="fa fa-sign-in"></span></a>    
+				<a class="nav-link " href="login">Login<span class="fa fa-sign-in"></span></a>    
 			</li> 
 			</ul>
 	</div>
 	</nav>
 	<!-- navbar ends -->
 	<!--Register forms begin-->
-	<form id="regForm" action="" name="RegisterForm" onsubmit="return RegisterValidation()"> 
+	<form id="regForm" method="POST" action="" name="RegisterForm" onsubmit="return RegisterValidation()">{% csrf_token %} 
 		<h4 class="title">Register</h4>
 		<div class="hint-text text-center text-muted">Create your account. It's free and only takes a minute.</div>
+		{% if messages %}
+            <ul class="messages">
+            {% for message in messages %}
+                <li style="color: red" {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+            {% endfor %}
+            </ul>
+        {% endif %}
 		<div class="tab">
 			<div class="form-group">
 				<div class="input-group">
 					<span class="input-group-addon"><i class="fa fa-envelope"></i></span>
-					  <input  type="email "class="form-control" placeholder="Email" name="emailId" required>
+					  <input  type="email "class="form-control" placeholder="Email" name="email" required>
 				</div>
 			</div>
 				<small id="emailAlert" class="form-text"></small>
@@ -54,7 +62,7 @@
 			<div class="form-group">
 				<div class="input-group">
 					<span class="input-group-add-on"><i class="fa fa-lock"></i></span>
-					<input  type="password" class="form-control" placeholder="Password" id="registerPassword"name="registerPassword" required>
+					<input  type="password" class="form-control" placeholder="Password" id="password" name="password" required>
 				</div>
 				<div class="form-group">
 					<small id="passwordAlert" class="form-text"></small>
@@ -82,7 +90,7 @@
 			<div class="form-group">
 				<div class="input-group">
 					<span class="input-group-addon"><i class="fa fa-university"></i></span>
-					 <input type="text"  class="form-control" placeholder="Name of College/University" name="collegeName" required>
+					 <input type="text"  class="form-control" placeholder="Name of College/University" name="college" required>
 				</div>
 				<div class="form-group">
 					<small id="collegeNameAlert" class="form-text"></small>
@@ -94,7 +102,7 @@
 						<i class="fa fa-graduation-cap"></i>
 					</span>
 				</label>	
-				<select class="year-select md-form" id="yearOfStudy" name="yearOfStudy" type="text">
+				<select class="year-select md-form" id="yearOfStudy" name="year" type="text">
 					<option value="none" selected disabled hidden>Year Of Study</option>
 					<option name="year" value="FY">FY</option>
 					<option name="year" value="SY">SY</option>
@@ -145,7 +153,7 @@
 				<button type="submit" class="btn register-button">Register</button>
 		
 		</div>
-		<div class="footer text-center">Already have an Account? <a href="..\login\login.html">Login Here</a></div>
+		<div class="footer text-center">Already have an Account? <a href="login">Login Here</a></div>
 	  </form>
 	<!--Register forms ends-->
 	 

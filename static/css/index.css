@@ -8,7 +8,7 @@ body, html {
 
 /*Landing page*/
 .hero-image {
-  background-image: url("index_background.jpg");
+  background-image: url("../../media/images/index_background.jpg");
   height: 100vh;
   background-position: center;
   background-repeat: no-repeat;
