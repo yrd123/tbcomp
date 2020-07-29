@@ -9,7 +9,7 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" type="text/css" href="{% static 'css/login.css' %}">
-        <script type="text/javascript" src="{% static 'js/login.js' %}"></script>
+        
     
     
     </head>
@@ -46,7 +46,7 @@
                     <h4 class="title">Login</h4>
                 </div>
                 <div class="main-form-body ">
-                    <form method="POST" action="" name="loginForm" onsubmit="return loginValidation()">{% csrf_token %}
+                    <form method="POST" name="loginForm" id="loginForm" onsubmit="return loginValidation()">{% csrf_token %}
                         {% if messages %}
                             <ul class="messages">
                             {% for message in messages %}
@@ -57,7 +57,7 @@
                         <div class="form-group">
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
-                                <input type="email" class="form-control" name="usernamw" placeholder="Email" required>
+                                <input type="email" class="form-control" name="emailId" placeholder="Email" required>
                             </div>
                             <div class="form-group">
                                 <small id="emailAlert" class="form-text"></small>
@@ -80,7 +80,7 @@
                             </div>      
                         </div>
                         <div class="form-group">
-                            <button type="submit" id="login-button"class="btn btn-primary btn-block btn-lg mt-2">Login <i class="fa fa-login"></i></button>
+                            <button type="submit" id="login-button" class="btn btn-primary btn-block btn-lg mt-2" >Login <i class="fa fa-login"></i></button>
                         </div>
                         <label class="form-check-label"><input type="checkbox"> Remember me</label>
                         <a href="#" class="hint-text" onclick="userQuestion()">Forgot Password?</a>
@@ -92,7 +92,7 @@
     </div> 
     <!--forgot Password form begin-->
     <div class="main-forgot-pass-section"  id="main-forgot-pass-section">	
-        <form name="forgetPasswordForm" id="ResetPassForm"action="" method="" onsubmit="return nameValidation()">
+        <form name="forgetPasswordForm" id="ResetPassForm" action="" method="" onsubmit="return nameValidation()">
             <h2>Forgot Password</h2>
             <div class="form-group">
                 <div class="input-group">
@@ -153,6 +153,7 @@
         document.getElementById("message").style.display = "none";
         }
     </script>
+    <script type="text/javascript" src="{% static 'js/login.js' %}"></script>
     
 </body>
 </html>

@@ -1,3 +1,4 @@
+ alert("hi");
  function RegisterValidation(){
     var email=document.forms["RegisterForm"]["emailId"].value;
     var email_patt=/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;

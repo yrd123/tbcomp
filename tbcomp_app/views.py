@@ -10,7 +10,7 @@ from .models import Student
 def index(request):
     return render(request,'index.html')
 
-def loguser(request):
+def login(request):
     if request.method == 'POST':
         username = request.POST.get('username')
         password = request.POST.get('password')
@@ -26,7 +26,7 @@ def loguser(request):
     template_name = 'login.html'
     return render(request, template_name)
 
-def logoutUser(request):
+def logout(request):
     logout(request)
     return redirect('/')
 
@@ -59,5 +59,5 @@ def signup(request):
     return render(request, template_name)
 
 def resetPassword(request):
-    template_name = 'ResetPassword.html'
+    template_name = 'resetPassword.html'
     return render(request, template_name)

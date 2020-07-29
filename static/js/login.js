@@ -1,3 +1,4 @@
+
 function userQuestion(){
     var loginForm = document.getElementById('main-login-form-section');
     var forgotPasswordForm = document.getElementById('main-forgot-pass-section');
@@ -10,7 +11,6 @@ function userQuestion(){
 
 
 function loginValidation(){
-    
   var email = document.forms["loginForm"]["emailId"].value;
   var email_patt = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
   var password =  document.forms["loginForm"]["loginPassword"].value;
@@ -18,17 +18,17 @@ function loginValidation(){
 
 	if(email_patt.test(email) == false )
 	{
-		document.getElementById('emailAlert').innerHTML=" **Please enter valid Email"
+        document.getElementById('emailAlert').innerHTML=" **Please enter valid Email";\
 		return false;
 	}
 	else{
-		document.getElementById('emailAlert').innerHTML = '';
+        document.getElementById('emailAlert').innerHTML = '';
 		document.getElementById('emailAlert').style.display = 'none';
     }
 
     if (passwordpattern.test(password) == false)
     {
-        document.getElementById('passwordAlert').innerHTML=" **Please enter valid Password"
+        document.getElementById('passwordAlert').innerHTML=" **Please enter valid Password";
 		return false;
     }
     else{
@@ -94,4 +94,9 @@ function nameValidation(){
         
     } 
     return false
+}
+
+function submitForm(){
+    alert("1");
+    console.log(document.getElementById("loginForm"));
 }
