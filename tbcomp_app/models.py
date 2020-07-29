@@ -7,7 +7,9 @@ class Student(models.Model):
     email = models.EmailField()
     password = models.CharField(max_length = 20)
     confirmPassword = models.CharField(max_length = 20)
-    
+    question1=models.CharField(max_length = 20,null=True, blank=True)
+    question2=models.CharField(max_length = 20,null=True, blank=True)
+    question3=models.CharField(max_length = 20,null=True, blank=True)
     def __str__(self):
         return self.email
 
