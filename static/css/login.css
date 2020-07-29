@@ -164,6 +164,9 @@ html,body
 #emailAlert{
 	color:red;
 }
+#passwordAlert{
+	color:red;
+}
 #message {
 	display:none;
 	padding: 5px;
@@ -175,103 +178,3 @@ html,body
 	color:white;
 	background-color: rgb(0, 0, 0);
 }
-/* Forgot Password Form Section Starts*/
-#forgot-password-navbar{
-	display: none;
-}
-.main-forgot-pass-section{
-	margin: 100px auto;
-	font-family: Raleway;
-	padding: 40px;
-	width: 50%;
-	min-width: 350px;
-	display: none;	
-}
-#forgetPasswordForm{
-	-webkit-box-shadow: 7px 7px 15px -1px rgba(103,103,103,0.99); 
-	box-shadow: 7px 7px 15px -1px rgba(103,103,103,0.99);
-	border-radius: 1%;
-}
-.main-forgot-pass-section h2 {
-	color: black;
-	margin: 0 0 15px;
-	text-align: center;
-}
-.main-forgot-pass-section form {		
-	border-radius: 1px;
-	margin-bottom: 15px;
-	background: #fff;
-	border: 1px solid #f3f3f3;
-	box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
-	padding: 30px;
-}
-.main-forgot-pass-section .form-group {
-	margin-bottom: 20px;
-}
-.main-forgot-pass-sectionlabel {
-	font-weight: normal;
-	font-size: 13px;
-}
-.main-forgot-pass-section .form-control {
-	min-height: 38px;
-	box-shadow: none !important;
-	border-width: 0 0 1px 0;
-	
-}	
-.main-forgot-pass-section .input-group-addon {
-	max-width: 42px;
-	text-align: center;
-	background: none;
-	border-bottom: 1px solid #e1e1e1;
-	padding-left: 5px;
-}
-.main-forgot-pass-section .fa {
-	font-size: 21px;
-	position: relative;
-	top: 8px;
-}
-.alert{
-	margin: auto;
-	margin-bottom: 20px;
-}
-#userNameAlert{
-	color:red;
-}
-#error-alert-message{
-	display: none;
-}
-#blank-alert-message{
-	display: none;
-}
-#passwordAlert{
-	color:red;
-}
-.reset-button{
-	margin: 5px;  
-	padding: 3.5px 25px ;
-	font-size: 20px;
-	color: rgb(0, 0, 0);
-	background-color: white;
-	border: 1px solid rgb(0, 0, 0);
-  }
-.submit-button{
-	margin:5px;
-	padding: 4px 18px;
-	font-size: 20px;
-	color: white;
-	background-color: rgb(0, 0, 0);
-}
- 
-.submit-button:hover {        
-	color: white;
-	background-color: rgb(0, 0, 0);
-}
-
-@media screen and (min-width: 603px) {
-	.button-center-align{
-		display: flex;
-		justify-content: center;
-		align-items: center;
-	}
-}	
-/* Forgot Password Form Section Ends*/
