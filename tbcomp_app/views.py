@@ -46,12 +46,18 @@ def signup(request):
             college = request.POST.get('college')
             password = request.POST.get('password')
             confirmpassword = request.POST.get('confirmPassword')
+            question1=request.POST.get("question1")
+            question2=request.POST.get("question2")
+            question3=request.POST.get("question3")
             obj2 = Student.objects.create(
                 email = email,
                 year = year,
                 college = college,
                 password = password,
                 confirmPassword = confirmpassword,
+                question1=question1,
+                question2=question2,
+                question3=question3
             )
             obj2.save()
             return redirect("login")
@@ -64,8 +70,10 @@ def resetPasswordQuestions(request):
         question1=request.POST.get("question1")
         question2=request.POST.get("question2")
         question3=request.POST.get("question3")
+        print(question1,question2)
         if Student.objects.filter(email=email,question1=question1,question2=question2,question3=question3).exists():
-            password=Student.objects.filter(email=email).get("password")
+            print("inside q")
+            password=Student.objects.get(email=email).password
             print(password)
             user = authenticate(request, username = email, password = password)
             auth.login(request,user)
@@ -73,12 +81,13 @@ def resetPasswordQuestions(request):
         else:
             messages.error(request, 'input correct email or answers')
             print('incorrect answers or email')
-
     template_name = 'resetPasswordQuestions.html'
     return render(request, template_name)
 
 @login_required(login_url="login")
 def resetPassword(request):
+    if request.method=="POST":
+        return redirect("subject")
     print("inside resetpassword: ",request.user.username)
     template_name = 'resetPassword.html'
     return render(request, template_name)

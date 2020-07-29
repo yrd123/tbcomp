@@ -44,9 +44,5 @@ function nameValidation(){
         BlankAlertMessage.style.display = "none";
         return false;
     }
-    else if (q1 != "" && q2 != "" && q3=="" || q1 ==""  && q2 != "" && q3 != "" || q1 != "" && q2== "" && q3 != "")
-    {
-        window.location.assign("resetPassword.html");   
-    } 
-    return false
+
 }
