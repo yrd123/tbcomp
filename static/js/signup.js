@@ -1,16 +1,15 @@
- alert("hi");
  function RegisterValidation(){
-    var email=document.forms["RegisterForm"]["emailId"].value;
+    var email=document.forms["RegisterForm"]["email"].value;
     var email_patt=/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 
-    var clg_name = document.forms["RegisterForm"]["collegeName"].value;
+    var clg_name = document.forms["RegisterForm"]["college"].value;
     var userPattern = /^[a-zA-Z]+$/;
 
-    var password =  document.forms["RegisterForm"]["registerPassword"].value;
+    var password =  document.forms["RegisterForm"]["password"].value;
     var passwordpattern=/^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{8,20}$/;
     var confirm_pass=document.forms["RegisterForm"]["confirmPassword"].value;
     
-    var studyYear=document.getElementById('yearOfStudy').value;
+    var studyYear=document.getElementById('year').value;
     
     if(email_patt.test(email) == false )
 	{
@@ -23,7 +22,6 @@
     }
     if (passwordpattern.test(password) == false)
     {
-        alert('Yes')
         document.getElementById('passwordAlert').innerHTML=" **Please enter valid Password"
 		return false;
     }
@@ -80,7 +78,6 @@
         ErrorAlertMessage.style.display = "block";
         alertMessage.style.display = "none";
         BlankAlertMessage.style.display = "none";
-        console.log('In here -2')
         return false;
 
     }

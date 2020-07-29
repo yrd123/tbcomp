@@ -52,7 +52,7 @@
 			<div class="form-group">
 				<div class="input-group">
 					<span class="input-group-addon"><i class="fa fa-envelope"></i></span>
-					  <input  type="email "class="form-control" placeholder="Email" name="email" required>
+					  <input  type="email" class="form-control" placeholder="Email" name="email" required>
 				</div>
 			</div>
 				<small id="emailAlert" class="form-text"></small>
@@ -102,7 +102,7 @@
 						<i class="fa fa-graduation-cap"></i>
 					</span>
 				</label>	
-				<select class="year-select md-form" id="yearOfStudy" name="year" type="text">
+				<select class="year-select md-form" id="year" name="year" type="text">
 					<option value="none" selected disabled hidden>Year Of Study</option>
 					<option name="year" value="FY">FY</option>
 					<option name="year" value="SY">SY</option>
@@ -161,7 +161,7 @@
 	   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
 	   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 	   <script>
-        var pass_input=document.getElementById("registerPassword");
+        var pass_input=document.getElementById("password");
             pass_input.onfocus = function() {
             document.getElementById("message").style.display = "block";
         }

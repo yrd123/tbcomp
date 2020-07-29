@@ -18,7 +18,7 @@ function loginValidation(){
 
 	if(email_patt.test(email) == false )
 	{
-        document.getElementById('emailAlert').innerHTML=" **Please enter valid Email";\
+        document.getElementById('emailAlert').innerHTML=" **Please enter valid Email";
 		return false;
 	}
 	else{
