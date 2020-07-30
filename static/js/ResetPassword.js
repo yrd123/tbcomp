@@ -32,7 +32,7 @@ function ResetFormValidation()
 
     if(main_pass != confirm_pass)
 	{
-        document.getElementById('confPasswordAlert').innerHTML='**Please enter the correct Password';
+        document.getElementById('confPasswordAlert').innerHTML='**Please enter the same password as above';
 		return false;
 	}	
 	else{
