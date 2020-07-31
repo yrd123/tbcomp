@@ -38,7 +38,7 @@
 	</nav>
 	<!-- navbar ends -->
 	<!--Register forms begin-->
-	<form id="regForm" method="POST" action="" name="RegisterForm" onsubmit="return RegisterValidation()">{% csrf_token %} 
+	<form id="regForm" method="POST" action="/signup" name="RegisterForm" onsubmit="return RegisterValidation()">{% csrf_token %} 
 		<h4 class="title">Register</h4>
 		<div class="hint-text text-center text-muted">Create your account. It's free and only takes a minute.</div>
 		{% if messages %}
