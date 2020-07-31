@@ -3,12 +3,13 @@ function ResetFormValidation()
 {
     var email=document.forms["ResetPasswordForm"]["emailId"].value;
     var email_patt=/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-
+   
     var password =  document.forms["ResetPasswordForm"]["Resetpassword"].value;
     var passwordpattern=/^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{8,20}$/;
-       
+      
     var main_pass=document.forms["ResetPasswordForm"]["Resetpassword"].value;
     var confirm_pass=document.forms["ResetPasswordForm"]["confirmPassword"].value;
+    
     
 	if(email_patt.test(email) == false )
 		{
