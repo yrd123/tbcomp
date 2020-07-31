@@ -31,7 +31,7 @@
 	
 		<ul class="navbar-nav ml-auto"> 
 			<li class="nav-item underlinehover "> 
-				<a class="nav-link " href="login">Login<span class="fa fa-sign-in"></span></a>    
+				<a class="nav-link " href="{% url 'login' %}">Login<span class="fa fa-sign-in"></span></a>    
 			</li> 
 			</ul>
 	</div>
@@ -153,7 +153,7 @@
 				<button type="submit" class="btn register-button">Register</button>
 		
 		</div>
-		<div class="footer text-center">Already have an Account? <a href="login">Login Here</a></div>
+		<div class="footer text-center">Already have an Account? <a href="{% url 'login' %}">Login Here</a></div>
 	  </form>
 	<!--Register forms ends-->
 	 

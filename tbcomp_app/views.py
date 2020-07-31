@@ -96,6 +96,8 @@ def resetPassword(request):
             obj3.save()
             print(obj3.password)
             Student.objects.filter(email = email).update(password = password, confirmPassword = confirmPassword)
+            user=authenticate(request, username = email, password = password)
+            auth.login(request,user)
             return redirect("subject")
         else:
             messages.error(request, 'This email doesn\'t exist. Please check it again!')
@@ -103,3 +105,6 @@ def resetPassword(request):
     print("inside resetpassword: ",request.user.username)
     template_name = 'resetPassword.html'
     return render(request, template_name)
+
+def subject(request):
+    return render(request,"subject.html")
