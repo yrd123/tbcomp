@@ -3,7 +3,7 @@
     var email_patt=/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 
     var clg_name = document.forms["RegisterForm"]["college"].value;
-    var userPattern = /^[a-zA-Z]+$/;
+    var userPattern = /^[a-zA-Z]([\w -.]*[a-zA-Z])?$/;
 
     var password =  document.forms["RegisterForm"]["password"].value;
     var passwordpattern=/^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{8,20}$/;
