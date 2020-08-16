@@ -1,0 +1,486 @@
+/*navbar*/
+
+.navbar-nav>li {
+    padding-left: 30px;
+    padding-right: 30px;
+    font-size: 1.1em;
+  }
+  
+  .navbar-brand {
+    padding-left: 20px;
+    padding-right: 30px;
+    margin-bottom: 0;
+  }
+  
+  .navbar {
+    background-color: rgb(0, 0, 0);
+    opacity: 0.88;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+  }
+  
+  .navbar-brand {
+    font-size: 1.5em;
+  }
+  
+  .ml-auto{
+    margin-right: 20px;
+  }
+  
+  .glypicon {
+    padding-left: 10px;
+  }
+  
+  .nav-link:hover {
+    background-color: #1a1a1a;
+  }
+  
+  .active .nav-link {
+    border-bottom: 2px solid #2d9cc2;
+  }
+  
+  .underlinehover {
+    display: inline-block;
+  }
+  
+  .underlinehover:after {
+    content: '';
+    display: block;
+    height: 1.5px;
+    width: 0;
+    background: transparent;
+    transition: width .5s ease, background-color .5s ease;
+  }
+  
+  .underlinehover:hover:after {
+    width: 100%;
+    background: #2d9cc2;
+  }
+  
+  /*navbar ends*/
+  
+
+.div1{
+    text-align: center;
+    margin-left: 40px;
+    margin-right: 40px;
+    margin-top: 40px;
+    font-size: 25px;
+    font-weight: 600;
+    border-radius: 22px;
+    padding:5px;
+    box-shadow: 1.5px 1.5px 3px 1px rgb(128 128 128 / 46%);
+}
+
+#subject1-row1{
+    margin-top: 10px;
+}
+#subject1-row2{
+    margin-top: 10px;
+}
+.row1{
+    /*margin-top: 100px;
+    margin-left: 35px;
+    margin-right: 35px;*/
+    height: 100px;
+    margin: auto;
+}
+.row2{
+    /*margin-top: 30px;
+    margin-left: 120px;
+    margin-right: 120px;*/
+    height: 100px;
+    margin: auto; 
+  
+}
+
+.topic{
+    
+    color: blue;
+    background-color: black;
+    height: 100px;
+}
+
+#subject2-row1{
+    margin-top: 100px;
+    
+}
+#subject2-row2{
+    margin:10px;
+}
+#subject2-row3{
+    margin:10px;
+}
+#subject3-row1{
+    margin-top: 50px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+#subject3-row2{
+    margin:10px;
+}
+#subject3-row3{
+    margin:10px;
+}
+
+/*carousel start*/
+
+#carouselExampleIndicators {
+   
+    justify-content: center;
+    background-color: white;
+    border-radius: 20px;
+    border-color: black; 
+    border-style: solid;
+    border-width: 1px;
+    height: 530px;
+}
+   
+.carousel-inner .carousel-item {
+    color: rgb(122, 121, 121);
+    }
+
+.carousel-indicators {
+    text-align: center;
+    font-size: 1em;
+   
+ }
+   
+
+/*carousel end*/
+      
+/*button start*/
+       
+ #btn1 {
+    background-color:#2d9cc2;
+    border: none;
+    color: white;
+    padding-bottom: 0.2%;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1em;
+    border-style: solid;
+    width: 8em;
+    border-width: 1px;
+    margin: 10px;
+    border-radius: 8em;
+    outline: none; 
+    font-weight: bolder;
+    transition: width 0.7s;
+    -moz-transition: width 0.7s;
+    -webkit-transition: width 0.7s, height 0.7s; 
+    -o-transition: width 0.7s;
+    border-color: #2d9cc2;
+    cursor: pointer;  
+    transition: 0.2s all; 
+    margin-left: 3%;
+}
+#btn1:active { 
+    transform: scale(0.98); 
+} 
+        
+#btn2 {
+    background-image: url(BECIcon.png);
+    background-size: 2.1em 3.1em;
+    background-repeat: no-repeat; 
+    background-position: center;
+    background-color:white;   
+    padding-bottom: 0.2%;      
+    border: none;         
+    color: black;
+    text-align: center;        
+    text-decoration: none;         
+    display: inline-block;         
+    font-size: 1em;          
+    border-style: solid;          
+    width: 4em;
+    border-width: 1px;
+    margin: 10px;
+    border-radius: 8em;
+    outline: none; 
+    font-weight: bolder;
+    transition: width 0.7s;
+    -moz-transition: width 0.7s;
+    -webkit-transition: width 0.7s, height 0.7s; 
+    -o-transition: width 0.7s;
+    border-color: #2d9cc2;
+    cursor: pointer;  
+    transition: 0.2s all; 
+    background-size: 30px 25px !important;
+}
+
+#btn2:active { 
+    transform: scale(0.98); 
+    } 
+
+#btn3 {
+    background-image: url(ECADIcon.png);
+    background-size: 1em 1.4em;
+    background-repeat: no-repeat; 
+    background-position: center;
+    background-color:white;
+    border: none;
+    color: black;
+    padding-bottom: 0.2%;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1em;
+    border-style: solid;
+    width: 4em;
+    border-width: 1px;
+    margin: 10px;
+    border-radius: 8em;
+    outline: none; 
+    font-weight: bolder;
+    transition: width 0.7s;
+    -moz-transition: width 0.7s;
+    -webkit-transition: width 0.7s, height 0.7s; 
+    -o-transition: width 0.7s;
+    border-color: #2d9cc2;
+    cursor: pointer;  
+    transition: 0.2s all; 
+}
+        
+#btn3:active { 
+    transform: scale(0.98);  
+    } 
+/*button end*/
+
+.card-img{
+    width: 30px;
+    height: 30px;
+    float: right;
+    margin-top:33px;
+}
+.card-body{
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+}
+
+.card{
+    margin-bottom: 50px;
+    min-height: 70px;
+    border: 0.5px solid #ccc;
+    box-shadow: 2px 2px 1px 1px rgb(148 149 148 / 35%);
+
+}
+.card-title{
+    font-size: 16px;
+}
+.card a{
+    text-decoration: none;
+    color: black;
+}
+.subject1padding{
+    margin-bottom: 55px;
+}
+.subject2padding{
+    margin-bottom: 55px;
+}
+.subject3padding{
+    margin-bottom: 55px;
+}
+.resize-img img{
+  width: 40px;
+  height: 40px;
+}
+#dc-circuit{
+  width: 40px;
+  height: 35px;
+}
+#ac-circuit{
+  width: 40px;
+  height: 35px;
+}
+#Diode-App{
+  width: 25px;
+  height: 35px;
+  margin-right: 2px;
+}
+#Single-Stage-Design{
+  height:40px;
+}
+#Darlington-Amplifier{
+  width: 25px;
+  height: 23px;
+}
+#Cascade-Amplifier{
+  width: 25px;
+  height: 25px;
+}
+#Oscillator-Amplifier{
+  width: 25px;
+  height: 25px;
+}
+#Differential-Amplifier{
+  width: 35px;
+}
+
+@media only screen and (max-width:432px){
+    .card{
+        margin: 20px;
+    }
+    .card-img{
+        width: 30px;
+        height: 30px;
+        float: right;
+        margin-top: 0px;
+    }
+    .carousel-inner .carousel-item{
+        height: 100%;
+    }
+    .div1{
+        font-size: 20px;
+        margin: 15px;
+        padding:10px;   
+    }
+    .demoFont{
+        font-size: 23px;
+    }
+    #carouselExampleIndicators {
+        height: auto;
+    }
+    #Single-Stage-Design{
+      height:22px;
+      
+    }
+}
+
+  .page3{
+    background-color: black;
+    width: auto;
+    padding-top: 30px;
+    padding-bottom: 20px;
+    margin-top: 1020px;
+  }
+
+  .page2{
+    background-color: black;
+    width: auto;
+    padding-top: 30px;
+    padding-bottom: 20px;
+    margin-top: 680px;
+  }
+
+/*footer css*/
+
+.footer {
+    background-color: black;
+    width: auto;
+    padding-top: 30px;
+    padding-bottom: 20px;
+    margin-top: 470px;
+  }
+  
+  @media screen and (max-width: 600px) {
+    .column .side{
+      width: 100%;
+      display: block;
+     
+    }
+  }
+  
+   .side {
+    text-align: left;
+    float: left;
+    color: white;
+  padding: 10px;
+  }
+  
+  .column .side .bb .a:hover {
+    text-decoration: none;
+  }
+  
+  ul.bb {
+    list-style-type: none;
+    padding: 0;
+    color: white;
+    font-size: 14px;
+  }
+  
+  /* .button  {
+    background-color:#2d9cc2;
+    border: none;
+    color: white;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 12px;
+    padding-right: 14px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 18px;
+    margin: 4px 2px;
+    cursor: pointer;
+    font-weight: bold;
+  } */
+  
+  .footer-btn {
+    background-color: #2d9cc2;
+    cursor: pointer;
+  }
+  
+  .footer-btn:hover {
+    background-color: green;
+  }
+  
+  .button1:active {
+    outline: none;
+    background-color: green;
+  }
+  
+  .column .fa {
+    font-size: 18px;
+  }
+  
+  .counter {
+    height: 30px;
+  }
+  
+  /*footer css*/
+  /*Profile Modal Begin*/
+  .modal-header{
+    background: #2d9cc2;
+    color:white;
+  }
+  .close{
+    color:white;
+    opacity:1.6;
+    border: none;
+  }
+  .close:hover{
+    color:white;
+   border: none;
+  }
+  .form-group input{
+    box-shadow: none !important;
+    border-top-style: hidden;
+    border-right-style: hidden;
+    border-left-style: hidden;
+    border-bottom-style: groove;
+    background-color: #eee;
+    background: white;
+  }
+  .form-control[readonly] {
+    background-color: white;
+    opacity: 1;
+  }
+  .profileForm label{
+    font-weight: 600;
+    font-size: 18px;
+  }
+  .profileForm .form-group input{
+    box-shadow: none !important;
+    border-top-style: hidden;
+    border-right-style: hidden;
+    border-left-style: hidden;
+    border-bottom-style: groove;
+    background-color: #eee;
+    background: white;
+}
+/*Profile Modal Ends*/
