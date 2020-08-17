@@ -9,7 +9,8 @@ urlpatterns = [
     path('signup', views.signup, name="signup"),
     path('resetPasswordQuestions', views.resetPasswordQuestions, name="resetPasswordQuestions"),
     path('resetPassword', views.resetPassword, name="resetPassword"),
-    path('subject', views.subject, name="subject"),
+    path('subjects',views.subjects, name="subjects"),
+    # path('documents/<str:subject>/<str:topic>',views.documents,name="documents"),
 ]
 
 

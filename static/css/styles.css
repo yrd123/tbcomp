@@ -1,6 +1,6 @@
 body {
 	font-family: 'Varela Round', sans-serif;
-	background-image: url('backgroundimg.jpg');
+	background-image: url('../media/images/signup/backgroundimg.png');
 	background-repeat: no-repeat;	
 	background-attachment: fixed;
 	background-size: cover;

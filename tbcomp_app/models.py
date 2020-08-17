@@ -5,6 +5,8 @@ class Student(models.Model):
     college = models.CharField(max_length = 50)
     year = models.CharField(max_length = 20)
     email = models.EmailField()
+    fullname = models.CharField(max_length = 30, null=True)
+    branch = models.CharField(max_length = 10, null=True)
     password = models.CharField(max_length = 20)
     confirmPassword = models.CharField(max_length = 20)
     question1=models.CharField(max_length = 20,null=True, blank=True)

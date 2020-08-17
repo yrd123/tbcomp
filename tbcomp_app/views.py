@@ -3,8 +3,9 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render, redirect
-from django.contrib.auth.models import User,auth
-from .models import Student
+from django.contrib.auth.models import User, auth
+from .models import Student, Document, StudentUpload
+
 
 # Create your views here.
 def index(request):
@@ -19,7 +20,7 @@ def login(request):
             auth.login(request, user)
             print('User verified')
             print(request.user.username)
-            return redirect("subject")
+            return redirect("subjects")
         else:
             messages.error(request, 'Input correct username and password')
             print('No such user')
@@ -42,6 +43,8 @@ def signup(request):
             )
             obj1.set_password(request.POST.get('password'))
             obj1.save()
+            fullname = request.POST.get('fullname')
+            branch = request.POST.get('branch')
             year = request.POST.get('year')
             college = request.POST.get('college')
             password = request.POST.get('password')
@@ -51,6 +54,8 @@ def signup(request):
             question3=request.POST.get("question3")
             obj2 = Student.objects.create(
                 email = email,
+                fullname=fullname,
+                branch=branch,
                 year = year,
                 college = college,
                 password = password,
@@ -72,14 +77,14 @@ def resetPasswordQuestions(request):
         question3=request.POST.get("question3")
         print(question1,question2)
         if Student.objects.filter(email=email,question1=question1,question2=question2,question3=question3).exists():
-            #print("inside q")
+            print("inside q")
             password=Student.objects.get(email=email).password
-            #print(password)
+            print(password)
             user = authenticate(request, username = email, password = password)
             auth.login(request,user)
             return redirect("resetPassword")
         else:
-            messages.error(request, 'Input correct email or answers')
+            messages.error(request, 'input correct email or answers')
             print('incorrect answers or email')
     template_name = 'resetPasswordQuestions.html'
     return render(request, template_name)
@@ -87,24 +92,41 @@ def resetPasswordQuestions(request):
 @login_required(login_url="login")
 def resetPassword(request):
     if request.method=="POST":
-        email = request.POST.get("emailId")
-        password = request.POST.get("Resetpassword")
-        confirmPassword = request.POST.get("confirmPassword")
-        if Student.objects.filter(email = email).exists():
-            obj3 = User.objects.get(email = email)
-            obj3.set_password(password)
+        email=request.POST.get("emailId")
+        Resetpassword=request.POST.get("Resetpassword")
+        confirmPassword=request.POST.get("confirmPassword")
+        if Student.objects.filter(email=email).exists():
+            obj3=User.objects.get(email=email)
+            obj3.set_password(Resetpassword)
             obj3.save()
-            print(obj3.password)
-            Student.objects.filter(email = email).update(password = password, confirmPassword = confirmPassword)
-            user=authenticate(request, username = email, password = password)
-            auth.login(request,user)
+            Student.objects.filter(email=email).update(password=Resetpassword, confirmPassword=confirmPassword)
             return redirect("subject")
         else:
-            messages.error(request, 'This email doesn\'t exist. Please check it again!')
-            print('Email doesn\'t exist')
-    print("inside resetpassword: ",request.user.username)
+            messages.error(request, 'Input correct email id')
+            print('incorrect email')
+            return redirect("resetPassword")
     template_name = 'resetPassword.html'
     return render(request, template_name)
 
-def subject(request):
-    return render(request,"subject.html")
+# @login_required(login_url="login")
+# def documents(request,subject,topic):
+#     studentUploads=StudentUpload.objects.filter(student__email__contains=request.user.username)
+#     documents_list_names=["document_1","document_2","document_3"]
+#     activity_questions_list_names=["activity_1"]
+#     uploaded_activities_list=[]
+#     if studentUploads.objects.filter(name="uploaded_activity_1").exists():
+#         uploaded_activities_list+=["activity_1_solution"]
+#         if studentUploads.objects.filter(name="uploaded_axtivity_1").status=="approved":
+#             documents_list_names+=["document_4","document_5","document_6"]
+#             activity_questions_list_names+=["activity_2"]
+#             if studentUploads.objects.filter(name="uploaded_activity_2").exists():
+#                 uploaded_activities_list=["activity_2_solution"]
+#                 if studentUploads.objects.filter(name="uploaded_activity_2").status=="approved":
+#                     documents_list_names+=["document_7","document_8","document_9"]
+#     documents=Document.objects.filter(topic__name__contains=topic,name=documents_list_names).order_by("name").files
+#     activities=Activity.objects.filter(topic__name__contains=topic,name=activity_questions_list_names).order_by("name").files
+
+
+@login_required(login_url="login")
+def subjects(request):
+    return render(request, 'subject.html')
