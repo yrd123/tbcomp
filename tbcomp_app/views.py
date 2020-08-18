@@ -108,25 +108,28 @@ def resetPassword(request):
     template_name = 'resetPassword.html'
     return render(request, template_name)
 
-# @login_required(login_url="login")
-# def documents(request,subject,topic):
-#     studentUploads=StudentUpload.objects.filter(student__email__contains=request.user.username)
-#     documents_list_names=["document_1","document_2","document_3"]
-#     activity_questions_list_names=["activity_1"]
-#     uploaded_activities_list=[]
-#     if studentUploads.objects.filter(name="uploaded_activity_1").exists():
-#         uploaded_activities_list+=["activity_1_solution"]
-#         if studentUploads.objects.filter(name="uploaded_axtivity_1").status=="approved":
-#             documents_list_names+=["document_4","document_5","document_6"]
-#             activity_questions_list_names+=["activity_2"]
-#             if studentUploads.objects.filter(name="uploaded_activity_2").exists():
-#                 uploaded_activities_list=["activity_2_solution"]
-#                 if studentUploads.objects.filter(name="uploaded_activity_2").status=="approved":
-#                     documents_list_names+=["document_7","document_8","document_9"]
-#     documents=Document.objects.filter(topic__name__contains=topic,name=documents_list_names).order_by("name").files
-#     activities=Activity.objects.filter(topic__name__contains=topic,name=activity_questions_list_names).order_by("name").files
+@login_required(login_url="login")
+def documents(request,subject,topic):
+    # studentUploads=StudentUpload.objects.filter(student__email__contains=request.user.username)
+    # documents_list_names=["document_1","document_2","document_3"]
+    # activity_questions_list_names=["activity_1"]
+    # uploaded_activities_list=[]
+    # if studentUploads.objects.filter(name="uploaded_activity_1").exists():
+    #     uploaded_activities_list+=["activity_1_solution"]
+    #     if studentUploads.objects.filter(name="uploaded_axtivity_1").status=="approved":
+    #         documents_list_names+=["document_4","document_5","document_6"]
+    #         activity_questions_list_names+=["activity_2"]
+    #         if studentUploads.objects.filter(name="uploaded_activity_2").exists():
+    #             uploaded_activities_list=["activity_2_solution"]
+    #             if studentUploads.objects.filter(name="uploaded_activity_2").status=="approved":
+    #                 documents_list_names+=["document_7","document_8","document_9"]
+    # documents=Document.objects.filter(topic__name__contains=topic,name=documents_list_names).order_by("name").files
+    # activities=Activity.objects.filter(topic__name__contains=topic,name=activity_questions_list_names).order_by("name").files
+    print("subject:",subject)
+    print("topic:",topic)
+    return render(request,"documents.html")
 
 
 @login_required(login_url="login")
 def subjects(request):
-    return render(request, 'subject.html')
+    return render(request, 'subjects.html')

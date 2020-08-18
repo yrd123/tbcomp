@@ -184,7 +184,7 @@
 } 
         
 #btn2 {
-    background-image: url(BECIcon.png);
+    background-image: url(../../media/images/post-login/BECIcon.png);
     background-size: 2.1em 3.1em;
     background-repeat: no-repeat; 
     background-position: center;
@@ -218,7 +218,7 @@
     } 
 
 #btn3 {
-    background-image: url(ECADIcon.png);
+    background-image: url(../../media/images/post-login/ECADIcon.png);
     background-size: 1em 1.4em;
     background-repeat: no-repeat; 
     background-position: center;
