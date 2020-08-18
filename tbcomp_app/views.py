@@ -132,4 +132,5 @@ def documents(request,subject,topic):
 
 @login_required(login_url="login")
 def subjects(request):
-    return render(request, 'subjects.html')
+    context={'student':Student.objects.get(email=request.user.username)}
+    return render(request, 'subjects.html',context)
