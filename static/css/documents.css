@@ -1,0 +1,543 @@
+/*navbar*/
+
+.navbar-nav>li {
+  padding-left: 30px;
+  padding-right: 30px;
+  font-size: 1.1em;
+  font-weight: 400;
+}
+
+.navbar-brand {
+  padding-left: 20px;
+  padding-right: 30px;
+  margin-bottom: 0;
+}
+
+.navbar {
+  background-color: rgb(0, 0, 0);
+  opacity: 0.88;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+  zoom:110%;
+}
+
+.navbar-brand {
+  font-size: 1.5em;
+}
+
+.ml-auto{
+  margin-right: 20px;
+}
+
+.glypicon {
+  padding-left: 10px;
+}
+
+.nav-link:hover {
+  background-color: #1a1a1a;
+}
+
+.active .nav-link {
+  border-bottom: 2px solid #2d9cc2;
+}
+
+.underlinehover {
+  display: inline-block;
+}
+
+.underlinehover:after {
+  content: '';
+  display: block;
+  height: 1.5px;
+  width: 0;
+  background: transparent;
+  transition: width .5s ease, background-color .5s ease;
+}
+
+.underlinehover:hover:after {
+  width: 100%;
+  background: #2d9cc2;
+}
+
+/*navbar ends*/
+
+
+
+/*heading*/
+
+.heading {
+  margin-top: 50px;
+  text-align: left !important;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/*heading*/
+
+/*main-div*/
+#maindiv{
+  zoom: 85%;
+}
+
+/*1st row topic*/
+
+.card-img {
+  width: 80px;
+  height: 80px;
+}
+
+.main {
+  margin-top: 60px;
+  /*margin-left: 200px;*/
+}
+
+.margin1 {
+  margin-left: 40px;
+}
+
+.divi {
+  position: relative;
+}
+
+.card-img {
+  float: left;
+}
+
+.card-title {
+  text-align: center;
+  font-size: 16px;
+  color: black;
+}
+
+.topicname {
+  padding-top: 15px;
+  padding-bottom: 5px;
+  padding-left: 15px;
+  padding-right: 10px;
+  margin-right: 20px;
+  margin-top: 20px;
+  margin-left: 80px;
+  background-color: #e6e6e6;
+  border-width: 0px;
+  border-style: solid;
+  border-radius: 5px;
+}
+
+.divrow1 {
+  margin-left: 30px;
+}
+
+@media only screen and (max-width:432px) {
+  .divi {
+    /*margin-left: 20px;*/
+    margin-right: 20px;
+    margin-bottom: 15px;
+  }
+  .card-img {
+    width: 50px;
+    height: 50px;
+  }
+  .main {
+    margin-left: 0px;
+  }
+  .topicname {
+    margin-top: 5px;
+    margin-left: 50px;
+    margin-right: 50px;
+    padding-top: 5px;
+    padding-bottom: 3px;
+  }
+  .heading {
+    font-size: 28px;
+  }
+}
+
+/*1st row topic ends*/
+
+/*Activity*/
+
+.cont1 {
+  background-color: white;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-color: #dfdfdf;
+  border-width: 1px;
+  border-style: solid;
+  /*margin-left: 200px;
+      margin-right: 200px;*/
+  border-radius: 10px;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+}
+
+@media only screen and (max-width:432px) {
+  .cont1 {
+    margin-left: 0px;
+  }
+}
+
+.activity {
+  padding: 5px;
+  align-items: center;
+  align-content: center;
+}
+
+.card1 {
+  align-items: center;
+  border: none;
+  padding-top: 1.5em;
+  cursor: pointer;
+}
+
+#btn2 {
+  border-style: solid;
+  border-color: #1F45FC;
+  border-width: 1px;
+  background-color: #2B65EC;
+  border-radius: 10px;
+  text-align: center;
+  font-weight: medium;
+  color: white;
+  width: auto;
+  height: auto;
+  padding-top: 1.2em;
+  padding-left: 2em;
+  padding-right: 2.5em;
+  position: center;
+  align-self: center;
+  margin-top: 2.5em;
+  margin-right: 3.6em;
+}
+
+@media only screen and (max-width:432px) {
+  #btn2 {
+    margin-top: 2em;
+    padding-top: 1em;
+    padding-left: 1em;
+    padding-right: 0.5em;
+    margin-right: 0px;
+  }
+  .card1 {
+    padding-top: 0px;
+  }
+  .activitydiv {
+    margin-right: 15px;
+    margin-left: 15px;
+  }
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+#btn1 {
+  background-color: #e6e6e6;
+  padding: 5px;
+  border-width: 0px;
+  border-style: solid;
+  margin-top: 10px;
+  border-radius: 5px;
+  width: 125px;
+  height: 35px;
+}
+
+
+
+/*Activity ends*/
+
+.file-upload {
+  background-color: #ffffff;
+  margin: 0 auto;
+  padding: 10px;
+  height: 100px;
+}
+
+.file-upload-btn {
+  width: 100%;
+  margin: 0;
+  color: #fff;
+  background: #1FB264;
+  border: none;
+  padding: 10px;
+  border-radius: 4px;
+  border-bottom: 4px solid #15824B;
+  transition: all .2s ease;
+  outline: none;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.file-upload-btn:hover {
+  background: #1AA059;
+  color: #ffffff;
+  transition: all .2s ease;
+  cursor: pointer;
+}
+
+.file-upload-btn:active {
+  border: 0;
+  transition: all .2s ease;
+}
+
+.file-upload-content {
+  display: none;
+  text-align: center;
+}
+
+.file-upload-input {
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  outline: none;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.image-upload-wrap {
+  position: relative;
+  outline: 2px dashed #b6b6b6;
+}
+
+.image-dropping, .image-upload-wrap:hover {
+  background-color: #E8E8E8;
+}
+
+.image-title-wrap {
+  padding: 20px;
+  color: #222;
+}
+
+.image-title {
+  font-weight: 600;
+  font-size: 14px;
+  color:black;
+}
+
+.drag-text {
+  text-align: center;
+}
+
+.drag-text h6 {
+  font-weight: 100;
+  font-size: 14px;
+  text-transform: uppercase;
+  color: black;
+  padding: 30px 30px 30px 10px;
+}
+
+.upload-icon {
+  float: left;
+}
+
+.upload-icon .fa-cloud-upload {
+  display: inline;
+  font-size: 40px;
+  color: #ccc;
+  margin: 20px;
+  justify-content: center;
+}
+
+.file-upload-image {
+  max-height: 200px;
+  max-width: 200px;
+  margin: auto;
+  padding: 20px;
+}
+
+.file-upload-content {
+  position: relative;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+}
+
+.file-doc-icon .fa-file {
+  font-size: 30px;
+  color:black;
+}
+
+.remove-image {
+  color: black;
+  background: white;
+  border: none;
+  padding: 8px 10px;
+  border-radius: 45%;
+  transition: all .2s ease;
+  outline: none;
+  text-transform: uppercase;
+}
+
+.remove-image:hover {
+  color: black;
+  background: #DCDCDC;
+  transition: all .2s ease;
+  cursor: pointer;
+}
+
+.remove-image:active {
+  border: 0;
+  transition: all .2s ease;
+}
+
+.status-section {
+  margin: 35px 20px 20px 20px;
+}
+
+.status-text {
+  color:black !important;
+  font-size: 20px;
+}
+
+.status-badge .badge {
+  font-size: 16px;
+  margin-top: 2px;
+  box-shadow: 5px 5px 5px -4px #000000;
+}
+
+@media only screen and (max-width:1200px) {
+  .status-section {
+    margin-top: 70px;
+  }
+  .status-text h8 {
+    font-size: 14px;
+    margin-top: 0px;
+  }
+  .status-badge .badge {
+    font-size: 13px;
+  }
+  .topicname{
+    padding-right: 85px;
+  }
+}
+
+@media only screen and (max-width:920px) {
+  .status-section {
+    margin-top: 80px;
+  }
+  .status-text {
+    height: 10px;
+  }
+  .file-upload {
+    margin-top: 2em;
+  }
+  #btn1 {
+    margin-right: 0px;
+  }
+  .divrow1 {
+    margin-left: 0px;
+  }
+
+}
+
+@media only screen and (max-width:750px) {
+  .status-section {
+    margin-top: 20px;
+  }
+  .status-text h8 {
+    font-size: 18px;
+    margin-top: 0px;
+  }
+  .status-badge .badge {
+    font-size: 14px;
+    margin-top: 0px;
+  }
+}
+
+@media only screen and (max-width:360px) {
+  .status-text h8 {
+    font-size: 18px;
+    margin-top: 0px;
+  }
+  .status-badge .badge {
+    font-size: 14px;
+    margin-top: 0px;
+  }
+  .status-section {
+    margin-top: 55px;
+  }
+}
+
+@media only screen and (min-width:432px) {
+  .file-doc-icon .fa-file {
+    font-size: 40px;
+  }
+  
+}
+
+/*footer css*/
+
+.footer {
+  background-color: black;
+  width: auto;
+  padding-top: 30px;
+  padding-bottom: 20px;
+}
+
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
+}
+
+.column {
+  float: left;
+  color: white;
+  text-align: left;
+}
+
+.column .side {
+  text-align: left;
+}
+
+.column .side .bb .a:hover {
+  text-decoration: none;
+}
+
+ul.bb {
+  list-style-type: none;
+  padding: 0;
+  color: white;
+  font-size: 14px;
+}
+
+/* .button  {
+  background-color:#2d9cc2;
+  border: none;
+  color: white;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 12px;
+  padding-right: 14px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 18px;
+  margin: 4px 2px;
+  cursor: pointer;
+  font-weight: bold;
+} */
+
+.footer-btn {
+  background-color: #2d9cc2;
+  cursor: pointer;
+}
+
+.footer-btn:hover {
+  background-color: green;
+}
+
+.footer>.button1:active {
+  outline: none;
+  background-color: green;
+}
+
+.footer>.column .footer>.fa {
+  font-size: 18px;
+}
+
+.footer>.counter {
+  height: 30px;
+}
+
+/*footer css*/

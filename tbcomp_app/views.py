@@ -127,7 +127,8 @@ def documents(request,subject,topic):
     # activities=Activity.objects.filter(topic__name__contains=topic,name=activity_questions_list_names).order_by("name").files
     print("subject:",subject)
     print("topic:",topic)
-    return render(request,"documents.html")
+    context={'subject':subject,'topic':topic}
+    return render(request,"documents.html",context)
 
 
 @login_required(login_url="login")

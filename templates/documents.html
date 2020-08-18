@@ -1,11 +1,556 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+{% load static %}
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Topics</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--Necessary CSS-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/hammerjs/2.0.8/hammer.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <!--AOS JS-->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!--template CSS-->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/documents.css' %}">
 </head>
+
 <body>
-    <h1>This is the list of documents</h1>
+    <!-- Navbar start -->
+    <nav class="navbar navbar-dark navbar-expand-lg fixed-top">
+        <a class="navbar-brand" href="#">Inderjit Singh</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item underlinehover">
+                    <a class="nav-link" href="#">Home <span class="fa fa-home"></span> <span
+                            class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item underlinehover">
+                    <a class="nav-link" href="#">Contact Us <span class="fa fa-phone"></span></a>
+                </li>
+            </ul>
+
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item underlinehover ">
+                    <a class="nav-link " href="..\login\login.html" id="btnLogin" data-toggle="modal"
+                        data-target="#profileModal">Profile <span class="fa fa-user"></span></a>
+                </li>
+                <li class="nav-item underlinehover ">
+                    <a class="nav-link " href="..\login\login.html">Logout<span class="fa fa-sign-in"></span></a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!-- navbar ends -->
+    <div class="modal fade show" data-easein="slideDownIn" id="profileModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-profile modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Profile</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form class="profileForm">
+                        <div class="form-group">
+                            <label for="fullName">Full Name</label>
+                            <input type="text" class="form-control" placeholder="Full Name" name="fullName"
+                                id="fullName" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label for="emailId">Email</label>
+                            <input type="email " class="form-control" placeholder="Email" name="emailId" id="emailId"
+                                readonly>
+                        </div>
+                        <div class="form-group">
+                            <label for="collegeName">Name of College/University</label>
+                            <input type="text" class="form-control" placeholder="Name of College/University"
+                                name="collegeName" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label for="branch">Branch</label>
+                            <input type="text" class="form-control" placeholder="Branch" name="branch" id="branch"
+                                readonly>
+                        </div>
+                        <div class="form-group">
+                            <label for="yearOfStudy">Year of Study</label>
+                            <input type="text" class="form-control" placeholder="Year of Study" id="yearOfStudy"
+                                name="yearOfStudy" readonly>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+    <div class="container text-center">
+        <h3 class="heading"> {{subject}} > {{topic}}</h3>
+    </div>
+    <!--  1st row-->
+    <div id="maindiv">
+        <div class="container main">
+            <div class="row row1">
+                <div class="col-sm-3 divi ">
+                    <a href="#">
+                        <img class="card-img" src="../../media/images/documents-page/pdf.png">
+                        <div class="topicname">
+                            <p class="card-title">Document 1</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-sm-1 "></div>
+                <div class="col-sm-3 divi divrow1">
+                    <a href="#">
+                        <img class="card-img" src="../../media/images/documents-page/pdf.png">
+                        <div class="topicname">
+                            <p class="card-title">Document 2</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-sm-1 "></div>
+                <div class="col-sm-3 divi divrow1">
+                    <a href="#">
+                        <img class="card-img" src="../../media/images/documents-page/pdf.png">
+                        <div class="topicname">
+                            <p class="card-title">Document 3</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- 1st row -->
+        <br>
+        <br>
+        <div class="activitydiv">
+            <div class="container cont1">
+                <div class="row row2">
+                    <!--Activity pdf starts-->
+                    <div class="column col-xl-3 col-l-3 col-md-3 col-sm-12 col-xs-12  column1 activity "
+                        onclick="window.location='#';">
+                        <div class="card card1">
+                            <a href="#">
+                                <img class="card-img" src="../../media/images/documents-page/pdf.png">
+                            </a>
+                            <button id="btn1">Activity 1</button>
+                        </div>
+                    </div>
+                    <!--Activity pdf ends-->
+                    <div class="column col-xl-1 col-l-1 col-md-1"></div>
+                    <!-- upload setion starts -->
+                    <div class="column col-xl-4 col-l-4 col-md-4 col-sm-12 col-xs-12">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="file-upload">
+                                    <!--<button class="file-upload-btn" type="button" onclick="$('.file-upload-input').trigger( 'click' )">Add Image</button>
+              -->
+                                    <div class="image-upload-wrap">
+                                        <input class="file-upload-input" id="file-upload-input" type="file"
+                                            onchange="readURL(this);checkFileUpload();"
+                                            accept="application/txt.application/pdf,application/doc">
+                                        <div class="drag-text">
+                                            <div class="upload-icon mt-4">
+                                                <i class="fa fa-cloud-upload"></i>
+                                            </div>
+                                            <h6 class="dragdrop">Drag and drop your file or Click to Browse</h6>
+                                        </div>
+                                    </div>
+                                    <div class="file-upload-content">
+                                        <!--<img class="file-upload-image" src="#" alt="your image" />-->
+                                        <div class="row no-gutters">
+                                            <div class="col-3 file-doc-icon m-auto">
+                                                <i class="fa fa-file"></i>
+                                            </div>
+                                            <div class="col-9">
+                                                <div class="row file-name-section">
+                                                    <div class="col-8  m-auto">
+                                                        <span class="image-title">Uploaded Image</span>
+                                                    </div>
+                                                    <div class="col-4 image-title-wrap m-auto">
+                                                        <button type="button" onclick="removeUpload()"
+                                                            class="remove-image">
+                                                            <i class="fa fa-times"></i>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row status-section">
+                            <div class="col-4 status-text">
+                                Status:
+                            </div>
+                            <div class="col-8 status-badge">
+                                <span class="badge badge-pill badge-danger" id="status-danger-badge">No File
+                                    Attached</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- upload setion ends-->
+                    <div class="column col-xl-1 col-l-1 col-md-1"></div>
+                    <!-- Example section starts-->
+                    <div
+                        class="column col-xl-3 col-l-3 col-md-3 col-sm-12 col-xs-12 offset-* column1 activity text-center">
+                        <button type="button" id="btn2">
+                            <p>
+                                Get access to some
+                                <br>
+                                solved LTspice files
+                            </p>
+                        </button>
+                    </div>
+                </div>
+                <!-- example section ends -->
+            </div>
+        </div>
+    </div>
+    <br>
+    <!--  1st row-->
+    <div id="maindiv">
+        <div class="container main">
+            <div class="row row1">
+                <div class="col-sm-3 divi ">
+                    <a href="#">
+                        <img class="card-img" src="../../media/images/documents-page/pdf.png">
+                        <div class="topicname">
+                            <p class="card-title">Document 1</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-sm-1 "></div>
+                <div class="col-sm-3 divi divrow1">
+                    <a href="#">
+                        <img class="card-img" src="../../media/images/documents-page/pdf.png">
+                        <div class="topicname">
+                            <p class="card-title">Document 2</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-sm-1 "></div>
+                <div class="col-sm-3 divi divrow1">
+                    <a href="#">
+                        <img class="card-img" src="../../media/images/documents-page/pdf.png">
+                        <div class="topicname">
+                            <p class="card-title">Document 3</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- 1st row -->
+        <br>
+        <br>
+        <div class="activitydiv">
+            <div class="container cont1">
+                <div class="row row2">
+                    <!--Activity pdf starts-->
+                    <div class="column col-xl-3 col-l-3 col-md-3 col-sm-12 col-xs-12  column1 activity "
+                        onclick="window.location='#';">
+                        <div class="card card1">
+                            <a href="#">
+                                <img class="card-img" src="../../media/images/documents-page/pdf.png">
+                            </a>
+                            <button id="btn1">Activity 1</button>
+                        </div>
+                    </div>
+                    <!--Activity pdf ends-->
+                    <div class="column col-xl-1 col-l-1 col-md-1"></div>
+                    <!-- upload setion starts -->
+                    <div class="column col-xl-4 col-l-4 col-md-4 col-sm-12 col-xs-12">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="file-upload">
+                                    <!--<button class="file-upload-btn" type="button" onclick="$('.file-upload-input').trigger( 'click' )">Add Image</button>
+              -->
+                                    <div class="image-upload-wrap">
+                                        <input class="file-upload-input" id="file-upload-input" type="file"
+                                            onchange="readURL(this);checkFileUpload();"
+                                            accept="application/txt.application/pdf,application/doc">
+                                        <div class="drag-text">
+                                            <div class="upload-icon mt-4">
+                                                <i class="fa fa-cloud-upload"></i>
+                                            </div>
+                                            <h6 class="dragdrop">Drag and drop your file or Click to Browse</h6>
+                                        </div>
+                                    </div>
+                                    <div class="file-upload-content">
+                                        <!--<img class="file-upload-image" src="#" alt="your image" />-->
+                                        <div class="row no-gutters">
+                                            <div class="col-3 file-doc-icon m-auto">
+                                                <i class="fa fa-file"></i>
+                                            </div>
+                                            <div class="col-9">
+                                                <div class="row file-name-section">
+                                                    <div class="col-8  m-auto">
+                                                        <span class="image-title">Uploaded Image</span>
+                                                    </div>
+                                                    <div class="col-4 image-title-wrap m-auto">
+                                                        <button type="button" onclick="removeUpload()"
+                                                            class="remove-image">
+                                                            <i class="fa fa-times"></i>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row status-section">
+                            <div class="col-4 status-text">
+                                Status:
+                            </div>
+                            <div class="col-8 status-badge">
+                                <span class="badge badge-pill badge-danger" id="status-danger-badge">No File
+                                    Attached</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- upload setion ends-->
+                    <div class="column col-xl-1 col-l-1 col-md-1"></div>
+                    <!-- Example section starts-->
+                    <div
+                        class="column col-xl-3 col-l-3 col-md-3 col-sm-12 col-xs-12 offset-* column1 activity text-center">
+                        <button type="button" id="btn2">
+                            <p>
+                                Get access to some
+                                <br>
+                                solved LTspice files
+                            </p>
+                        </button>
+                    </div>
+                </div>
+                <!-- example section ends -->
+            </div>
+        </div>
+    </div>
+    <br>
+    <!--  1st row-->
+    <div id="maindiv">
+        <div class="container main">
+            <div class="row row1">
+                <div class="col-sm-3 divi ">
+                    <a href="#">
+                        <img class="card-img" src="../../media/images/documents-page/pdf.png">
+                        <div class="topicname">
+                            <p class="card-title">Document 1</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-sm-1 "></div>
+                <div class="col-sm-3 divi divrow1">
+                    <a href="#">
+                        <img class="card-img" src="../../media/images/documents-page/pdf.png">
+                        <div class="topicname">
+                            <p class="card-title">Document 2</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-sm-1 "></div>
+                <div class="col-sm-3 divi divrow1">
+                    <a href="#">
+                        <img class="card-img" src="../../media/images/documents-page/pdf.png">
+                        <div class="topicname">
+                            <p class="card-title">Document 3</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- 1st row -->
+        <br>
+        <br>
+        <div class="activitydiv">
+            <div class="container cont1">
+                <div class="row row2">
+                    <!--Activity pdf starts-->
+                    <div class="column col-xl-3 col-l-3 col-md-3 col-sm-12 col-xs-12  column1 activity "
+                        onclick="window.location='#';">
+                        <div class="card card1">
+                            <a href="#">
+                                <img class="card-img" src="../../media/images/documents-page/pdf.png">
+                            </a>
+                            <button id="btn1">Activity 1</button>
+                        </div>
+                    </div>
+                    <!--Activity pdf ends-->
+                    <div class="column col-xl-1 col-l-1 col-md-1"></div>
+                    <!-- upload setion starts -->
+                    <div class="column col-xl-4 col-l-4 col-md-4 col-sm-12 col-xs-12">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="file-upload">
+                                    <!--<button class="file-upload-btn" type="button" onclick="$('.file-upload-input').trigger( 'click' )">Add Image</button>
+              -->
+                                    <div class="image-upload-wrap">
+                                        <input class="file-upload-input" id="file-upload-input" type="file"
+                                            onchange="readURL(this);checkFileUpload();"
+                                            accept="application/txt.application/pdf,application/doc">
+                                        <div class="drag-text">
+                                            <div class="upload-icon mt-4">
+                                                <i class="fa fa-cloud-upload"></i>
+                                            </div>
+                                            <h6 class="dragdrop">Drag and drop your file or Click to Browse</h6>
+                                        </div>
+                                    </div>
+                                    <div class="file-upload-content">
+                                        <!--<img class="file-upload-image" src="#" alt="your image" />-->
+                                        <div class="row no-gutters">
+                                            <div class="col-3 file-doc-icon m-auto">
+                                                <i class="fa fa-file"></i>
+                                            </div>
+                                            <div class="col-9">
+                                                <div class="row file-name-section">
+                                                    <div class="col-8  m-auto">
+                                                        <span class="image-title">Uploaded Image</span>
+                                                    </div>
+                                                    <div class="col-4 image-title-wrap m-auto">
+                                                        <button type="button" onclick="removeUpload()"
+                                                            class="remove-image">
+                                                            <i class="fa fa-times"></i>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row status-section">
+                            <div class="col-4 status-text">
+                                Status:
+                            </div>
+                            <div class="col-8 status-badge">
+                                <span class="badge badge-pill badge-danger" id="status-danger-badge">No File
+                                    Attached</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- upload setion ends-->
+                    <div class="column col-xl-1 col-l-1 col-md-1"></div>
+                    <!-- Example section starts-->
+                    <div
+                        class="column col-xl-3 col-l-3 col-md-3 col-sm-12 col-xs-12 offset-* column1 activity text-center">
+                        <button type="button" id="btn2">
+                            <p>
+                                Get access to some
+                                <br>
+                                solved LTspice files
+                            </p>
+                        </button>
+                    </div>
+                </div>
+                <!-- example section ends -->
+            </div>
+        </div>
+    </div>
+    </div>
+    <br>
+    <!--footerr-->
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="column col-xl-3 col-md-3 col-sm-12 offset-md-1 side">
+                    <h6 style="font-weight:bold">Register for free
+                        </h5>
+                        <br>
+                        <a href="..\register\register.html">
+                            <!-- <button class="button button1">Sign Up!</button> -->
+                            <button type="button" style="color:white;" class="btn  footer-btn">Sign Up</button>
+                        </a>
+                </div>
+                <div class="column col-xl-2 col-md-2 col-sm-12 side">
+                    <h6 style="font-weight:bold">Useful links
+                        </h5>
+                        <br>
+                        <ul class="bb">
+                            <li>
+                                <a href="index.html" style="text-decoration: none;color:#2d9cc2;"
+                                    class="fa fa-home"></a>
+                                <a href="index.html" style="text-decoration: none;color:white"> Home</a>
+                            </li>
+                            <br>
+                            <li>
+                                <a href="#" class="fa fa-phone" style="text-decoration: none;color:#2d9cc2;"></a>
+                                <a href="#" style="text-decoration: none;color:white"> Contact</a>
+                            </li>
+                            <br>
+                            <li>
+                                <a href="..\login\login.html" style="text-decoration: none;color:#2d9cc2;"
+                                    class="fa fa-sign-in"></a>
+                                <a href="..\login\login.html" style="text-decoration: none;color:white"> Login</a>
+                            </li>
+                        </ul>
+                </div>
+                <div class="column col-xl-3 col-md-3 col-sm-12 side">
+                    <h6 style="font-weight:bold">Contact Us
+                        </h5>
+                        <br>
+                        <p style="font-size: 14px;">
+                            <a class="fa fa-map-marker" style="font-size:18px;color:#2d9cc2;"></a>
+                            K.J. Somaiya College of Engineering
+                            <br> Vidyanagar, Vidyavihar
+                            <br>
+                            Mumbai, India
+                        </p>
+                        <p>
+                            <a class="fa fa-envelope" style="font-size:14px;color:#2d9cc2;"></a> Email
+                        </p>
+                </div>
+                <div class="column col-xl-3 col-md-3 col-sm-12 side">
+                    <h6 style="font-weight:bold">Number of Visitors
+                        </h5>
+                        <br>
+                        <div class="counter" style="zoom:75%;">
+                            <!-- Start of WebFreeCounter Code -->
+                            <a href="https://www.webfreecounter.com/" target="_blank">
+                                <img src="https://www.webfreecounter.com/hit.php?id=geaqcfp&nd=6&style=10" border="0"
+                                    alt="hit counter">
+                            </a>
+                            <!-- End of WebFreeCounter Code -->
+                        </div>
+                        <br>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--footer-->
+    <!--Other JS-->
+    <script type="text/javascript" src="{% static 'js/documents.js' %}"></script>
+    <!--Necessary Javascript-->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
 </body>
+
 </html>
