@@ -27,7 +27,7 @@ def login(request):
     return render(request, template_name)
 
 def logout(request):
-    auth.logout(request)
+    logout(request)
     return redirect('/')
 
 def signup(request):
@@ -109,7 +109,7 @@ def resetPassword(request):
 
 @login_required(login_url="login")
 def documents(request,subject,topic):
-    if request.method == "POST" and request.FILES['upload-doc']:
+    if request.method == "POST" and request.FILES['file-upload-input-doc1']:
         email = request.user.username
         studentUploads = StudentUpload.objects.filter(student__email__contains = email)
         if StudentUpload.objects.filter(activity__name__contains = 'act1').exists():
@@ -125,8 +125,8 @@ def documents(request,subject,topic):
             activity = act,
         )
         new.save()
-        new.files = request.FILES['upload-doc']
-        new.name = request.FILES['upload-doc'].name
+        new.files = request.FILES['file-upload-input-doc1']
+        new.name = request.FILES['file-upload-input-doc1'].name
         new.save()
     email = request.user.username
     studentUploads = StudentUpload.objects.filter(student__email__contains = email)
