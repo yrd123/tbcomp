@@ -4,8 +4,7 @@ from django.contrib import messages
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User, auth
-from .models import Student, Document, StudentUpload
-
+from .models import Student, Document, StudentUpload, Activity
 
 # Create your views here.
 def index(request):
@@ -110,25 +109,48 @@ def resetPassword(request):
 
 @login_required(login_url="login")
 def documents(request,subject,topic):
-    # studentUploads=StudentUpload.objects.filter(student__email__contains=request.user.username)
-    # documents_list_names=["document_1","document_2","document_3"]
-    # activity_questions_list_names=["activity_1"]
-    # uploaded_activities_list=[]
-    # if studentUploads.objects.filter(name="uploaded_activity_1").exists():
-    #     uploaded_activities_list+=["activity_1_solution"]
-    #     if studentUploads.objects.filter(name="uploaded_axtivity_1").status=="approved":
-    #         documents_list_names+=["document_4","document_5","document_6"]
-    #         activity_questions_list_names+=["activity_2"]
-    #         if studentUploads.objects.filter(name="uploaded_activity_2").exists():
-    #             uploaded_activities_list=["activity_2_solution"]
-    #             if studentUploads.objects.filter(name="uploaded_activity_2").status=="approved":
-    #                 documents_list_names+=["document_7","document_8","document_9"]
-    # documents=Document.objects.filter(topic__name__contains=topic,name=documents_list_names).order_by("name").files
-    # activities=Activity.objects.filter(topic__name__contains=topic,name=activity_questions_list_names).order_by("name").files
+    if request.method == "POST" and request.FILES['upload-doc']:
+        email = request.user.username
+        studentUploads = StudentUpload.objects.filter(student__email__contains = email)
+        if StudentUpload.objects.filter(activity__name__contains = 'act1').exists():
+            print("act1 found")
+            act = Activity.objects.get(name = "act2")
+        else:
+            print("act2 found")
+            act = Activity.objects.get(name = "act1")
+        stu = Student.objects.get(email = email)
+        new = StudentUpload.objects.create(
+            student = stu,
+            status = 'uploaded',
+            activity = act,
+        )
+        new.save()
+        new.files = request.FILES['upload-doc']
+        new.name = request.FILES['upload-doc'].name
+        new.save()
+    email = request.user.username
+    studentUploads = StudentUpload.objects.filter(student__email__contains = email)
+    documents_list_names=["doc1","doc2","doc3"]
+    activity_questions_list_names=["activity_1"]
+    documents=[]
+    activities=[]
+    for u in studentUploads:
+        if u.activity.name == "act1":
+            if u.status == "approved":
+                documents_list_names+=["doc4","doc5","doc6"]
+                activity_questions_list_names+=["activity_2"]
+        else:
+            if u.status == "approved":
+                documents_list_names+=["doc7","doc8","doc9"] 
+    for i in documents_list_names:
+        documents+=Document.objects.filter(name=i)
+    for j in activity_questions_list_names:
+        activities+=Activity.objects.filter(name=j)
+    template_name = 'documents.html'
     print("subject:",subject)
     print("topic:",topic)
-    context={'subject':subject,'topic':topic}
-    return render(request,"documents.html",context)
+    context={'subject':subject,'topic':topic, 'documents' : documents}
+    return render(request,template_name,context)
 
 
 @login_required(login_url="login")
