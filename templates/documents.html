@@ -108,6 +108,8 @@
         <!-- 1st row -->
         <br>
         <br>
+        <form id="uploadDoc" method="POST" name="UploadForm" enctype="multipart/form-data">
+            {% csrf_token %}
         <div class="activitydiv">
             <div class="container cont1">
                 <div class="row row2">
@@ -171,6 +173,7 @@
                                 <span class="badge badge-pill badge-danger" id="status-danger-badge1">No File
                                     Attached</span>
                             </div>
+                            <button class="submitButton" type="submit">Submit</button>
                         </div>
                     </div>
                     <!-- upload setion ends-->
@@ -190,6 +193,7 @@
                 <!-- example section ends -->
             </div>
         </div>
+        </form>
     </div>
     <br>
 
@@ -228,6 +232,7 @@
         <!-- 1st row -->
         <br>
         <br>
+        <form id="uploadDoc" method="POST" name="UploadForm" enctype="multipart/form-data">{% csrf_token %}
         <div class="activitydiv">
             <div class="container cont1">
                 <div class="row row2">
@@ -291,6 +296,7 @@
                                 <span class="badge badge-pill badge-danger" id="status-danger-badge2">No File
                                     Attached</span>
                             </div>
+                            <button class="submitButton" type="submit">Submit</button>
                         </div>
                     </div>
                     <!-- upload setion ends-->
@@ -310,6 +316,7 @@
                 <!-- example section ends -->
             </div>
         </div>
+        </form>
     </div>
     <br>
 
@@ -412,6 +419,7 @@
                                 <span class="badge badge-pill badge-danger" id="status-danger-badge3">No File
                                     Attached</span>
                             </div>
+                            <button class="submitButton" type="submit">Submit</button>
                         </div>
                     </div>
                     <!-- upload setion ends-->
