@@ -111,13 +111,13 @@ def resetPassword(request):
 def documents(request,subject,topic):
     if request.method == "POST" and request.FILES['file-upload-input-doc1']:
         email = request.user.username
-        studentUploads = StudentUpload.objects.filter(student__email__contains = email)
-        if StudentUpload.objects.filter(activity__name__contains = 'act1').exists():
+        studentUploads = StudentUpload.objects.filter(student__email__contains = email, activity__topic__name__contains = topic, activity__topic__subject__name__contains = subject)
+        if StudentUpload.objects.filter(activity__name__contains = 'act1', activity__topic__name__contains = topic, activity__topic__subject__name__contains = subject).exists():
             print("act1 found")
-            act = Activity.objects.get(name = "act2")
+            act = Activity.objects.get(name = "act2", topic__name__contains = topic, topic__subject__name__contains = subject)
         else:
             print("act2 found")
-            act = Activity.objects.get(name = "act1")
+            act = Activity.objects.get(name = "act1",  topic__name__contains = topic, topic__subject__name__contains = subject)
         stu = Student.objects.get(email = email)
         new = StudentUpload.objects.create(
             student = stu,
@@ -129,27 +129,29 @@ def documents(request,subject,topic):
         new.name = request.FILES['file-upload-input-doc1'].name
         new.save()
     email = request.user.username
-    studentUploads = StudentUpload.objects.filter(student__email__contains = email)
+    studentUploads = StudentUpload.objects.filter(student__email__contains = email, activity__topic__name__contains = topic, activity__topic__subject__name__contains = subject)
     documents_list_names=["doc1","doc2","doc3"]
-    activity_questions_list_names=["activity_1"]
+    activity_questions_list_names=["act1"]
     documents=[]
     activities=[]
     for u in studentUploads:
         if u.activity.name == "act1":
             if u.status == "approved":
                 documents_list_names+=["doc4","doc5","doc6"]
-                activity_questions_list_names+=["activity_2"]
+                print("act1 approved")
+                activity_questions_list_names+=["act2"]
         else:
             if u.status == "approved":
-                documents_list_names+=["doc7","doc8","doc9"] 
+                documents_list_names+=["doc7","doc8","doc9"]
+                print("act2 approved") 
     for i in documents_list_names:
-        documents+=Document.objects.filter(name=i)
+        documents+=Document.objects.filter(name= i , topic__name__contains = topic, topic__subject__name__contains = subject)
     for j in activity_questions_list_names:
-        activities+=Activity.objects.filter(name=j)
+        activities+=Activity.objects.filter(name= j , topic__name__contains = topic, topic__subject__name__contains = subject)
     template_name = 'documents.html'
     print("subject:",subject)
     print("topic:",topic)
-    context={'subject':subject,'topic':topic, 'documents' : documents}
+    context={'subject':subject,'topic':topic, 'documents' : documents, 'activities' : activities}
     return render(request,template_name,context)
 
 

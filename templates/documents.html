@@ -78,30 +78,48 @@
         <div class="container main">
             <div class="row row1">
                 <div class="col-sm-3 divi ">
-                    <a href="#">
-                        <img class="card-img" src="../../media/images/documents-page/pdf.png">
-                        <div class="topicname">
-                            <p class="card-title">Document 1</p>
-                        </div>
-                    </a>
+                    {% if documents %}
+                        {% for document in documents %}
+                            {% if document.name == "doc1" %}
+                            <a href="{{ document.files.url }}" target="_blank">
+                                <img class="card-img" src="../../media/images/documents-page/pdf.png">
+                                <div class="topicname">
+                                    <p class="card-title">{{ document.name }}</p>
+                                </div>
+                            </a>
+                            {% endif %}
+                        {% endfor %}
+                    {% endif %}
                 </div>
                 <div class="col-sm-1 "></div>
                 <div class="col-sm-3 divi divrow1">
-                    <a href="#">
-                        <img class="card-img" src="../../media/images/documents-page/pdf.png">
-                        <div class="topicname">
-                            <p class="card-title">Document 2</p>
-                        </div>
-                    </a>
+                    {% if documents %}
+                        {% for document in documents %}
+                            {% if document.name == "doc2" %}
+                            <a href="{{ document.files.url }}" target="_blank">
+                                <img class="card-img" src="../../media/images/documents-page/pdf.png">
+                                <div class="topicname">
+                                    <p class="card-title">{{ document.name }}</p>
+                                </div>
+                            </a>
+                            {% endif %}
+                        {% endfor %}
+                    {% endif %}
                 </div>
                 <div class="col-sm-1 "></div>
                 <div class="col-sm-3 divi divrow1">
-                    <a href="#">
-                        <img class="card-img" src="../../media/images/documents-page/pdf.png">
-                        <div class="topicname">
-                            <p class="card-title">Document 3</p>
-                        </div>
-                    </a>
+                    {% if documents %}
+                        {% for document in documents %}
+                            {% if document.name == "doc3" %}
+                            <a href="{{ document.files.url }}" target="_blank">
+                                <img class="card-img" src="../../media/images/documents-page/pdf.png">
+                                <div class="topicname">
+                                    <p class="card-title">{{ document.name }}</p>
+                                </div>
+                            </a>
+                            {% endif %}
+                        {% endfor %}
+                    {% endif %}
                 </div>
             </div>
         </div>
@@ -117,10 +135,16 @@
                     <div class="column col-xl-3 col-l-3 col-md-3 col-sm-12 col-xs-12  column1 activity "
                         onclick="window.location='#';">
                         <div class="card card1">
-                            <a href="#">
-                                <img class="card-img" src="../../media/images/documents-page/pdf.png">
-                            </a>
-                            <button id="btn1">Activity 1</button>
+                            {% if activities %}
+                                {% for activity in activities %}
+                                    {% if activity.name == "act1" %}
+                                        <a href="{{ activity.files.url }}" target="_blank">
+                                            <img class="card-img" src="../../media/images/documents-page/pdf.png">
+                                        </a>
+                                        <button id="btn1">Activity 1</button>
+                                    {% endif %}
+                                {% endfor %}
+                            {% endif %}
                         </div>
                     </div>
                     <!--Activity pdf ends-->
@@ -202,30 +226,48 @@
         <div class="container main">
             <div class="row row1">
                 <div class="col-sm-3 divi ">
-                    <a href="#">
-                        <img class="card-img" src="../../media/images/documents-page/pdf.png">
-                        <div class="topicname">
-                            <p class="card-title">Document 1</p>
-                        </div>
-                    </a>
+                    {% if documents %}
+                        {% for document in documents %}
+                            {% if document.name == "doc4" %}
+                            <a href="{{ document.files.url }}" target="_blank">
+                                <img class="card-img" src="../../media/images/documents-page/pdf.png">
+                                <div class="topicname">
+                                    <p class="card-title">{{ document.name }}</p>
+                                </div>
+                            </a>
+                            {% endif %}
+                        {% endfor %}
+                    {% endif %}
                 </div>
                 <div class="col-sm-1 "></div>
                 <div class="col-sm-3 divi divrow1">
-                    <a href="#">
-                        <img class="card-img" src="../../media/images/documents-page/pdf.png">
-                        <div class="topicname">
-                            <p class="card-title">Document 2</p>
-                        </div>
-                    </a>
+                    {% if documents %}
+                        {% for document in documents %}
+                            {% if document.name == "doc5" %}
+                            <a href="{{ document.files.url }}" target="_blank">
+                                <img class="card-img" src="../../media/images/documents-page/pdf.png">
+                                <div class="topicname">
+                                    <p class="card-title">{{ document.name }}</p>
+                                </div>
+                            </a>
+                            {% endif %}
+                        {% endfor %}
+                    {% endif %}
                 </div>
                 <div class="col-sm-1 "></div>
                 <div class="col-sm-3 divi divrow1">
-                    <a href="#">
-                        <img class="card-img" src="../../media/images/documents-page/pdf.png">
-                        <div class="topicname">
-                            <p class="card-title">Document 3</p>
-                        </div>
-                    </a>
+                    {% if documents %}
+                        {% for document in documents %}
+                            {% if document.name == "doc6" %}
+                            <a href="{{ document.files.url }}" target="_blank">
+                                <img class="card-img" src="../../media/images/documents-page/pdf.png">
+                                <div class="topicname">
+                                    <p class="card-title">{{ document.name }}</p>
+                                </div>
+                            </a>
+                            {% endif %}
+                        {% endfor %}
+                    {% endif %}
                 </div>
             </div>
         </div>
@@ -240,10 +282,16 @@
                     <div class="column col-xl-3 col-l-3 col-md-3 col-sm-12 col-xs-12  column1 activity "
                         onclick="window.location='#';">
                         <div class="card card1">
-                            <a href="#">
-                                <img class="card-img" src="../../media/images/documents-page/pdf.png">
-                            </a>
-                            <button id="btn1">Activity 1</button>
+                            {% if activities %}
+                                {% for activity in activities %}
+                                    {% if activity.name == "act2" %}
+                                        <a href="{{ activity.files.url }}" target="_blank">
+                                            <img class="card-img" src="../../media/images/documents-page/pdf.png">
+                                        </a>
+                                        <button id="btn1">Activity 2</button>
+                                    {% endif %}
+                                {% endfor %}
+                            {% endif %}
                         </div>
                     </div>
                     <!--Activity pdf ends-->
@@ -325,30 +373,48 @@
         <div class="container main">
             <div class="row row1">
                 <div class="col-sm-3 divi ">
-                    <a href="#">
-                        <img class="card-img" src="../../media/images/documents-page/pdf.png">
-                        <div class="topicname">
-                            <p class="card-title">Document 1</p>
-                        </div>
-                    </a>
+                    {% if documents %}
+                        {% for document in documents %}
+                            {% if document.name == "doc7" %}
+                            <a href="{{ document.files.url }}" target="_blank">
+                                <img class="card-img" src="../../media/images/documents-page/pdf.png">
+                                <div class="topicname">
+                                    <p class="card-title">{{ document.name }}</p>
+                                </div>
+                            </a>
+                            {% endif %}
+                        {% endfor %}
+                    {% endif %}
                 </div>
                 <div class="col-sm-1 "></div>
                 <div class="col-sm-3 divi divrow1">
-                    <a href="#">
-                        <img class="card-img" src="../../media/images/documents-page/pdf.png">
-                        <div class="topicname">
-                            <p class="card-title">Document 2</p>
-                        </div>
-                    </a>
+                    {% if documents %}
+                        {% for document in documents %}
+                            {% if document.name == "doc8" %}
+                            <a href="{{ document.files.url }}" target="_blank">
+                                <img class="card-img" src="../../media/images/documents-page/pdf.png">
+                                <div class="topicname">
+                                    <p class="card-title">{{ document.name }}</p>
+                                </div>
+                            </a>
+                            {% endif %}
+                        {% endfor %}
+                    {% endif %}
                 </div>
                 <div class="col-sm-1 "></div>
                 <div class="col-sm-3 divi divrow1">
-                    <a href="#">
-                        <img class="card-img" src="../../media/images/documents-page/pdf.png">
-                        <div class="topicname">
-                            <p class="card-title">Document 3</p>
-                        </div>
-                    </a>
+                    {% if documents %}
+                        {% for document in documents %}
+                            {% if document.name == "doc9" %}
+                            <a href="{{ document.files.url }}" target="_blank">
+                                <img class="card-img" src="../../media/images/documents-page/pdf.png">
+                                <div class="topicname">
+                                    <p class="card-title">{{ document.name }}</p>
+                                </div>
+                            </a>
+                            {% endif %}
+                        {% endfor %}
+                    {% endif %}
                 </div>
             </div>
         </div>
