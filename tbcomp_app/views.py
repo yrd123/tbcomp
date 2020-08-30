@@ -27,7 +27,7 @@ def login(request):
     return render(request, template_name)
 
 def logout(request):
-    logout(request)
+    auth.logout(request)
     return redirect('/')
 
 def signup(request):

@@ -58,7 +58,7 @@
                     </a>
                 </li>
                 <li class="nav-item underlinehover ">
-                    <a class="nav-link" href="..\login\login.html">
+                    <a class="nav-link" href="{% url 'logout' %}">
                         Logout
                         <span class="fa fa-sign-in"></span>
                     </a>
@@ -467,8 +467,8 @@
                             <li><a href="#" class="fa fa-phone" style="text-decoration: none;color:#2d9cc2;"></a><a
                                     href="#" style="text-decoration: none;color:white"> Contact</a></li>
                             <br>
-                            <li><a href="..\login\login.html" style="text-decoration: none;color:#2d9cc2;"
-                                    class="fa fa-sign-in"></a><a href="..\login\login.html"
+                            <li><a href="{% url 'logout' %}" style="text-decoration: none;color:#2d9cc2;"
+                                    class="fa fa-sign-in"></a><a href="{% url 'logout' %}"
                                     style="text-decoration: none;color:white"> Login</a> </li>
                         </ul>
                 </div>
