@@ -151,7 +151,7 @@ def documents(request,subject,topic):
     template_name = 'documents.html'
     print("subject:",subject)
     print("topic:",topic)
-    context={'subject':subject,'topic':topic, 'documents' : documents, 'activities' : activities}
+    context={'subject':subject,'topic':topic, 'documents' : documents, 'activities' : activities, 'uploads' : studentUploads}
     return render(request,template_name,context)
 
 
