@@ -70,7 +70,7 @@
     <br>
     <br>
     <div class='container text-center'>
-        <h3 class="heading"> {{subject}} > {{topic}}</h3>
+        <h3 class="heading"><a href="{% url 'subjects' %}"><span> {{subject}} </span></a> > {{topic}}</h3>
     </div>
 
     <!--  1st row-->
@@ -79,46 +79,46 @@
             <div class="row row1">
                 <div class="col-sm-3 divi ">
                     {% if documents %}
-                        {% for document in documents %}
-                            {% if document.name == "doc1" %}
-                            <a href="{{ document.files.url }}" target="_blank">
-                                <img class="card-img" src="../../media/images/documents-page/pdf.png">
-                                <div class="topicname">
-                                    <p class="card-title">{{ document.name }}</p>
-                                </div>
-                            </a>
-                            {% endif %}
-                        {% endfor %}
+                    {% for document in documents %}
+                    {% if document.name == "doc1" %}
+                    <a href="{{ document.files.url }}" target="_blank">
+                        <img class="card-img" src="../../media/images/documents-page/pdf.png">
+                        <div class="topicname">
+                            <p class="card-title">{{ document.name }}</p>
+                        </div>
+                    </a>
+                    {% endif %}
+                    {% endfor %}
                     {% endif %}
                 </div>
                 <div class="col-sm-1 "></div>
                 <div class="col-sm-3 divi divrow1">
                     {% if documents %}
-                        {% for document in documents %}
-                            {% if document.name == "doc2" %}
-                            <a href="{{ document.files.url }}" target="_blank">
-                                <img class="card-img" src="../../media/images/documents-page/pdf.png">
-                                <div class="topicname">
-                                    <p class="card-title">{{ document.name }}</p>
-                                </div>
-                            </a>
-                            {% endif %}
-                        {% endfor %}
+                    {% for document in documents %}
+                    {% if document.name == "doc2" %}
+                    <a href="{{ document.files.url }}" target="_blank">
+                        <img class="card-img" src="../../media/images/documents-page/pdf.png">
+                        <div class="topicname">
+                            <p class="card-title">{{ document.name }}</p>
+                        </div>
+                    </a>
+                    {% endif %}
+                    {% endfor %}
                     {% endif %}
                 </div>
                 <div class="col-sm-1 "></div>
                 <div class="col-sm-3 divi divrow1">
                     {% if documents %}
-                        {% for document in documents %}
-                            {% if document.name == "doc3" %}
-                            <a href="{{ document.files.url }}" target="_blank">
-                                <img class="card-img" src="../../media/images/documents-page/pdf.png">
-                                <div class="topicname">
-                                    <p class="card-title">{{ document.name }}</p>
-                                </div>
-                            </a>
-                            {% endif %}
-                        {% endfor %}
+                    {% for document in documents %}
+                    {% if document.name == "doc3" %}
+                    <a href="{{ document.files.url }}" target="_blank">
+                        <img class="card-img" src="../../media/images/documents-page/pdf.png">
+                        <div class="topicname">
+                            <p class="card-title">{{ document.name }}</p>
+                        </div>
+                    </a>
+                    {% endif %}
+                    {% endfor %}
                     {% endif %}
                 </div>
             </div>
@@ -128,59 +128,62 @@
         <br>
         <form id="uploadDoc" method="POST" name="UploadForm" enctype="multipart/form-data">
             {% csrf_token %}
-        <div class="activitydiv">
-            <div class="container cont1">
-                <div class="row row2">
-                    <!--Activity pdf starts-->
-                    <div class="column col-xl-3 col-l-3 col-md-3 col-sm-12 col-xs-12  column1 activity "
-                        onclick="window.location='#';">
-                        <div class="card card1">
-                            {% if activities %}
+            <div class="activitydiv">
+                <div class="container cont1">
+                    <div class="row row2">
+                        <!--Activity pdf starts-->
+                        <div class="column col-xl-3 col-l-3 col-md-3 col-sm-12 col-xs-12  column1 activity "
+                            onclick="window.location='#';">
+                            <div class="card card1">
+                                {% if activities %}
                                 {% for activity in activities %}
-                                    {% if activity.name == "act1" %}
-                                        <a href="{{ activity.files.url }}" target="_blank">
-                                            <img class="card-img" src="../../media/images/documents-page/pdf.png">
-                                        </a>
-                                        <button id="btn1">Activity 1</button>
-                                    {% endif %}
+                                {% if activity.name == "act1" %}
+                                <a href="{{ activity.files.url }}" target="_blank">
+                                    <img class="card-img" src="../../media/images/documents-page/pdf.png">
+                                </a>
+                                <button id="btn1">Activity 1</button>
+                                {% endif %}
                                 {% endfor %}
-                            {% endif %}
+                                {% endif %}
+                            </div>
                         </div>
-                    </div>
-                    <!--Activity pdf ends-->
-                    <div class="column col-xl-1 col-l-1 col-md-1"></div>
-                    <!-- upload setion starts -->
-                    <div class="column col-xl-4 col-l-4 col-md-4 col-sm-12 col-xs-12">
-                        <div class="row">
-                            <div class="col-12">
-                                <div class="file-upload">
+                        <!--Activity pdf ends-->
+                        <div class="column col-xl-1 col-l-1 col-md-1"></div>
+                        <!-- upload setion starts -->
+                        <div class="column col-xl-4 col-l-4 col-md-4 col-sm-12 col-xs-12">
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="file-upload">
 
-                                    <div class="image-upload-wrap1" id="wrap1">
-                                        <input class="file-upload-input1" id="file-upload-input-doc1" name="file-upload-input-doc1" type="file"
-                                            onchange="readURL1(this);checkFileUploadDoc1();"
-                                            accept="application/txt.application/pdf,application/doc">
-                                        <div class="drag-text">
-                                            <div class="upload-icon mt-4">
-                                                <i class="fa fa-cloud-upload"></i>
+                                        <div class="image-upload-wrap1" id="wrap1">
+                                            <input class="file-upload-input1" id="file-upload-input-doc1"
+                                                name="file-upload-input-doc1" type="file"
+                                                onchange="readURL1(this);checkFileUploadDoc1();"
+                                                accept="application/txt.application/pdf,application/doc">
+                                            <div class="drag-text">
+                                                <div class="upload-icon mt-4">
+                                                    <i class="fa fa-cloud-upload"></i>
+                                                </div>
+                                                <h6 class="dragdrop">Drag and drop your file or Click to Browse</h6>
                                             </div>
-                                            <h6 class="dragdrop">Drag and drop your file or Click to Browse</h6>
                                         </div>
-                                    </div>
-                                    <div class="file-upload-content1" id="file-content1">
-                                        <div class="row no-gutters">
-                                            <div class="col-3 file-doc-icon m-auto">
-                                                <i class="fa fa-file"></i>
-                                            </div>
-                                            <div class="col-9">
-                                                <div class="row file-name-section">
-                                                    <div class="col-8  m-auto">
-                                                        <span class="image-title1" id="imgtitle1">Uploaded Image</span>
-                                                    </div>
-                                                    <div class="col-4 image-title-wrap m-auto">
-                                                        <button type="button" onclick="removeUpload1()"
-                                                            class="remove-image">
-                                                            <i class="fa fa-times"></i>
-                                                        </button>
+                                        <div class="file-upload-content1" id="file-content1">
+                                            <div class="row no-gutters">
+                                                <div class="col-3 file-doc-icon m-auto">
+                                                    <i class="fa fa-file"></i>
+                                                </div>
+                                                <div class="col-9">
+                                                    <div class="row file-name-section">
+                                                        <div class="col-8  m-auto">
+                                                            <span class="image-title1" id="imgtitle1">Uploaded
+                                                                Image</span>
+                                                        </div>
+                                                        <div class="col-4 image-title-wrap m-auto">
+                                                            <button type="button" onclick="removeUpload1()"
+                                                                class="remove-image">
+                                                                <i class="fa fa-times"></i>
+                                                            </button>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -188,35 +191,34 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="row status-section">
+                                <div class="col-4 status-text">
+                                    Status:
+                                </div>
+                                <div class="col-8 status-badge">
+                                    <span class="badge badge-pill badge-danger" id="status-danger-badge1">No File
+                                        Attached</span>
+                                </div>
+                                <button class="submitButton" type="submit">Submit</button>
+                            </div>
                         </div>
-                        <div class="row status-section">
-                            <div class="col-4 status-text">
-                                Status:
-                            </div>
-                            <div class="col-8 status-badge">
-                                <span class="badge badge-pill badge-danger" id="status-danger-badge1">No File
-                                    Attached</span>
-                            </div>
-                            <button class="submitButton" type="submit">Submit</button>
+                        <!-- upload setion ends-->
+                        <div class="column col-xl-1 col-l-1 col-md-1"></div>
+                        <!-- Example section starts-->
+                        <div
+                            class="column col-xl-3 col-l-3 col-md-3 col-sm-12 col-xs-12 offset-* column1 activity text-center">
+                            <button type="button" id="btn2">
+                                <p>
+                                    Get access to some
+                                    <br>
+                                    solved LTspice files
+                                </p>
+                            </button>
                         </div>
                     </div>
-                    <!-- upload setion ends-->
-                    <div class="column col-xl-1 col-l-1 col-md-1"></div>
-                    <!-- Example section starts-->
-                    <div
-                        class="column col-xl-3 col-l-3 col-md-3 col-sm-12 col-xs-12 offset-* column1 activity text-center">
-                        <button type="button" id="btn2">
-                            <p>
-                                Get access to some
-                                <br>
-                                solved LTspice files
-                            </p>
-                        </button>
-                    </div>
+                    <!-- example section ends -->
                 </div>
-                <!-- example section ends -->
             </div>
-        </div>
         </form>
     </div>
     <br>
@@ -227,46 +229,46 @@
             <div class="row row1">
                 <div class="col-sm-3 divi ">
                     {% if documents %}
-                        {% for document in documents %}
-                            {% if document.name == "doc4" %}
-                            <a href="{{ document.files.url }}" target="_blank">
-                                <img class="card-img" src="../../media/images/documents-page/pdf.png">
-                                <div class="topicname">
-                                    <p class="card-title">{{ document.name }}</p>
-                                </div>
-                            </a>
-                            {% endif %}
-                        {% endfor %}
+                    {% for document in documents %}
+                    {% if document.name == "doc4" %}
+                    <a href="{{ document.files.url }}" target="_blank">
+                        <img class="card-img" src="../../media/images/documents-page/pdf.png">
+                        <div class="topicname">
+                            <p class="card-title">{{ document.name }}</p>
+                        </div>
+                    </a>
+                    {% endif %}
+                    {% endfor %}
                     {% endif %}
                 </div>
                 <div class="col-sm-1 "></div>
                 <div class="col-sm-3 divi divrow1">
                     {% if documents %}
-                        {% for document in documents %}
-                            {% if document.name == "doc5" %}
-                            <a href="{{ document.files.url }}" target="_blank">
-                                <img class="card-img" src="../../media/images/documents-page/pdf.png">
-                                <div class="topicname">
-                                    <p class="card-title">{{ document.name }}</p>
-                                </div>
-                            </a>
-                            {% endif %}
-                        {% endfor %}
+                    {% for document in documents %}
+                    {% if document.name == "doc5" %}
+                    <a href="{{ document.files.url }}" target="_blank">
+                        <img class="card-img" src="../../media/images/documents-page/pdf.png">
+                        <div class="topicname">
+                            <p class="card-title">{{ document.name }}</p>
+                        </div>
+                    </a>
+                    {% endif %}
+                    {% endfor %}
                     {% endif %}
                 </div>
                 <div class="col-sm-1 "></div>
                 <div class="col-sm-3 divi divrow1">
                     {% if documents %}
-                        {% for document in documents %}
-                            {% if document.name == "doc6" %}
-                            <a href="{{ document.files.url }}" target="_blank">
-                                <img class="card-img" src="../../media/images/documents-page/pdf.png">
-                                <div class="topicname">
-                                    <p class="card-title">{{ document.name }}</p>
-                                </div>
-                            </a>
-                            {% endif %}
-                        {% endfor %}
+                    {% for document in documents %}
+                    {% if document.name == "doc6" %}
+                    <a href="{{ document.files.url }}" target="_blank">
+                        <img class="card-img" src="../../media/images/documents-page/pdf.png">
+                        <div class="topicname">
+                            <p class="card-title">{{ document.name }}</p>
+                        </div>
+                    </a>
+                    {% endif %}
+                    {% endfor %}
                     {% endif %}
                 </div>
             </div>
@@ -275,59 +277,62 @@
         <br>
         <br>
         <form id="uploadDoc" method="POST" name="UploadForm" enctype="multipart/form-data">{% csrf_token %}
-        <div class="activitydiv">
-            <div class="container cont1">
-                <div class="row row2">
-                    <!--Activity pdf starts-->
-                    <div class="column col-xl-3 col-l-3 col-md-3 col-sm-12 col-xs-12  column1 activity "
-                        onclick="window.location='#';">
-                        <div class="card card1">
-                            {% if activities %}
+            <div class="activitydiv">
+                <div class="container cont1">
+                    <div class="row row2">
+                        <!--Activity pdf starts-->
+                        <div class="column col-xl-3 col-l-3 col-md-3 col-sm-12 col-xs-12  column1 activity "
+                            onclick="window.location='#';">
+                            <div class="card card1">
+                                {% if activities %}
                                 {% for activity in activities %}
-                                    {% if activity.name == "act2" %}
-                                        <a href="{{ activity.files.url }}" target="_blank">
-                                            <img class="card-img" src="../../media/images/documents-page/pdf.png">
-                                        </a>
-                                        <button id="btn1">Activity 2</button>
-                                    {% endif %}
+                                {% if activity.name == "act2" %}
+                                <a href="{{ activity.files.url }}" target="_blank">
+                                    <img class="card-img" src="../../media/images/documents-page/pdf.png">
+                                </a>
+                                <button id="btn1">Activity 2</button>
+                                {% endif %}
                                 {% endfor %}
-                            {% endif %}
+                                {% endif %}
+                            </div>
                         </div>
-                    </div>
-                    <!--Activity pdf ends-->
-                    <div class="column col-xl-1 col-l-1 col-md-1"></div>
-                    <!-- upload setion starts -->
-                    <div class="column col-xl-4 col-l-4 col-md-4 col-sm-12 col-xs-12">
-                        <div class="row">
-                            <div class="col-12">
-                                <div class="file-upload">
+                        <!--Activity pdf ends-->
+                        <div class="column col-xl-1 col-l-1 col-md-1"></div>
+                        <!-- upload setion starts -->
+                        <div class="column col-xl-4 col-l-4 col-md-4 col-sm-12 col-xs-12">
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="file-upload">
 
-                                    <div class="image-upload-wrap2" id="wrap2">
-                                        <input class="file-upload-input2" id="file-upload-input-doc1" type="file" name="file-upload-input-doc1"
-                                            onchange="readURL2(this);checkFileUploadDoc2();"
-                                            accept="application/txt.application/pdf,application/doc">
-                                        <div class="drag-text">
-                                            <div class="upload-icon mt-4">
-                                                <i class="fa fa-cloud-upload"></i>
+                                        <div class="image-upload-wrap2" id="wrap2">
+                                            <input class="file-upload-input2" id="file-upload-input-doc1" type="file"
+                                                name="file-upload-input-doc1"
+                                                onchange="readURL2(this);checkFileUploadDoc2();"
+                                                accept="application/txt.application/pdf,application/doc">
+                                            <div class="drag-text">
+                                                <div class="upload-icon mt-4">
+                                                    <i class="fa fa-cloud-upload"></i>
+                                                </div>
+                                                <h6 class="dragdrop">Drag and drop your file or Click to Browse</h6>
                                             </div>
-                                            <h6 class="dragdrop">Drag and drop your file or Click to Browse</h6>
                                         </div>
-                                    </div>
-                                    <div class="file-upload-content2" id="file-content2">
-                                        <div class="row no-gutters">
-                                            <div class="col-3 file-doc-icon m-auto">
-                                                <i class="fa fa-file"></i>
-                                            </div>
-                                            <div class="col-9">
-                                                <div class="row file-name-section">
-                                                    <div class="col-8  m-auto">
-                                                        <span class="image-title2" id="imgtitle2">Uploaded Image</span>
-                                                    </div>
-                                                    <div class="col-4 image-title-wrap m-auto">
-                                                        <button type="button" onclick="removeUpload2()"
-                                                            class="remove-image">
-                                                            <i class="fa fa-times"></i>
-                                                        </button>
+                                        <div class="file-upload-content2" id="file-content2">
+                                            <div class="row no-gutters">
+                                                <div class="col-3 file-doc-icon m-auto">
+                                                    <i class="fa fa-file"></i>
+                                                </div>
+                                                <div class="col-9">
+                                                    <div class="row file-name-section">
+                                                        <div class="col-8  m-auto">
+                                                            <span class="image-title2" id="imgtitle2">Uploaded
+                                                                Image</span>
+                                                        </div>
+                                                        <div class="col-4 image-title-wrap m-auto">
+                                                            <button type="button" onclick="removeUpload2()"
+                                                                class="remove-image">
+                                                                <i class="fa fa-times"></i>
+                                                            </button>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -335,35 +340,34 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="row status-section">
+                                <div class="col-4 status-text">
+                                    Status:
+                                </div>
+                                <div class="col-8 status-badge">
+                                    <span class="badge badge-pill badge-danger" id="status-danger-badge2">No File
+                                        Attached</span>
+                                </div>
+                                <button class="submitButton" type="submit">Submit</button>
+                            </div>
                         </div>
-                        <div class="row status-section">
-                            <div class="col-4 status-text">
-                                Status:
-                            </div>
-                            <div class="col-8 status-badge">
-                                <span class="badge badge-pill badge-danger" id="status-danger-badge2">No File
-                                    Attached</span>
-                            </div>
-                            <button class="submitButton" type="submit">Submit</button>
+                        <!-- upload setion ends-->
+                        <div class="column col-xl-1 col-l-1 col-md-1"></div>
+                        <!-- Example section starts-->
+                        <div
+                            class="column col-xl-3 col-l-3 col-md-3 col-sm-12 col-xs-12 offset-* column1 activity text-center">
+                            <button type="button" id="btn2">
+                                <p>
+                                    Get access to some
+                                    <br>
+                                    solved LTspice files
+                                </p>
+                            </button>
                         </div>
                     </div>
-                    <!-- upload setion ends-->
-                    <div class="column col-xl-1 col-l-1 col-md-1"></div>
-                    <!-- Example section starts-->
-                    <div
-                        class="column col-xl-3 col-l-3 col-md-3 col-sm-12 col-xs-12 offset-* column1 activity text-center">
-                        <button type="button" id="btn2">
-                            <p>
-                                Get access to some
-                                <br>
-                                solved LTspice files
-                            </p>
-                        </button>
-                    </div>
+                    <!-- example section ends -->
                 </div>
-                <!-- example section ends -->
             </div>
-        </div>
         </form>
     </div>
     <br>
@@ -374,139 +378,54 @@
             <div class="row row1">
                 <div class="col-sm-3 divi ">
                     {% if documents %}
-                        {% for document in documents %}
-                            {% if document.name == "doc7" %}
-                            <a href="{{ document.files.url }}" target="_blank">
-                                <img class="card-img" src="../../media/images/documents-page/pdf.png">
-                                <div class="topicname">
-                                    <p class="card-title">{{ document.name }}</p>
-                                </div>
-                            </a>
-                            {% endif %}
-                        {% endfor %}
+                    {% for document in documents %}
+                    {% if document.name == "doc7" %}
+                    <a href="{{ document.files.url }}" target="_blank">
+                        <img class="card-img" src="../../media/images/documents-page/pdf.png">
+                        <div class="topicname">
+                            <p class="card-title">{{ document.name }}</p>
+                        </div>
+                    </a>
+                    {% endif %}
+                    {% endfor %}
                     {% endif %}
                 </div>
                 <div class="col-sm-1 "></div>
                 <div class="col-sm-3 divi divrow1">
                     {% if documents %}
-                        {% for document in documents %}
-                            {% if document.name == "doc8" %}
-                            <a href="{{ document.files.url }}" target="_blank">
-                                <img class="card-img" src="../../media/images/documents-page/pdf.png">
-                                <div class="topicname">
-                                    <p class="card-title">{{ document.name }}</p>
-                                </div>
-                            </a>
-                            {% endif %}
-                        {% endfor %}
+                    {% for document in documents %}
+                    {% if document.name == "doc8" %}
+                    <a href="{{ document.files.url }}" target="_blank">
+                        <img class="card-img" src="../../media/images/documents-page/pdf.png">
+                        <div class="topicname">
+                            <p class="card-title">{{ document.name }}</p>
+                        </div>
+                    </a>
+                    {% endif %}
+                    {% endfor %}
                     {% endif %}
                 </div>
                 <div class="col-sm-1 "></div>
                 <div class="col-sm-3 divi divrow1">
                     {% if documents %}
-                        {% for document in documents %}
-                            {% if document.name == "doc9" %}
-                            <a href="{{ document.files.url }}" target="_blank">
-                                <img class="card-img" src="../../media/images/documents-page/pdf.png">
-                                <div class="topicname">
-                                    <p class="card-title">{{ document.name }}</p>
-                                </div>
-                            </a>
-                            {% endif %}
-                        {% endfor %}
+                    {% for document in documents %}
+                    {% if document.name == "doc9" %}
+                    <a href="{{ document.files.url }}" target="_blank">
+                        <img class="card-img" src="../../media/images/documents-page/pdf.png">
+                        <div class="topicname">
+                            <p class="card-title">{{ document.name }}</p>
+                        </div>
+                    </a>
+                    {% endif %}
+                    {% endfor %}
                     {% endif %}
                 </div>
             </div>
         </div>
         <!-- 1st row -->
-        <br>
-        <br>
-        <div class="activitydiv">
-            <div class="container cont1">
-                <div class="row row2">
-                    <!--Activity pdf starts-->
-                    <div class="column col-xl-3 col-l-3 col-md-3 col-sm-12 col-xs-12  column1 activity "
-                        onclick="window.location='#';">
-                        <div class="card card1">
-                            <a href="#">
-                                <img class="card-img" src="../../media/images/documents-page/pdf.png">
-                            </a>
-                            <button id="btn1">Activity 1</button>
-                        </div>
-                    </div>
-                    <!--Activity pdf ends-->
-                    <div class="column col-xl-1 col-l-1 col-md-1"></div>
-                    <!-- upload setion starts -->
-                    <div class="column col-xl-4 col-l-4 col-md-4 col-sm-12 col-xs-12">
-                        <div class="row">
-                            <div class="col-12">
-                                <div class="file-upload">
-
-                                    <div class="image-upload-wrap3" id="wrap3">
-                                        <input class="file-upload-input3" id="file-upload-input-doc1" type="file" name="file-upload-input-doc1"
-                                            onchange="readURL3(this);checkFileUploadDoc3();"
-                                            accept="application/txt.application/pdf,application/doc">
-                                        <div class="drag-text">
-                                            <div class="upload-icon mt-4">
-                                                <i class="fa fa-cloud-upload"></i>
-                                            </div>
-                                            <h6 class="dragdrop">Drag and drop your file or Click to Browse</h6>
-                                        </div>
-                                    </div>
-                                    <div class="file-upload-content3" id="file-content3">
-                                        <!--<img class="file-upload-image" src="#" alt="your image" />-->
-                                        <div class="row no-gutters">
-                                            <div class="col-3 file-doc-icon m-auto">
-                                                <i class="fa fa-file"></i>
-                                            </div>
-                                            <div class="col-9">
-                                                <div class="row file-name-section">
-                                                    <div class="col-8  m-auto">
-                                                        <span class="image-title3" id="imgtitle3">Uploaded Image</span>
-                                                    </div>
-                                                    <div class="col-4 image-title-wrap m-auto">
-                                                        <button type="button" onclick="removeUpload3()"
-                                                            class="remove-image">
-                                                            <i class="fa fa-times"></i>
-                                                        </button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row status-section">
-                            <div class="col-4 status-text">
-                                Status:
-                            </div>
-                            <div class="col-8 status-badge">
-                                <span class="badge badge-pill badge-danger" id="status-danger-badge3">No File
-                                    Attached</span>
-                            </div>
-                            <button class="submitButton" type="submit">Submit</button>
-                        </div>
-                    </div>
-                    <!-- upload setion ends-->
-                    <div class="column col-xl-1 col-l-1 col-md-1"></div>
-                    <!-- Example section starts-->
-                    <div
-                        class="column col-xl-3 col-l-3 col-md-3 col-sm-12 col-xs-12 offset-* column1 activity text-center">
-                        <button type="button" id="btn2">
-                            <p>
-                                Get access to some
-                                <br>
-                                solved LTspice files
-                            </p>
-                        </button>
-                    </div>
-                </div>
-                <!-- example section ends -->
-            </div>
-        </div>
     </div>
     </div>
+    <hr><br>
     <br>
     <!--footerr-->
 

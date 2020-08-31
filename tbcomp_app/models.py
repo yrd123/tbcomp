@@ -34,7 +34,7 @@ class Activity(models.Model):
     files = models.FileField(upload_to = 'activities', null = True, blank = True)
 
     def __str__(self):
-        return self.name
+        return self.name+"_"+self.topic.name
 
 class Document(models.Model):
     name = models.CharField(max_length = 50)
@@ -56,4 +56,4 @@ class StudentUpload(models.Model):
     name = models.CharField(max_length = 20)
 
     def __str__(self):
-        return self.name
+        return self.student.fullname+"_"+self.activity.topic.name+"_"+self.activity.name
