@@ -385,23 +385,26 @@ a:hover {
 }
 
 .status-text{
-  font-size: 15px;
+  font-size: 18px;
   color: black;
 }
 
 .status-badge .badge {
   font-size: 16px;
   margin-top: 2px;
-
   box-shadow: 5px 5px 5px -4px #000000;
+  font-weight: 400;
 }
 
 #status-button{
-margin-left:30px;
-  height : 27px;
+  margin-left:28px;
+  height : 26px;
   font-size:15px;
-  background: #000000;
+  background: #0022ff;
   color: #FFFFFF;
+  border-radius: 10px;
+  border:0;
+  box-shadow: 5px 5px 5px -4px #000000;
 }
 
 @media only screen and (max-width:1200px) {
