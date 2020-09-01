@@ -112,16 +112,12 @@ def documents(request,subject,topic):
     if request.method == "POST" and request.FILES['file-upload-input-doc1']:
         email = request.user.username
         studentUploads = StudentUpload.objects.filter(student__email__contains = email, activity__topic__name__contains = topic, activity__topic__subject__name__contains = subject)
-        if StudentUpload.objects.filter(activity__name__contains = 'act1', activity__topic__name__contains = topic, activity__topic__subject__name__contains = subject).exists():
-            print("act1 found")
-            act = Activity.objects.get(name = "act2", topic__name__contains = topic, topic__subject__name__contains = subject)
-        else:
-            print("act2 found")
-            act = Activity.objects.get(name = "act1",  topic__name__contains = topic, topic__subject__name__contains = subject)
+        activity_name=request.POST["activity_name"]
+        act = Activity.objects.get(name = activity_name, topic__name__contains = topic, topic__subject__name__contains = subject)
         stu = Student.objects.get(email = email)
         new = StudentUpload.objects.create(
             student = stu,
-            status = 'uploaded',
+            status = 'Uploaded',
             activity = act,
         )
         new.save()
@@ -131,17 +127,17 @@ def documents(request,subject,topic):
     email = request.user.username
     studentUploads = StudentUpload.objects.filter(student__email__contains = email, activity__topic__name__contains = topic, activity__topic__subject__name__contains = subject)
     documents_list_names=["doc1","doc2","doc3"]
-    activity_questions_list_names=["act1"]
+    activity_questions_list_names=["activity_1"]
     documents=[]
     activities=[]
     for u in studentUploads:
-        if u.activity.name == "act1":
-            if u.status == "approved":
+        if u.activity.name == "activity_1":
+            if u.status == "Approved":
                 documents_list_names+=["doc4","doc5","doc6"]
                 print("act1 approved")
-                activity_questions_list_names+=["act2"]
+                activity_questions_list_names+=["activity_2"]
         else:
-            if u.status == "approved":
+            if u.status == "Approved":
                 documents_list_names+=["doc7","doc8","doc9"]
                 print("act2 approved") 
     for i in documents_list_names:
