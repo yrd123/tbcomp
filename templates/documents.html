@@ -73,6 +73,7 @@
         <h3 class="heading"><a href="{% url 'subjects' %}"><span> {{subject}} </span></a> > {{topic}}</h3>
     </div>
 
+    <h7>{{message}}</h7>
     <!--  1st row-->
     <div id="maindiv">
         <div class="container main">
@@ -223,8 +224,7 @@
                                                                 Status:
                                                             </div>
                                                             <div class="col-8 status-badge">
-                                                                <span class="badge badge-pill badge-danger" id="status-danger-badge2">No File
-                                                                    Attached</span>
+                                                                <span class="badge badge-pill badge-danger" id="status-danger-badge2">{{upload.status}}</span>
                                                             </div>
                                                             <button class="submitButton" type="submit">Submit</button>
                                                         </div>

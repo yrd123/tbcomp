@@ -125,7 +125,12 @@ def documents(request,subject,topic):
         new.name = request.FILES['file-upload-input-doc1'].name
         new.save()
     email = request.user.username
+    
     studentUploads = StudentUpload.objects.filter(student__email__contains = email, activity__topic__name__contains = topic, activity__topic__subject__name__contains = subject)
+    message=""
+    if(StudentUpload.objects.filter(student__email__contains = email, activity__topic__name__contains = topic, activity__topic__subject__name__contains = subject, status="Rejected").exists()):
+        message="dusra daal be"
+    StudentUpload.objects.filter(student__email__contains = email, activity__topic__name__contains = topic, activity__topic__subject__name__contains = subject, status="Rejected").delete()
     documents_list_names=["doc1","doc2","doc3"]
     activity_questions_list_names=["activity_1"]
     documents=[]
@@ -147,7 +152,7 @@ def documents(request,subject,topic):
     template_name = 'documents.html'
     print("subject:",subject)
     print("topic:",topic)
-    context={'subject':subject,'topic':topic, 'documents' : documents, 'activities' : activities, 'uploads' : studentUploads}
+    context={'subject':subject,'topic':topic, 'documents' : documents, 'activities' : activities, 'uploads' : studentUploads, 'message':message}
     return render(request,template_name,context)
 
 
