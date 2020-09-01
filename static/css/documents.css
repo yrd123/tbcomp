@@ -381,18 +381,27 @@ a:hover {
 }
 
 .status-section {
-  margin: 25px 20px 20px 20px;
+  margin: 25px 20px 20px 0px;/*Changes*/
 }
 
 .status-text{
-  font-size: 18px;
+  font-size: 15px;
   color: black;
 }
 
 .status-badge .badge {
   font-size: 16px;
   margin-top: 2px;
+
   box-shadow: 5px 5px 5px -4px #000000;
+}
+
+#status-button{
+margin-left:30px;
+  height : 27px;
+  font-size:15px;
+  background: #000000;
+  color: #FFFFFF;
 }
 
 @media only screen and (max-width:1200px) {

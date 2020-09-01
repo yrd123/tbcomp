@@ -132,7 +132,7 @@ function changeBadge(s1,s2){
     statusBadge.className = 'badge badge-pill badge-danger';
   }
   else if(fileInput.value != 0){
-    statusBadge.innerHTML = 'Uploaded';
+    statusBadge.innerHTML = 'File Attached';
     statusBadge.className = 'badge badge-pill badge-success';
   }
 }
