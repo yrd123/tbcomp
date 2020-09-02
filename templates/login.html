@@ -9,32 +9,39 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" type="text/css" href="{% static 'css/login.css' %}">
+        <link rel='stylesheet' type="text/css" href="{% static 'css/navbar.css' %}">
     </head>
 <body>
-    <!-- Navbar start -->
-    <nav class="navbar navbar-dark navbar-expand-lg fixed-top" id="login-navbar">
-    <a class="navbar-brand" href="/">Inderjit Singh</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-        <li class="nav-item underlinehover">
-            <a class="nav-link" href="/">Home <span class="fa fa-home"></a>
-        </li>
-        <li class="nav-item underlinehover">
-            <a class="nav-link" href="/">Contact Us <span class="fa fa-phone"></span></a>
-        </li>
-        </ul>
     
-        <ul class="navbar-nav ml-auto"> 
-            <li class="nav-item active" id="login-li"> 
-                <a class="nav-link " href="{% url 'login' %}">Login<span class="fa fa-sign-in"></span><span class="sr-only">(current)</span></a>    
-            </li> 
-            </ul>
+    <!-- Navbar start -->
+    <div class='our-navbar'>
+        <nav class="navbar navbar-dark navbar-expand-lg fixed-top" id="login-navbar">
+            <a class="navbar-brand" href="/">Inderjit Singh</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                <li class="nav-item underlinehover">
+                    <a class="nav-link" href="/">Home <span class="fa fa-home"></a>
+                </li>
+                <li class="nav-item underlinehover">
+                    <a class="nav-link" href="/">Contact Us <span class="fa fa-phone"></span></a>
+                </li>
+                </ul>
+            
+                <ul class="navbar-nav ml-auto"> 
+                    <li class="nav-item active" id="login-li"> 
+                        <a class="nav-link " href="{% url 'login' %}">Login<span class="fa fa-sign-in"></span><span class="sr-only">(current)</span></a>    
+                    </li> 
+                    </ul>
+            </div>
+            </nav>
     </div>
-    </nav>
+    
     <!-- navbar ends -->
+
+
     <!-- Login form HTML begin-->
     <div id="main-login-form-section" class="row mt-5 main-login-form-section">
         <div class="col-sm-12 col-md-5 login  m-auto">
@@ -83,7 +90,7 @@
                         <a href="{% url 'resetPasswordQuestions' %}" class="hint-text">Forgot Password?</a>
                     </form>
                 </div>
-                <div class="modal-footer">Don't have an account? <a href="{% url 'signup' %}">Create one</a></div>
+                <div class="modal-footer text-center"> Don't have an account? <a href="{% url 'signup' %}">Create one</a></div>
             </div>
         </div>
     </div> 
