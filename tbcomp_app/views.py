@@ -129,7 +129,7 @@ def documents(request,subject,topic):
     studentUploads = StudentUpload.objects.filter(student__email__contains = email, activity__topic__name__contains = topic, activity__topic__subject__name__contains = subject)
     message=""
     if(StudentUpload.objects.filter(student__email__contains = email, activity__topic__name__contains = topic, activity__topic__subject__name__contains = subject, status="Rejected").exists()):
-        message="dusra daal be"
+        message="Your previous activity was rejected. Please upload a different one."
     StudentUpload.objects.filter(student__email__contains = email, activity__topic__name__contains = topic, activity__topic__subject__name__contains = subject, status="Rejected").delete()
     documents_list_names=["doc1","doc2","doc3"]
     activity_questions_list_names=["activity_1"]
