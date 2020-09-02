@@ -157,19 +157,39 @@
                                                 {% if upload.status == "Uploaded" or upload.status == "Approved" %}
                                                     <!-- upload setion starts -->
                                                     <div class="column col-xl-4 col-l-4 col-md-4 col-sm-12 col-xs-12">
-                                                        <div class="row">
-                                                            <span class="badge badge-pill badge-warning" id="status-danger-badge2">
+                                                        <div class="row file-upload">
+                                                            <div class="file-approved-content">
+                                                                <div class="row no-gutters">
+                                                                    <div class="col-3 file-doc-icon m-auto">
+                                                                        <i class="fa fa-file"></i>
+                                                                    </div>
+                                                                    <div class="col-9">
+                                                                        <div class="row file-name-section">
+                                                                            <div class="col-12">
+                                                                                <span class="approved-image-title">
+                                                                                    <a href="{{ upload.files.url }}" target="_blank">{{ upload.name }}</a>
+                                                                                </span>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <!--<span class="badge badge-pill badge-warning" id="status-danger-badge2">
                                                                 <a href="{{ upload.files.url }}" target="_blank">{{ upload.name }}</a>
-                                                            </span>
+                                                            </span>-->
                                                         </div>
                                                         <div class="row status-section">
-                                                            <div class="col-4 status-text">
+                                                            <div class="col-3 status-text">
                                                                 Status:
                                                             </div>
-                                                            <div class="col-8 status-badge">
+                                                            <div class="col-5 status-badge">
                                                                 <span class="badge badge-pill badge-success" id="status-danger-badge2">
                                                                     {{ upload.status }}
                                                                 </span>
+                                                            </div>
+                                                            <div class="col-4 status-button">
+                                                                <button class="button"type="submit">Submit</button>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -219,13 +239,15 @@
                                                             </div>
                                                         </div>
                                                         <div class="row status-section">
-                                                            <div class="col-4 status-text">
+                                                            <div class="col-3 status-text">
                                                                 Status:
                                                             </div>
-                                                            <div class="col-8 status-badge">
+                                                            <div class="col-5 status-badge">
                                                                 <span class="badge badge-pill badge-danger" id="status-danger-badge2">{{upload.status}}</span>
                                                             </div>
-                                                            <button class="submitButton" type="submit">Submit</button>
+                                                            <div class="col-4 status-button">
+                                                                <button class="button"type="submit">Submit</button>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                     <!-- upload setion ends-->
@@ -276,14 +298,16 @@
                                                     </div>
                                                 </div>
                                                 <div class="row status-section">
-                                                    <div class="col-4 status-text">
+                                                    <div class="col-3 status-text">
                                                         Status:
                                                     </div>
-                                                    <div class="col-8 status-badge">
+                                                    <div class="col-5 status-badge">
                                                         <span class="badge badge-pill badge-danger" id="status-danger-badge2">No File
                                                             Attached</span>
                                                     </div>
-                                                    <button class="submitButton" type="submit">Submit</button>
+                                                    <div class="col-4 status-button">
+                                                        <button class="button"type="submit">Submit</button>
+                                                    </div>
                                                 </div>
                                             </div>
                                             <!-- upload setion ends-->      
@@ -340,12 +364,13 @@
                                             </div>
                                             
                                             <div class="col-5 status-badge status-button1">
-                                                <span class="badge badge-pill badge-danger" id="status-danger-badge2">No File
-                                                    Attached</span>
+                                                <span class="badge badge-pill badge-danger" id="status-danger-badge2">
+                                                    No File Attached
+                                                </span>
                                             </div>
 
                                             <div class="col-4 status-button">
-                                                 <button class="button"type="submit" id="status-button">Submit</button>
+                                                 <button class="button"type="submit">Submit</button>
                                             </div>
 
                                         </div>
@@ -452,21 +477,40 @@
                                     {% if upload.status == "Uploaded" or upload.status == "Approved" %}
                                         <!-- upload setion starts -->
                                         <div class="column col-xl-4 col-l-4 col-md-4 col-sm-12 col-xs-12">
-                                            <div class="row">
+                                            <div class="row file-upload">
+                                                <div class="file-approved-content">
+                                                    <div class="row no-gutters">
+                                                        <div class="col-3 file-doc-icon m-auto">
+                                                            <i class="fa fa-file"></i>
+                                                        </div>
+                                                        <div class="col-9">
+                                                            <div class="row file-name-section">
+                                                                <div class="col-9 m-auto">
+                                                                    <span class="approved-image-title">
+                                                                        <a href="{{ upload.files.url }}" target="_blank">{{ upload.name }}</a>
+                                                                    </span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!--
                                                 <span class="badge badge-pill badge-warning" id="status-danger-badge2">
                                                     <a href="{{ upload.files.url }}" target="_blank">{{ upload.name }}</a>
-                                                </span>
+                                                </span>-->
                                             </div>
                                             <div class="row status-section">
-                                                <div class="col-4 status-text">
+                                                <div class="col-3 status-text">
                                                     Status:
                                                 </div>
-                                                <div class="col-8 status-badge">
+                                                <div class="col-5 status-badge">
                                                     <span class="badge badge-pill badge-success" id="status-danger-badge2">
                                                         {{ upload.status }}
                                                     </span>
                                                 </div>
-                                                <button class="submitButton" type="submit">Submit</button>
+                                                <div class="col-4 status-button">
+                                                    <button class="button"type="submit">Submit</button>
+                                                </div>
                                             </div>
                                         </div>
                                         <!-- upload setion ends-->
@@ -515,14 +559,16 @@
                                                 </div>
                                             </div>
                                             <div class="row status-section">
-                                                <div class="col-4 status-text">
+                                                <div class="col-3 status-text">
                                                     Status:
                                                 </div>
-                                                <div class="col-8 status-badge">
+                                                <div class="col-5 status-badge">
                                                     <span class="badge badge-pill badge-danger" id="status-danger-badge2">No File
                                                         Attached</span>
                                                 </div>
-                                                <button class="submitButton" type="submit">Submit</button>
+                                                <div class="col-4 status-button">
+                                                    <button class="button"type="submit">Submit</button>
+                                                </div>
                                             </div>
                                         </div>
                                         <!-- upload setion ends-->
@@ -575,14 +621,16 @@
                                         </div>
                                     </div>
                                     <div class="row status-section">
-                                        <div class="col-4 status-text">
+                                        <div class="col-3 status-text">
                                             Status:
                                         </div>
-                                        <div class="col-8 status-badge">
+                                        <div class="col-5 status-badge">
                                             <span class="badge badge-pill badge-danger" id="status-danger-badge2">No File
                                                 Attached</span>
                                         </div>
-                                        <button class="submitButton" type="submit">Submit</button>
+                                        <div class="col-4 status-button">
+                                            <button class="button"type="submit">Submit</button>
+                                        </div>
                                     </div>
                                 </div>
                                 <!-- upload setion ends-->
@@ -678,7 +726,6 @@
             </div>
         </div>
         <!-- 1st row -->
-    </div>
     </div>
     <hr><br>
     <br>

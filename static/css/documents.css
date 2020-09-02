@@ -282,6 +282,15 @@ a:hover {
   position: relative;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
 }
+.file-approved-content{
+  position: relative;
+  width:100%;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+   justify-content: center;
+   display:flex;
+   align-items:center;
+
+}
 .file-upload-input1,.file-upload-input2,.file-upload-input3 {
   position: absolute;
   margin: 0;
@@ -319,6 +328,12 @@ a:hover {
   font-weight: 600;
   font-size: 14px;
   color: #000000;
+}
+.approved-image-title{
+  font-weight: 600;
+  font-size: 15px;
+  color: #000000;
+
 }
 
 .drag-text {
@@ -396,7 +411,7 @@ a:hover {
   font-weight: 400;
 }
 
-#status-button{
+.status-button .button{
   margin-left:28px;
   height : 26px;
   font-size:15px;
