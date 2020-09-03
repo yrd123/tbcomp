@@ -441,7 +441,7 @@ a:hover {
   .column {
     width: 100%;
     display: block;
-    margin-bottom: 20px;
+    /*margin-bottom: 20px;*/
   }
 }
 

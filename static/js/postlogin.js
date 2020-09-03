@@ -30,6 +30,7 @@ function myFunction2() {
       var btn1 = document.getElementById("btn1");
       var btn2 = document.getElementById("btn2");
       var btn3 = document.getElementById("btn3");
+      var footer1 = document.getElementById("footer1");
       btn1.style.backgroundImage="url('../media/images/post-login/EEEEIcon.png')";
       btn1.style.backgroundSize="1em 1.4em";
       btn1.style.backgroundRepeat="no-repeat";
@@ -52,10 +53,10 @@ function myFunction2() {
       btn2.style.backgroundImage="none";
       btn2.innerHTML = "BEC";
       if (window.matchMedia("(max-width: 432px)").matches) { // If media query matches
-      footer.className="page2";
+      footer1.className="page2";
       } 
       else{
-            footer.className="footer";
+            footer1.className="footer";
       }
      
 }
@@ -63,6 +64,7 @@ function myFunction3() {
       var btn1 = document.getElementById("btn1");
       var btn2 = document.getElementById("btn2");
       var btn3 = document.getElementById("btn3");
+      var footer1 = document.getElementById("footer1");
       btn1.style.backgroundImage="url('../media/images/post-login/EEEEIcon.png')";
       btn1.style.backgroundSize="1em 1.4em";
       btn1.style.backgroundRepeat="no-repeat";
@@ -85,9 +87,9 @@ function myFunction3() {
       btn1.style.width="4em";
       btn3.innerHTML = "ECAD";
      if (window.matchMedia("(max-width: 432px)").matches) { // If media query matches
-      footer.className="page3";
+      footer1.className="page3";
   } 
   else{
-            footer.className="footer";
+            footer1.className="footer";
       }
 }
