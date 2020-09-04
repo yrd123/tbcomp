@@ -24,6 +24,12 @@
       btn2.style.width="4em";
       btn3.style.width="4em";
       btn1.innerHTML = "EEEE";
+      if (window.matchMedia("(max-width: 432px)").matches) { // If media query matches
+      footer1.className="footer";
+      } 
+      else{
+            footer1.className="footer";
+      }
         
 }
 function myFunction2() {
@@ -54,10 +60,14 @@ function myFunction2() {
       btn2.innerHTML = "BEC";
       if (window.matchMedia("(max-width: 432px)").matches) { // If media query matches
       footer1.className="page2";
-      } 
-      else{
-            footer1.className="footer";
       }
+      else if (window.matchMedia("(min-width: 769px)").matches){
+            footer1.className="footer";
+      } 
+      else if (window.matchMedia("(min-width: 433px)").matches){
+            footer1.className="page2";
+      }
+      
      
 }
 function myFunction3() {
@@ -88,8 +98,12 @@ function myFunction3() {
       btn3.innerHTML = "ECAD";
      if (window.matchMedia("(max-width: 432px)").matches) { // If media query matches
       footer1.className="page3";
-  } 
-  else{
+      } 
+      else if (window.matchMedia("(min-width: 1100px)").matches){
             footer1.className="footer";
       }
+      else if (window.matchMedia("(min-width: 433px)").matches){
+            footer1.className="page3";
+      }
+      
 }
