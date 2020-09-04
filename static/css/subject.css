@@ -382,6 +382,9 @@
   
   /*footer css*/
   /*Profile Modal Begin*/
+  .modal {
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
   .modal-header{
     background: #2d9cc2;
     color:white;

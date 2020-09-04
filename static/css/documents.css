@@ -509,3 +509,48 @@ ul.bb {
 }
 
 /*footer css*/
+
+/*Profile Modal Begin*/
+.modal {
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.modal-header{
+  background: #2d9cc2;
+  color:white;
+}
+.close{
+  color:white;
+  opacity:1.6;
+  border: none;
+}
+.close:hover{
+  color:white;
+ border: none;
+}
+.form-group input{
+  box-shadow: none !important;
+  border-top-style: hidden;
+  border-right-style: hidden;
+  border-left-style: hidden;
+  border-bottom-style: groove;
+  background-color: #eee;
+  background: white;
+}
+.form-control[readonly] {
+  background-color: white;
+  opacity: 1;
+}
+.profileForm label{
+  font-weight: 600;
+  font-size: 18px;
+}
+.profileForm .form-group input{
+  box-shadow: none !important;
+  border-top-style: hidden;
+  border-right-style: hidden;
+  border-left-style: hidden;
+  border-bottom-style: groove;
+  background-color: #eee;
+  background: white;
+}
+/*Profile Modal Ends*/
