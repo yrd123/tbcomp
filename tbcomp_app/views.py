@@ -119,15 +119,16 @@ def documents(request,subject,topic):
             activity_name=request.POST["activity_name"]
             act = Activity.objects.get(name = activity_name, topic__name__contains = topic, topic__subject__name__contains = subject)
             stu = Student.objects.get(email = email)
-            new = StudentUpload.objects.create(
-                student = stu,
-                status = 'Uploaded',
-                activity = act,
-            )
-            new.save()
-            new.files = request.FILES['file-upload-input-doc1']
-            new.name = request.FILES['file-upload-input-doc1'].name
-            new.save()
+            if(not(StudentUpload.objects.filter(student__email__contains = email, activity__name__contains = activity_name, activity__topic__name__contains = topic, activity__topic__subject__name__contains = subject).exists())):
+                new = StudentUpload.objects.create(
+                    student = stu,
+                    status = 'Uploaded',
+                    activity = act,
+                )
+                new.save()
+                new.files = request.FILES['file-upload-input-doc1']
+                new.name = request.FILES['file-upload-input-doc1'].name
+                new.save()
         email = request.user.username
         
         studentUploads = StudentUpload.objects.filter(student__email__contains = email, activity__topic__name__contains = topic, activity__topic__subject__name__contains = subject)
