@@ -1,0 +1,478 @@
+/*navbar*/
+
+html, body {
+  overflow-x: hidden;
+}
+
+.navbar-nav>li {
+  padding-left: 30px;
+  padding-right: 30px;
+  font-size: 1.1em;
+}
+
+.navbar-brand {
+  padding-left: 20px;
+  padding-right: 30px;
+  margin-bottom: 0;
+}
+
+.navbar {
+  background-color: rgb(0, 0, 0);
+  opacity: 0.88;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+}
+
+.navbar-brand {
+  font-size: 1.5em;
+}
+
+.ml-auto .nav-link {
+  margin-right: 20px;
+}
+
+.glypicon {
+  padding-left: 10px;
+}
+
+.nav-link:hover {
+  background-color: #1a1a1a;
+  font-size: 19px;
+}
+
+.active .nav-link {
+  border-bottom: 2px solid #2d9cc2;
+}
+
+.underlinehover {
+  display: inline-block;
+}
+
+.underlinehover:after {
+  content: '';
+  display: block;
+  height: 1px;
+  width: 0;
+  background: transparent;
+  transition: width .5s ease, background-color .5s ease;
+}
+
+.underlinehover:hover:after {
+  width: 100%;
+  background: #2d9cc2;
+}
+
+/*navbar ends*/
+.timelinehead {
+    text-align:center;
+    display: grid;
+    grid-template-columns: 200px max-content 200px;
+    grid-template-rows: 20px 0;
+    grid-gap: 20px;
+    justify-content:center;
+    /*padding-top: 2em;*/
+    /*padding-bottom: 1.5em;*/
+    }
+    .timelinehead:after,.timelinehead:before {
+    content: " ";
+    display: block;
+    border-bottom: 1.5px solid #2d9cc2;
+}
+
+/*About Sir*/
+.aboutheading{
+  margin-top: 30px;
+}
+.maindiv{
+  /*background-color: pink;*/
+  margin: auto;
+}
+.sirphoto{
+  
+  float: left;
+  height: 250px;
+  width: 250px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+.row1{
+  margin-top: 30px;
+  height: auto;
+}
+.sircontent{
+  margin-left: 100px;
+  margin-top: 10px;
+  border-width: 1px;
+  border-style: solid;
+  height: 320px;
+  width: 660px;
+  border-radius: 50px;
+  padding-left: 170px;
+  padding-right: 10px;
+  padding-top: 20px;
+  box-shadow: 3px 3px 5px 6px #ccc; 
+}
+.sirtext{
+  padding-top: 20px;
+  text-align: center;
+  line-height: 30px;
+  padding-right: 20px;
+  font-weight: 620;
+}
+.quotation-mark{
+    font-weight: bold;
+    font-size:48px;
+    color:blue;
+    font-family: "Times New Roman", Georgia, Serif;
+}
+.sirtext1{
+  margin-top: 10px;
+  text-align: right;
+  padding-right: 20px;
+  font-weight: 500;
+
+}
+.image1{
+  height: 250px;
+  width: 250px;
+  border-width: 2px;
+  border-style: solid;
+  border-radius: 10px;
+}
+
+@media only screen and (max-width:1050px) {
+  .sirphoto {
+  float: none;
+  height: 250px;
+  width: 250px;
+  margin: auto;
+  }
+  .sircontent{
+  margin-left: 10px;
+  margin-right: 10px;
+  height: auto;
+  width: auto;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+}
+
+/*End About Sir*/
+
+.teamhead{
+  font-weight: 400;
+}
+@media (max-width: 760px) {
+    .carousel-inner .carousel-item > div {
+        display: none;
+    }
+    .carousel-inner .carousel-item > div:first-child {
+        display: block;
+    }
+}
+@media only screen and (min-width:760px) and (max-width: 770px) {
+  .carousel-inner .carousel-item > div {
+      display: block;
+     
+  }
+  
+.card {
+  width:200px;
+ 
+}
+
+}
+@media only screen and (min-width:768px) and (max-width: 771px) {
+  .carousel-inner .carousel-item > div {
+      display: block;
+     
+  }
+  
+.card {
+  width:150px;
+ 
+}
+
+}
+
+.carousel-inner .carousel-item.active,
+.carousel-inner .carousel-item-next,
+.carousel-inner .carousel-item-prev {
+    display: flex;
+}
+
+/* display 3 */
+
+@media (min-width: 760px) {
+    
+    .carousel-inner .carousel-item-right.active,
+    .carousel-inner .carousel-item-next {
+      /*transform: translateX(33.333%);*/
+      position: relative;
+      transform: translate3d(0, 0, 0);
+    }
+    
+    .carousel-inner .carousel-item-left.active, 
+    .carousel-inner .carousel-item-prev {
+     
+      position: relative;
+      transform: translate3d(-100%, 0, 0);
+      display: none;
+      visibility: hidden;
+     
+      
+    }
+    
+}
+
+.carousel-inner .carousel-item-next,
+.carousel-inner .carousel-item-prev {
+  position: relative;
+  transform: translate3d(0, 0, 0);
+}
+
+.main{
+  border:1px solid blue;
+  border-radius: 20px;
+  margin:10%;
+  height: auto;
+}
+.team-title{
+  color:Blue;
+  text-align: center;
+  font-size: xx-large;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  
+}
+
+.teamcontainer h4{
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  
+}
+
+.teamcontainer {
+  margin-top: 40px !important;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  text-align: center;
+  font-family: arial;
+  margin: 0.5em;
+  margin-right: 10px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.link a {
+  text-decoration: none;
+  font-size: 35px;
+  padding: 2px;
+  color: white;
+  padding-left: 10px;
+}
+
+.name {
+  color: white;
+}
+
+.img1 {
+  width: 100%;
+  max-width: 360px;
+  height: 180px;
+}
+
+.branch-name {
+  color: white;
+  font-size: 13px;
+  margin-bottom: 0px;
+}
+
+.overlay {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  width: 100%;
+  height: 15%;
+  transition: .5s ease;
+  background: linear-gradient( to top, rgb(24, 24, 24), rgba(0, 0, 0, 0.3));
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.teamcard:hover .overlay {
+  height: 47%;
+}
+
+.link {
+  margin-top: 0px;
+}
+
+.link .fa {
+  font-size: 20px;
+  margin-top: 0cm;
+  padding-top: 0cm;
+  margin-right: 5px;
+  margin-left: 5px;
+  
+}
+
+@media only screen and (max-width:432px) {
+
+  .img1 {
+    width: 100%;
+    max-width: 180px;
+    max-height: 180px;
+    min-height: 180px;
+    height: auto;
+  }
+  .name h5 {
+    font-size: 20px;
+  }
+  .timelinehead{
+    font-size: 27px;
+  }
+}
+
+@media only screen and (min-width:760px) and (max-width: 1024px) {
+  .main{
+    margin:0;
+  }
+  .link {
+    padding-top: 45%;
+  }
+  .img1 {
+    width: 100%;
+    max-width: 150px;
+    height: 150px;
+  }
+  .name {
+    padding: 6px;
+    font-size: 15px;
+  }
+  .link {
+    padding-top: 0%;
+  }
+  .teamcard:hover .overlay {
+    height: 53%;
+}  
+
+}
+@media only screen and (max-width:432px) {
+  .main{
+    margin:0px;
+  }
+ 
+  .card{
+    margin-left:30px ;
+    margin-right:30px ;
+  }
+}
+@media only screen and (min-width:450px) and (max-width: 759px) {
+  .card{
+    margin:auto ;
+  }
+}
+
+@media only screen and (min-width:770px) and (max-width: 1000px) {
+  .link {
+    padding-top: 0%;
+  }
+  .teamcard:hover .overlay {
+    height: 55%;
+}  
+.overlay {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+    width: 100%;
+    height: 21%;
+    transition: .5s ease;
+    background: linear-gradient( to top, rgb(24, 24, 24), rgba(0, 0, 0, 0.3));
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  }
+}
+
+/*footer css*/
+
+.footer {
+  background-color: black;
+  width: auto;
+  padding-top: 30px;
+  padding-bottom: 20px;
+}
+
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
+}
+
+.column {
+  float: left;
+  color: white;
+  text-align: left;
+}
+
+.column .side {
+  text-align: left;
+}
+
+.column .side .bb .a:hover {
+  text-decoration: none;
+}
+
+ul.bb {
+  list-style-type: none;
+  padding: 0;
+  color: white;
+  font-size: 14px;
+}
+
+/* .button  {
+  background-color:#2d9cc2;
+  border: none;
+  color: white;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 12px;
+  padding-right: 14px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 18px;
+  margin: 4px 2px;
+  cursor: pointer;
+  font-weight: bold;
+} */
+
+.footer-btn {
+  background-color: #2d9cc2;
+  cursor: pointer;
+}
+
+.footer-btn:hover {
+  background-color: green;
+}
+
+.button1:active {
+  outline: none;
+  background-color: green;
+}
+
+.column .fa {
+  font-size: 18px;
+}
+
+.counter {
+  height: 30px;
+}
+
+/*footer css*/
