@@ -17,12 +17,9 @@ def login(request):
         user = authenticate(request, username = username, password = password)
         if user is not None:
             auth.login(request, user)
-            print('User verified')
-            print(request.user.username)
             return redirect("subjects")
         else:
             messages.error(request, 'Input correct username and password')
-            print('No such user')
     template_name = 'login.html'
     return render(request, template_name)
 
@@ -74,17 +71,13 @@ def resetPasswordQuestions(request):
         question1=request.POST.get("question1")
         question2=request.POST.get("question2")
         question3=request.POST.get("question3")
-        print(question1,question2)
         if Student.objects.filter(email=email,question1=question1,question2=question2,question3=question3).exists():
-            print("inside q")
             password=Student.objects.get(email=email).password
-            print(password)
             user = authenticate(request, username = email, password = password)
             auth.login(request,user)
             return redirect("resetPassword")
         else:
             messages.error(request, 'input correct email or answers')
-            print('incorrect answers or email')
     template_name = 'resetPasswordQuestions.html'
     return render(request, template_name)
 
@@ -102,61 +95,63 @@ def resetPassword(request):
             return redirect("subject")
         else:
             messages.error(request, 'Input correct email id')
-            print('incorrect email')
             return redirect("resetPassword")
     template_name = 'resetPassword.html'
     return render(request, template_name)
-
-@login_required(login_url="login")
-def documents(request,subject,topic):
-    if request.method == "POST" and request.FILES['file-upload-input-doc1']:
-        email = request.user.username
-        studentUploads = StudentUpload.objects.filter(student__email__contains = email, activity__topic__name__contains = topic, activity__topic__subject__name__contains = subject)
-        activity_name=request.POST["activity_name"]
-        act = Activity.objects.get(name = activity_name, topic__name__contains = topic, topic__subject__name__contains = subject)
-        stu = Student.objects.get(email = email)
-        new = StudentUpload.objects.create(
-            student = stu,
-            status = 'Uploaded',
-            activity = act,
-        )
-        new.save()
-        new.files = request.FILES['file-upload-input-doc1']
-        new.name = request.FILES['file-upload-input-doc1'].name
-        new.save()
-    email = request.user.username
-    
-    studentUploads = StudentUpload.objects.filter(student__email__contains = email, activity__topic__name__contains = topic, activity__topic__subject__name__contains = subject)
-    message=""
-    if(StudentUpload.objects.filter(student__email__contains = email, activity__topic__name__contains = topic, activity__topic__subject__name__contains = subject, status="Rejected").exists()):
-        message="Your previous activity was rejected. Please upload a different one."
-    StudentUpload.objects.filter(student__email__contains = email, activity__topic__name__contains = topic, activity__topic__subject__name__contains = subject, status="Rejected").delete()
-    documents_list_names=["doc1","doc2","doc3"]
-    activity_questions_list_names=["activity_1"]
-    documents=[]
-    activities=[]
-    for u in studentUploads:
-        if u.activity.name == "activity_1":
-            if u.status == "Approved":
-                documents_list_names+=["doc4","doc5","doc6"]
-                print("act1 approved")
-                activity_questions_list_names+=["activity_2"]
-        else:
-            if u.status == "Approved":
-                documents_list_names+=["doc7","doc8","doc9"]
-                print("act2 approved") 
-    for i in documents_list_names:
-        documents+=Document.objects.filter(name= i , topic__name__contains = topic, topic__subject__name__contains = subject)
-    for j in activity_questions_list_names:
-        activities+=Activity.objects.filter(name= j , topic__name__contains = topic, topic__subject__name__contains = subject)
-    template_name = 'documents.html'
-    print("subject:",subject)
-    print("topic:",topic)
-    context={'subject':subject,'topic':topic, 'documents' : documents, 'activities' : activities, 'uploads' : studentUploads, 'message':message}
-    return render(request,template_name,context)
 
 
 @login_required(login_url="login")
 def subjects(request):
     context={'student':Student.objects.get(email=request.user.username)}
     return render(request, 'subjects.html',context)
+
+
+@login_required(login_url="login")
+def documents(request,subject,topic):
+    if(subject=="EEEE"):
+        template_name=str(topic)+".html"
+        context={'subject':subject,'topic':topic,'student':Student.objects.get(email=request.user.username)}
+        return render(request,template_name,context)
+    else:
+        if request.method == "POST" and request.FILES['file-upload-input-doc1']:
+            email = request.user.username
+            studentUploads = StudentUpload.objects.filter(student__email__contains = email, activity__topic__name__contains = topic, activity__topic__subject__name__contains = subject)
+            activity_name=request.POST["activity_name"]
+            act = Activity.objects.get(name = activity_name, topic__name__contains = topic, topic__subject__name__contains = subject)
+            stu = Student.objects.get(email = email)
+            new = StudentUpload.objects.create(
+                student = stu,
+                status = 'Uploaded',
+                activity = act,
+            )
+            new.save()
+            new.files = request.FILES['file-upload-input-doc1']
+            new.name = request.FILES['file-upload-input-doc1'].name
+            new.save()
+        email = request.user.username
+        
+        studentUploads = StudentUpload.objects.filter(student__email__contains = email, activity__topic__name__contains = topic, activity__topic__subject__name__contains = subject)
+        message=""
+        if(StudentUpload.objects.filter(student__email__contains = email, activity__topic__name__contains = topic, activity__topic__subject__name__contains = subject, status="Rejected").exists()):
+            message="Your previous activity was rejected. Please upload a different one."
+        StudentUpload.objects.filter(student__email__contains = email, activity__topic__name__contains = topic, activity__topic__subject__name__contains = subject, status="Rejected").delete()
+        documents_list_names=["doc1","doc2","doc3"]
+        activity_questions_list_names=["activity_1"]
+        documents=[]
+        activities=[]
+        for u in studentUploads:
+            if u.activity.name == "activity_1":
+                if u.status == "Approved":
+                    documents_list_names+=["doc4","doc5","doc6"]
+                    activity_questions_list_names+=["activity_2"]
+            else:
+                if u.status == "Approved":
+                    documents_list_names+=["doc7","doc8","doc9"]
+        for i in documents_list_names:
+            documents+=Document.objects.filter(name= i , topic__name__contains = topic, topic__subject__name__contains = subject)
+        for j in activity_questions_list_names:
+            activities+=Activity.objects.filter(name= j , topic__name__contains = topic, topic__subject__name__contains = subject)
+        template_name = 'documents.html'
+        context={'subject':subject,'topic':topic, 'documents' : documents, 'activities' : activities, 'uploads' : studentUploads, 'message':message,'student':Student.objects.get(email=request.user.username)}
+        return render(request,template_name,context)
+
