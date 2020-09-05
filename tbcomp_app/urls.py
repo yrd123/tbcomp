@@ -11,6 +11,7 @@ urlpatterns = [
     path('resetPassword', views.resetPassword, name="resetPassword"),
     path('subjects',views.subjects, name="subjects"),
     path('<str:subject>/<str:topic>/documents',views.documents,name="documents"),
+    path('aboutus', views.aboutus, name="aboutus")
 ]
 
 

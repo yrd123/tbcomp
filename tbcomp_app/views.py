@@ -156,3 +156,6 @@ def documents(request,subject,topic):
         context={'subject':subject,'topic':topic, 'documents' : documents, 'activities' : activities, 'uploads' : studentUploads, 'message':message,'student':Student.objects.get(email=request.user.username)}
         return render(request,template_name,context)
 
+def aboutus(request):
+    return render(request,'aboutus.html')
+

@@ -65,10 +65,10 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="">Home <span class="fa fa-home"></span><span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="{% url 'index' %}">Home <span class="fa fa-home"></span><span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item underlinehover">
-            <a class="nav-link" href="">About Us <span class="fa fa-phone"></span></a>
+            <a class="nav-link" href="{% url 'aboutus' %}">About Us <span class="fa fa-phone"></span></a>
           </li>
         </ul>
 
@@ -280,8 +280,8 @@
               <li><a href="/" style="text-decoration: none;color:#2d9cc2;" class="fa fa-home"></a><a href="/"
                   style="text-decoration: none;color:white"> Home</a></li>
               <br>
-              <li><a href="/" class="fa fa-phone" style="text-decoration: none;color:#2d9cc2;"></a><a href="/"
-                  style="text-decoration: none;color:white"> Contact</a></li>
+              <li><a href="{% url 'aboutus' %}" class="fa fa-phone" style="text-decoration: none;color:#2d9cc2;"></a><a href="/"
+                  style="text-decoration: none;color:white"> About</a></li>
               <br>
               <li><a href="{% url 'login' %}" style="text-decoration: none;color:#2d9cc2;" class="fa fa-sign-in"></a>
                 {% if user.is_authenticated %}

@@ -39,11 +39,11 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item underlinehover">
-                        <a class="nav-link" href="/">Home <span class="fa fa-home"></span><span
+                        <a class="nav-link" href="{% url 'index' %}">Home <span class="fa fa-home"></span><span
                                 class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item underlinehover">
-                        <a class="nav-link" href="#">About Us <span class="fa fa-phone"></span></a>
+                        <a class="nav-link" href="{% url 'aboutus' %}">About Us <span class="fa fa-phone"></span></a>
                     </li>
                 </ul>
 
@@ -782,7 +782,7 @@
                 <div class="column col-xl-3 col-md-3 col-sm-12 offset-md-1 side">
                     <h6 style="font-weight:bold">Register for free</h5>
                         <br>
-                        <a href="..\register\register.html">
+                        <a href="{% url 'signup' %}">
                             <!-- <button class="button button1">Sign Up!</button> -->
                             <button type="button" style="color:white;" class="btn  footer-btn">Sign Up</button>
                         </a>
@@ -792,12 +792,12 @@
                     <h6 style="font-weight:bold">Useful links</h5>
                         <br>
                         <ul class="bb">
-                            <li><a href="index.html" style="text-decoration: none;color:#2d9cc2;"
-                                    class="fa fa-home"></a><a href="index.html"
+                            <li><a href="{% url 'index' %}" style="text-decoration: none;color:#2d9cc2;"
+                                    class="fa fa-home"></a><a href="{% url 'index' %}"
                                     style="text-decoration: none;color:white"> Home</a></li>
                             <br>
                             <li><a href="#" class="fa fa-phone" style="text-decoration: none;color:#2d9cc2;"></a><a
-                                    href="#" style="text-decoration: none;color:white"> Contact</a></li>
+                                    href="{% url 'aboutus' %}" style="text-decoration: none;color:white">About</a></li>
                             <br>
                             <li><a href="{% url 'logout' %}" style="text-decoration: none;color:#2d9cc2;"
                                     class="fa fa-sign-in"></a><a href="{% url 'logout' %}"
@@ -812,7 +812,7 @@
                                 style="font-size:18px;color:#2d9cc2;"></a> K.J. Somaiya College of Engineering
                             <br> Vidyanagar, Vidyavihar<br>
                             Mumbai, India </p>
-                        <p><a class="fa fa-envelope" style="font-size:14px;color:#2d9cc2;"></a> Email</p>
+                        <p><a class="fa fa-envelope" style="font-size:14px;color:#2d9cc2;" href="mailto:inderjitsingh@somaiya.edu"></a> Email</p>
                 </div>
 
                 <div class="column col-xl-3 col-md-3 col-sm-12 side">

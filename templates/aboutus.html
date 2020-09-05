@@ -1,3 +1,4 @@
+{% load static %}
 <html>
 
 <head>
@@ -9,7 +10,7 @@
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    <link rel="stylesheet" type="text/css" href="page.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/aboutus.css' %}">
    
 </head>
 
@@ -23,16 +24,16 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item underlinehover">
-            <a class="nav-link" href="#">Home <span class="fa fa-home"></span> <span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="{% url 'index' %}">Home <span class="fa fa-home"></span> <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item underlinehover">
-            <a class="nav-link" href="#">Contact Us <span class="fa fa-phone"></span></a>
+            <a class="nav-link" href="{% url 'aboutus' %}">About Us <span class="fa fa-phone"></span></a>
           </li>
         </ul>
       
         <ul class="navbar-nav ml-auto"> 
               <li class="nav-item underlinehover "> 
-                <a class="nav-link " href="..\login\login.html">Login <span class="fa fa-sign-in"></span></a>    
+                <a class="nav-link " href="{% url 'login' %}">Login<span class="fa fa-sign-in"></span></a>    
               </li> 
             </ul>
       </div>
@@ -50,7 +51,7 @@
   <div class='col-md-6 maindiv'>
 
     <div class="sirphoto">
-        <img src="sirpic.jpg" class="image1">
+        <img src="../../media/images/aboutus/sirpic.jpg" class="image1">
     </div>
     <div class="sircontent">
     <div class="sirtext">
@@ -80,7 +81,7 @@
                         <div class="col-md-3">
                             <div class="card card-body">
                                 <div class="teamcard">
-                                    <img class="img1" src="./images/phase1_sharvari.png" alt="sharvari">
+                                    <img class="img1" src="../../media/images/aboutus/phase1_sharvari.png" alt="sharvari">
                                     <div class="overlay">
                                         <div class="link">
                                             <h5 class="name">Sharvari Baradkar</h5>
@@ -97,7 +98,7 @@
                         <div class="col-md-3">
                             <div class="card card-body">
                                 <div class="teamcard">
-                                    <img class="img1" src="./images/phase1_swetha.png" alt="swetha">
+                                    <img class="img1" src="../../media/images/aboutus/phase1_swetha.png" alt="swetha">
                                     <div class="overlay">
 
                                         <div class="link">
@@ -115,7 +116,7 @@
                         <div class="col-md-3">
                             <div class="card card-body">
                                 <div class="teamcard">
-                                    <img class="img1" src="./images/phase1_chinmay.png" alt="chinmay">
+                                    <img class="img1" src="../../media/images/aboutus/phase1_chinmay.png" alt="chinmay">
                                     <div class="overlay">
 
                                         <div class="link">
@@ -133,7 +134,7 @@
                         <div class="col-md-3">
                             <div class="card card-body">
                                 <div class="teamcard">
-                                    <img class="img1" src="./images/phase1_vruksha.png" alt="vruksha">
+                                    <img class="img1" src="../../media/images/aboutus/phase1_vruksha.png" alt="vruksha">
                                     <div class="overlay">
 
                                         <div class="link">
@@ -151,7 +152,7 @@
                         <div class="col-md-3">
                             <div class="card card-body">
                                 <div class="teamcard">
-                                    <img class="img1" src="./images/phase1_gayatri.jpg" alt="gayatri">
+                                    <img class="img1" src="../../media/images/aboutus/phase1_gayatri.jpg" alt="gayatri">
                                     <div class="overlay">
 
                                         <div class="link">
@@ -169,7 +170,7 @@
                         <div class="col-md-3">
                             <div class="card card-body">
                                 <div class="teamcard">
-                                    <img class="img1" src="./images/phase1_abhishek.jpg" alt="abhishek">
+                                    <img class="img1" src="../../media/images/aboutus/phase1_abhishek.jpg" alt="abhishek">
                                     <div class="overlay">
 
                                         <div class="link">
@@ -187,7 +188,7 @@
                         <div class="col-md-3">
                             <div class="card card-body">
                                 <div class="teamcard">
-                                    <img class="img1" src="./images/phase1_mitali.jpg" alt="mitali">
+                                    <img class="img1" src="../../media/images/aboutus/phase1_mitali.jpg" alt="mitali">
                                     <div class="overlay">
 
                                         <div class="link">
@@ -205,7 +206,7 @@
                         <div class="col-md-3">
                             <div class="card card-body">
                                 <div class="teamcard">
-                                    <img class="img1" src="./images/phase1_sushant.png" alt="sushant">
+                                    <img class="img1" src="../../media/images/aboutus/phase1_sushant.png" alt="sushant">
                                     <div class="overlay">
 
                                         <div class="link">
@@ -223,7 +224,7 @@
                         <div class="col-md-3">
                             <div class="card card-body">
                                 <div class="teamcard">
-                                    <img class="img1" src="./images/phase1_raghvendra.jpg" alt="raghvendra">
+                                    <img class="img1" src="../../media/images/aboutus/phase1_raghvendra.jpg" alt="raghvendra">
                                     <div class="overlay">
 
                                         <div class="link">
@@ -241,7 +242,7 @@
                         <div class="col-md-3">
                             <div class="card card-body">
                                 <div class="teamcard">
-                                    <img class="img1" src="./images/phase1_rohit.png" alt="rohit">
+                                    <img class="img1" src="../../media/images/aboutus/phase1_rohit.png" alt="rohit">
                                     <div class="overlay">
 
                                         <div class="link">
@@ -281,7 +282,7 @@
                     <div class="col-md-3">
                         <div class="card card-body">
                             <div class="teamcard">
-                                <img class="img1" src="./images/phase2_suparshwa.png" alt="suparshwa">
+                                <img class="img1" src="../../media/images/aboutus/phase2_suparshwa.png" alt="suparshwa">
                                 <div class="overlay">
 
                                     <div class="link">
@@ -299,7 +300,7 @@
                     <div class="col-md-3">
                         <div class="card card-body">
                             <div class="teamcard">
-                                <img class="img1" src="./images/phase2_ajinkya.png" alt="ajinkya">
+                                <img class="img1" src="../../media/images/aboutus/phase2_ajinkya.png" alt="ajinkya">
                                 <div class="overlay">
 
                                     <div class="link">
@@ -317,7 +318,7 @@
                     <div class="col-md-3">
                         <div class="card card-body">
                             <div class="teamcard">
-                                <img class="img1" src="./images/phase2_esha.png" alt="esha">
+                                <img class="img1" src="../../media/images/aboutus/phase2_esha.png" alt="esha">
                                 <div class="overlay">
 
                                     <div class="link">
@@ -335,7 +336,7 @@
                     <div class="col-md-3">
                         <div class="card card-body">
                             <div class="teamcard">
-                                <img class="img1" src="./images/phase2_rohit.jpg" alt="rohit">
+                                <img class="img1" src="../../media/images/aboutus/phase2_rohit.jpg" alt="rohit">
                                 <div class="overlay">
 
                                     <div class="link">
@@ -353,7 +354,7 @@
                     <div class="col-md-3">
                         <div class="card card-body">
                             <div class="teamcard">
-                                <img class="img1" src="./images/phase2_shreyasi.png" alt="shreyasi">
+                                <img class="img1" src="../../media/images/aboutus/phase2_shreyasi.png" alt="shreyasi">
                                 <div class="overlay">
 
                                     <div class="link">
@@ -371,7 +372,7 @@
                     <div class="col-md-3">
                         <div class="card card-body">
                             <div class="teamcard">
-                                <img class="img1" src="./images/phase2_kunj.png" alt="kunj">
+                                <img class="img1" src="../../media/images/aboutus/phase2_kunj.png" alt="kunj">
                                 <div class="overlay">
 
                                     <div class="link">
@@ -389,7 +390,7 @@
                     <div class="col-md-3">
                         <div class="card card-body">
                             <div class="teamcard">
-                                <img class="img1" src="./images/phase2_mitwa.png" alt="mitwa">
+                                <img class="img1" src="../../media/images/aboutus/phase2_mitwa.png" alt="mitwa">
                                 <div class="overlay">
 
                                     <div class="link">
@@ -407,7 +408,7 @@
                     <div class="col-md-3">
                         <div class="card card-body">
                             <div class="teamcard">
-                                <img class="img1" src="./images/phase2_shreyans.png" alt="shreyans">
+                                <img class="img1" src="../../media/images/aboutus/phase2_shreyans.png" alt="shreyans">
                                 <div class="overlay">
 
                                     <div class="link">
@@ -425,7 +426,7 @@
                     <div class="col-md-3">
                         <div class="card card-body">
                             <div class="teamcard">
-                                <img class="img1" src="./images/phase2_pankti.png" alt="pankti">
+                                <img class="img1" src="../../media/images/aboutus/phase2_pankti.png" alt="pankti">
                                 <div class="overlay">
 
                                     <div class="link">
@@ -465,7 +466,7 @@
                     <div class="col-md-3">
                         <div class="card card-body">
                             <div class="teamcard">
-                                <img class="img1" src="./images/phase3_yash.PNG" alt="yash">
+                                <img class="img1" src="../../media/images/aboutus/phase3_yash.PNG" alt="yash">
                                 <div class="overlay">
 
                                     <div class="link">
@@ -483,7 +484,7 @@
                     <div class="col-md-3">
                         <div class="card card-body">
                             <div class="teamcard">
-                                <img class="img1" src="./images/phase3_param.png" alt="param">
+                                <img class="img1" src="../../media/images/aboutus/phase3_param.png" alt="param">
                                 <div class="overlay">
 
                                     <div class="link">
@@ -501,7 +502,7 @@
                     <div class="col-md-3">
                         <div class="card card-body">
                             <div class="teamcard">
-                                <img class="img1" src="./images/phase3_nandini.png" alt="nandini">
+                                <img class="img1" src="../../media/images/aboutus/phase3_nandini.png" alt="nandini">
                                 <div class="overlay">
 
                                     <div class="link">
@@ -519,7 +520,7 @@
                     <div class="col-md-3">
                         <div class="card card-body">
                             <div class="teamcard">
-                                <img class="img1" src="./images/phase3_suparshwa.png" alt="suparshwa">
+                                <img class="img1" src="../../media/images/aboutus/phase3_suparshwa.png" alt="suparshwa">
                                 <div class="overlay">
 
                                     <div class="link">
@@ -537,7 +538,7 @@
                     <div class="col-md-3">
                         <div class="card card-body">
                             <div class="teamcard">
-                                <img class="img1" src="./images/phase3_ajinkya.png" alt="ajinkya">
+                                <img class="img1" src="../../media/images/aboutus/phase3_ajinkya.png" alt="ajinkya">
                                 <div class="overlay">
 
                                     <div class="link">
@@ -555,7 +556,7 @@
                     <div class="col-md-3">
                         <div class="card card-body">
                             <div class="teamcard">
-                                <img class="img1" src="./images/phase3_esha.png" alt="esha">
+                                <img class="img1" src="../../media/images/aboutus/phase3_esha.png" alt="esha">
                                 <div class="overlay">
                                     <div class="link">
                                         <h5 class="name">Esha Gupta</h5>
@@ -572,7 +573,7 @@
                     <div class="col-md-3">
                         <div class="card card-body">
                             <div class="teamcard">
-                                <img class="img1" src="./images/phase3_kunj.png" alt="kunj">
+                                <img class="img1" src="../../media/images/aboutus/phase3_kunj.png" alt="kunj">
                                 <div class="overlay">
 
                                     <div class="link">
@@ -590,7 +591,7 @@
                     <div class="col-md-3">
                         <div class="card card-body">
                             <div class="teamcard">
-                                <img class="img1" src="./images/phase3_pankti.png" alt="pankti">
+                                <img class="img1" src="../../media/images/aboutus/phase3_pankti.png" alt="pankti">
                                 <div class="overlay">
 
                                     <div class="link">
@@ -628,7 +629,7 @@
                     <div class="col-md-3">
                         <div class="card card-body">
                             <div class="teamcard">
-                                <img class="img1" src="./images/eeee_aakash.jpg" alt="sharvari">
+                                <img class="img1" src="../../media/images/aboutus/eeee_aakash.jpg" alt="sharvari">
                                 <div class="overlay">
                                     <div class="link">
                                         <h5 class="name">Aakash Divakar</h5>
@@ -645,7 +646,7 @@
                     <div class="col-md-3">
                         <div class="card card-body">
                             <div class="teamcard">
-                                <img class="img1" src="./images/eeee_abhishek.jpg" alt="swetha">
+                                <img class="img1" src="../../media/images/aboutus/eeee_abhishek.jpg" alt="swetha">
                                 <div class="overlay">
 
                                     <div class="link">
@@ -663,7 +664,7 @@
                     <div class="col-md-3">
                         <div class="card card-body">
                             <div class="teamcard">
-                                <img class="img1" src="./images/eeee_aditya.jpg" alt="chinmay">
+                                <img class="img1" src="../../media/images/aboutus/eeee_aditya.jpg" alt="chinmay">
                                 <div class="overlay">
 
                                     <div class="link">
@@ -681,7 +682,7 @@
                     <div class="col-md-3">
                         <div class="card card-body">
                             <div class="teamcard">
-                                <img class="img1" src="./images/eeee_jyoti.jpg" alt="vruksha">
+                                <img class="img1" src="../../media/images/aboutus/eeee_jyoti.jpg" alt="vruksha">
                                 <div class="overlay">
 
                                     <div class="link">
@@ -699,7 +700,7 @@
                     <div class="col-md-3">
                         <div class="card card-body">
                             <div class="teamcard">
-                                <img class="img1" src="./images/eeee_keyur.jpg" alt="gayatri">
+                                <img class="img1" src="../../media/images/aboutus/eeee_keyur.jpg" alt="gayatri">
                                 <div class="overlay">
 
                                     <div class="link">
@@ -717,7 +718,7 @@
                     <div class="col-md-3">
                         <div class="card card-body">
                             <div class="teamcard">
-                                <img class="img1" src="./images/eeee_nachiket.png" alt="abhishek">
+                                <img class="img1" src="../../media/images/aboutus/eeee_nachiket.png" alt="abhishek">
                                 <div class="overlay">
 
                                     <div class="link">
@@ -735,7 +736,7 @@
                     <div class="col-md-3">
                         <div class="card card-body">
                             <div class="teamcard">
-                                <img class="img1" src="./images/eeee_sahil.jpg" alt="mitali">
+                                <img class="img1" src="../../media/images/aboutus/eeee_sahil.jpg" alt="mitali">
                                 <div class="overlay">
 
                                     <div class="link">
@@ -753,7 +754,7 @@
                     <div class="col-md-3">
                         <div class="card card-body">
                             <div class="teamcard">
-                                <img class="img1" src="./images/eeee_saumya.jpg" alt="sushant">
+                                <img class="img1" src="../../media/images/aboutus/eeee_saumya.jpg" alt="sushant">
                                 <div class="overlay">
 
                                     <div class="link">
@@ -771,7 +772,7 @@
                     <div class="col-md-3">
                         <div class="card card-body">
                             <div class="teamcard">
-                                <img class="img1" src="./images/eeee_akshara.png" alt="sharvari">
+                                <img class="img1" src="../../media/images/aboutus/eeee_akshara.png" alt="sharvari">
                                 <div class="overlay">
                                     <div class="link">
                                         <h5 class="name">Akshara Mehta</h5>
@@ -788,7 +789,7 @@
                     <div class="col-md-3">
                         <div class="card card-body">
                             <div class="teamcard">
-                                <img class="img1" src="./images/eeee_chetana.png" alt="swetha">
+                                <img class="img1" src="../../media/images/aboutus/eeee_chetana.png" alt="swetha">
                                 <div class="overlay">
 
                                     <div class="link">
@@ -806,7 +807,7 @@
                     <div class="col-md-3">
                         <div class="card card-body">
                             <div class="teamcard">
-                                <img class="img1" src="./images/eeee_dhrumil.png" alt="chinmay">
+                                <img class="img1" src="../../media/images/aboutus/eeee_dhrumil.png" alt="chinmay">
                                 <div class="overlay">
 
                                     <div class="link">
@@ -824,7 +825,7 @@
                     <div class="col-md-3">
                         <div class="card card-body">
                             <div class="teamcard">
-                                <img class="img1" src="./images/eeee_jas.jpg" alt="vruksha">
+                                <img class="img1" src="../../media/images/aboutus/eeee_jas.jpg" alt="vruksha">
                                 <div class="overlay">
 
                                     <div class="link">
@@ -842,7 +843,7 @@
                     <div class="col-md-3">
                         <div class="card card-body">
                             <div class="teamcard">
-                                <img class="img1" src="./images/eeee_kashish.jpg" alt="sharvari">
+                                <img class="img1" src="../../media/images/aboutus/eeee_kashish.jpg" alt="sharvari">
                                 <div class="overlay">
                                     <div class="link">
                                         <h5 class="name">Kashish shah</h5>
@@ -859,7 +860,7 @@
                     <div class="col-md-3">
                         <div class="card card-body">
                             <div class="teamcard">
-                                <img class="img1" src="./images/eeee_manas.png" alt="swetha">
+                                <img class="img1" src="../../media/images/aboutus/eeee_manas.png" alt="swetha">
                                 <div class="overlay">
 
                                     <div class="link">
@@ -877,7 +878,7 @@
                     <div class="col-md-3">
                         <div class="card card-body">
                             <div class="teamcard">
-                                <img class="img1" src="./images/eeee_sanika.png" alt="chinmay">
+                                <img class="img1" src="../../media/images/aboutus/eeee_sanika.png" alt="chinmay">
                                 <div class="overlay">
 
                                     <div class="link">
@@ -895,7 +896,7 @@
                     <div class="col-md-3">
                         <div class="card card-body">
                             <div class="teamcard">
-                                <img class="img1" src="./images/eeee_suryansh.png" alt="vruksha">
+                                <img class="img1" src="../../media/images/aboutus/eeee_suryansh.png" alt="vruksha">
                                 <div class="overlay">
 
                                     <div class="link">
@@ -913,7 +914,7 @@
                     <div class="col-md-3">
                         <div class="card card-body">
                             <div class="teamcard">
-                                <img class="img1" src="./images/eeee_advait.jpg" alt="sharvari">
+                                <img class="img1" src="../../media/images/aboutus/eeee_advait.jpg" alt="sharvari">
                                 <div class="overlay">
                                     <div class="link">
                                         <h5 class="name">Advait Narsikar</h5>
@@ -930,7 +931,7 @@
                     <div class="col-md-3">
                         <div class="card card-body">
                             <div class="teamcard">
-                                <img class="img1" src="./images/eeee_anoushka.jpg" alt="swetha">
+                                <img class="img1" src="../../media/images/aboutus/eeee_anoushka.jpg" alt="swetha">
                                 <div class="overlay">
 
                                     <div class="link">
@@ -948,7 +949,7 @@
                     <div class="col-md-3">
                         <div class="card card-body">
                             <div class="teamcard">
-                                <img class="img1" src="./images/eeee_aruna.jpg" alt="chinmay">
+                                <img class="img1" src="../../media/images/aboutus/eeee_aruna.jpg" alt="chinmay">
                                 <div class="overlay">
 
                                     <div class="link">
@@ -966,7 +967,7 @@
                     <div class="col-md-3">
                         <div class="card card-body">
                             <div class="teamcard">
-                                <img class="img1" src="./images/eeee_avanthika.png" alt="vruksha">
+                                <img class="img1" src="../../media/images/aboutus/eeee_avanthika.png" alt="vruksha">
                                 <div class="overlay">
 
                                     <div class="link">
@@ -984,7 +985,7 @@
                     <div class="col-md-3">
                         <div class="card card-body">
                             <div class="teamcard">
-                                <img class="img1" src="./images/eeee_harshal.png" alt="sharvari">
+                                <img class="img1" src="../../media/images/aboutus/eeee_harshal.png" alt="sharvari">
                                 <div class="overlay">
                                     <div class="link">
                                         <h5 class="name">Harshal Sooman</h5>
@@ -1001,7 +1002,7 @@
                     <div class="col-md-3">
                         <div class="card card-body">
                             <div class="teamcard">
-                                <img class="img1" src="./images/eeee_manoj.jpg" alt="swetha">
+                                <img class="img1" src="../../media/images/aboutus/eeee_manoj.jpg" alt="swetha">
                                 <div class="overlay">
 
                                     <div class="link">
@@ -1019,7 +1020,7 @@
                     <div class="col-md-3">
                         <div class="card card-body">
                             <div class="teamcard">
-                                <img class="img1" src="./images/eeee_pranay.png" alt="chinmay">
+                                <img class="img1" src="../../media/images/aboutus/eeee_pranay.png" alt="chinmay">
                                 <div class="overlay">
 
                                     <div class="link">
@@ -1037,7 +1038,7 @@
                     <div class="col-md-3">
                         <div class="card card-body">
                             <div class="teamcard">
-                                <img class="img1" src="./images/eeee_sakshi.png" alt="vruksha">
+                                <img class="img1" src="../../media/images/aboutus/eeee_sakshi.png" alt="vruksha">
                                 <div class="overlay">
 
                                     <div class="link">
@@ -1065,7 +1066,7 @@
 </div>
  <!-- EEEE Team end-->
 <br><br>
-<!--footerr-->
+<!--footer-->
     
 <div class="footer" >
     <div class="container">
@@ -1073,7 +1074,7 @@
         <div class="column col-xl-3 col-md-3 col-sm-12 offset-md-1 side">
         <h6 style="font-weight:bold">Register for free</h5>
         <br>
-          <a href="..\register\register.html">
+          <a href="{% url 'signup' %}">
             <!-- <button class="button button1">Sign Up!</button> -->
             <button type="button" style="color:white;" class="btn  footer-btn">Sign Up</button>
           </a>
@@ -1083,11 +1084,17 @@
           <h6  style="font-weight:bold">Useful links</h5>
           <br>
           <ul class="bb">
-              <li><a href="index.html" style="text-decoration: none;color:#2d9cc2;" class="fa fa-home" ></a><a href="index.html" style="text-decoration: none;color:white"> Home</a></li>
+              <li><a href="{% url 'index' %}" style="text-decoration: none;color:#2d9cc2;" class="fa fa-home" ></a><a href="{% url 'index' %}" style="text-decoration: none;color:white"> Home</a></li>
               <br>
-              <li><a href="#" class="fa fa-phone" style="text-decoration: none;color:#2d9cc2;" ></a><a href="#" style="text-decoration: none;color:white"> Contact</a></li>
+              <li><a href="{% url 'aboutus' %}" class="fa fa-phone" style="text-decoration: none;color:#2d9cc2;" ></a><a href="{% url 'aboutus' %}" style="text-decoration: none;color:white"> About</a></li>
               <br>
-              <li><a href="..\login\login.html" style="text-decoration: none;color:#2d9cc2;" class="fa fa-sign-in"></a><a href="..\login\login.html" style="text-decoration: none;color:white"> Login</a> </li>
+              <li>
+                  {% if user.is_authenticated %}
+                  <a href="{% url 'logout' %}" style="text-decoration: none;color:#2d9cc2;" class="fa fa-sign-in"></a><a href="{% url 'logout' %}" style="text-decoration: none;color:white"> Logout</a> 
+                  {% else %}
+                  <a href="{% url 'login' %}" style="text-decoration: none;color:#2d9cc2;" class="fa fa-sign-in"></a><a href="{% url 'login' %}" style="text-decoration: none;color:white"> Login</a>
+                  {% endif %}
+              </li>
           </ul>
         </div>
   
@@ -1095,10 +1102,10 @@
         <div class="column col-xl-3 col-md-3 col-sm-12 side">
           <h6 style="font-weight:bold">Contact Us</h5>
           <br>
-          <p style="font-size: 14px;"><a class="fa fa-map-marker" style="font-size:18px;color:#2d9cc2;"></a> K.J. Somaiya College of Engineering
+          <p style="font-size: 14px;"><a class="fa fa-map-marker" style="font-size:18px;color:#0f1416;"></a> K.J. Somaiya College of Engineering
           <br> Vidyanagar, Vidyavihar<br>
           Mumbai, India </p>
-          <p><a class="fa fa-envelope" style="font-size:14px;color:#2d9cc2;"></a> Email</p>
+          <p><a class="fa fa-envelope" style="font-size:14px;color:#2d9cc2;" href="mailto:inderjitsingh@somaiya.edu"> Email</a></p>
         </div>
   
           
@@ -1132,7 +1139,7 @@
   <!-- Custom scripts for this template -->
   <script src="grayscale.min.js"></script>   
   
-  <script type="text/javascript" src="page.js"></script>
+  <script type="text/javascript" src="{% static 'js/aboutus.js' %}"></script>
 </body>
 
 </html>
