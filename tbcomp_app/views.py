@@ -101,6 +101,11 @@ def resetPassword(request):
 
 
 @login_required(login_url="login")
+def homeToSubjects(request):
+    context={'student':Student.objects.get(email=request.user.username)}
+    return render(request, 'subjects.html',context)
+
+@login_required(login_url="login")
 def subjects(request):
     context={'student':Student.objects.get(email=request.user.username)}
     return render(request, 'subjects.html',context)
