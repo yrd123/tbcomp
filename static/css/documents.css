@@ -1,3 +1,17 @@
+.overlay {
+  width: 100%;
+  height: 93%;
+  position: absolute;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+  padding: 10px;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 10px 10px 10px 10px;
+}
+
 .our-navbar{
   zoom:105%;
 }
@@ -8,6 +22,11 @@
   padding-left: 25px;
   text-align: left;
   font-family: Arial, Helvetica, sans-serif;
+  font-size: 17px;
+}
+
+.heading .badge{
+  font-size: large;
 }
 
 .heading .badge:hover{
@@ -90,7 +109,7 @@
     padding-bottom: 3px;
   }
   .heading {
-    font-size: 28px;
+    font-size: 18px;
   }
 }
 
