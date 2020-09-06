@@ -7,12 +7,12 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <link rel="stylesheet" type="text/css" href="{% static 'css/aboutus.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'css/navbar.css' %}">
-   
+
 </head>
 
 <body>
@@ -20,63 +20,75 @@
     <div class='our-navbar'>
         <nav class="navbar navbar-dark navbar-expand-lg fixed-top">
             <a class="navbar-brand" href="#">Inderjit Singh</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav mr-auto">
-                <li class="nav-item underlinehover">
-                  <a class="nav-link" href="{% url 'index' %}">Home <span class="fa fa-home"></span> <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item underlinehover">
-                  <a class="nav-link" href="{% url 'aboutus' %}">About Us <i class="fa fa-users" aria-hidden="true"></i></a>
-                </li>
-              </ul>
-            
-              <ul class="navbar-nav ml-auto"> 
-                    <li class="nav-item underlinehover "> 
-                      <a class="nav-link " href="{% url 'login' %}">Login<span class="fa fa-sign-in"></span></a>    
-                    </li> 
-                  </ul>
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item underlinehover">
+                        <a class="nav-link" href="{% url 'index' %}">Home <span class="fa fa-home"></span> <span
+                                class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="{% url 'aboutus' %}">About Us <i class="fa fa-users"
+                                aria-hidden="true"></i></a>
+                    </li>
+                </ul>
+
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item underlinehover ">
+                        {% if user.is_authenticated %}
+                        <a class="nav-link " href="{% url 'logout' %}">Logout <span class="fa fa-sign-out"></span></a>
+                        {% else %}
+                        <a class="nav-link " href="{% url 'login' %}">Login <span class="fa fa-sign-in"></span></a>
+                        {% endif %}
+                    </li>
+                </ul>
             </div>
-          </nav>
+        </nav>
     </div>
-    
-  <!-- navbar ends -->
-  <br>
-  <br>
-  <br>
+
+    <!-- navbar ends -->
+    <br>
+    <br>
+    <br>
 
     <!-- ABOUT US -->
     <h1 class="teamhead aboutheading" align="center">About Us</h1>
-  <div class="row row1">
+    <div class="row row1">
 
-  <!-- <div class='col-md-3'></div> -->
-  <div class='col-md-6 maindiv'>
+        <!-- <div class='col-md-3'></div> -->
+        <div class='col-md-6 maindiv'>
 
-    <div class="sirphoto">
-        <img src="../../media/images/aboutus/sirpic.jpg" class="image1">
+            <div class="sirphoto">
+                <img src="../../media/images/aboutus/sirpic.jpg" class="image1">
+            </div>
+            <div class="sircontent">
+                <div class="sirtext">
+                    <span class="quotation-mark">“</span>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
+                    do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                    exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+                    reprehenderit in voluptate velit esse proident, sunt in culpa qui officia.<span
+                        class="quotation-mark">”</span>
+                    <p class="sirtext1">-Inderjit Singh</p>
+
+
+                </div>
+            </div>
+        </div>
+        <!-- <div class='col-md-3'></div> -->
     </div>
-    <div class="sircontent">
-    <div class="sirtext">
-        <span class="quotation-mark">“</span>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse proident, sunt in culpa qui officia.<span class="quotation-mark">”</span>
-        <p class="sirtext1">-Inderjit Singh</p>
-        
-    
-    </div>
-    </div>
-  </div>
-  <!-- <div class='col-md-3'></div> -->
-  </div>
     <!-- End About Us -->
 
     <br><br>
     <h1 class="teamhead" align="center">Team Members</h1>
     <br>
- <!-- Simulation Core Project start-->
+    <!-- Simulation Core Project start-->
     <div class="container text-center my-3">
         <h2 class="font-weight-light timelinehead">Simulation Core Project</h2>
-        <h7 class="font-weight-light">To create LTspice .asc files for solved & unsolved numericals in standard Electronic engineering textbooks</h7>
+        <h7 class="font-weight-light">To create LTspice .asc files for solved & unsolved numericals in standard
+            Electronic engineering textbooks</h7>
         <br>
         <div class="row mx-auto my-auto">
             <div id="sim" class="carousel slide w-100" data-ride="carousel">
@@ -85,12 +97,14 @@
                         <div class="col-md-3">
                             <div class="card card-body">
                                 <div class="teamcard">
-                                    <img class="img1" src="../../media/images/aboutus/phase1_sharvari.png" alt="sharvari">
+                                    <img class="img1" src="../../media/images/aboutus/phase1_sharvari.png"
+                                        alt="sharvari">
                                     <div class="overlay">
                                         <div class="link">
                                             <h5 class="name">Sharvari Baradkar</h5>
                                             <p class="branch-name">ETRX</p>
-                                            <a href="https://www.linkedin.com/in/sharvari-baradkar-05230a1b5"><i class="fa fa-linkedin"></i></a>
+                                            <a href="https://www.linkedin.com/in/sharvari-baradkar-05230a1b5"><i
+                                                    class="fa fa-linkedin"></i></a>
                                             <a href="mailto:s.baradkar@somaiya.edu"><i class="fa fa-envelope"></i></a>
                                         </div>
                                     </div>
@@ -108,7 +122,8 @@
                                         <div class="link">
                                             <h5 class="name">Swetha Chilveri</h5>
                                             <p class="branch-name">EXTC</p>
-                                            <a href="https://www.linkedin.com/in/swetha-chiliveri-714653192/"><i class="fa fa-linkedin"> </i></a>
+                                            <a href="https://www.linkedin.com/in/swetha-chiliveri-714653192/"><i
+                                                    class="fa fa-linkedin"> </i></a>
                                             <a href="mailto:swetha.c@somaiya.edu"><i class="fa fa-envelope"> </i></a>
                                         </div>
                                     </div>
@@ -126,7 +141,8 @@
                                         <div class="link">
                                             <h5 class="name">Chinmay Kumar</h5>
                                             <p class="branch-name">EXTC</p>
-                                            <a href="https://www.linkedin.com/in/chinmay06"><i class="fa fa-linkedin"></i></a>
+                                            <a href="https://www.linkedin.com/in/chinmay06"><i
+                                                    class="fa fa-linkedin"></i></a>
                                             <a href="mailto:sunil.ck@somaiya.edu"><i class="fa fa-envelope"></i></a>
                                         </div>
                                     </div>
@@ -144,7 +160,8 @@
                                         <div class="link">
                                             <h5 class="name">Vruksha Joshi</h5>
                                             <p class="branch-name">ETRX</p>
-                                            <a href="https://www.linkedin.com/in/vruksha-joshi-576a9818b"><i class="fa fa-linkedin"></i></a>
+                                            <a href="https://www.linkedin.com/in/vruksha-joshi-576a9818b"><i
+                                                    class="fa fa-linkedin"></i></a>
                                             <a href="mailto:vruksha.j@somaiya.edu "><i class="fa fa-envelope"></i></a>
                                         </div>
                                     </div>
@@ -162,8 +179,10 @@
                                         <div class="link">
                                             <h5 class="name">Gayatri Mahindrakar</h5>
                                             <p class="branch-name">ETRX</p>
-                                            <a href="https://www.linkedin.com/in/gayatri-mahindrakar-9332911ab"><i class="fa fa-linkedin"></i></a>
-                                            <a href="mailto:g.mahindrakar@somaiya.edu"><i class="fa fa-envelope"></i></a>
+                                            <a href="https://www.linkedin.com/in/gayatri-mahindrakar-9332911ab"><i
+                                                    class="fa fa-linkedin"></i></a>
+                                            <a href="mailto:g.mahindrakar@somaiya.edu"><i
+                                                    class="fa fa-envelope"></i></a>
                                         </div>
                                     </div>
                                 </div>
@@ -174,14 +193,16 @@
                         <div class="col-md-3">
                             <div class="card card-body">
                                 <div class="teamcard">
-                                    <img class="img1" src="../../media/images/aboutus/phase1_abhishek.jpg" alt="abhishek">
+                                    <img class="img1" src="../../media/images/aboutus/phase1_abhishek.jpg"
+                                        alt="abhishek">
                                     <div class="overlay">
 
                                         <div class="link">
                                             <h5 class="name">Abhishek Padiya</h5>
                                             <p class="branch-name">ETRX</p>
                                             <a href="#"><i class="fa fa-linkedin"></i></a>
-                                            <a href="mailto:abhishek.padiya@somaiya.edu"><i class="fa fa-envelope"></i></a>
+                                            <a href="mailto:abhishek.padiya@somaiya.edu"><i
+                                                    class="fa fa-envelope"></i></a>
                                         </div>
                                     </div>
                                 </div>
@@ -198,8 +219,10 @@
                                         <div class="link">
                                             <h5 class="name">Mitali Potnis</h5>
                                             <p class="branch-name">ETRX</p>
-                                            <a href="https://www.linkedin.com/in/mitali-potnis-b34821193"><i class="fa fa-linkedin"></i></a>
-                                            <a href="mailto:mitali.potnis@somaiya.edu"><i class="fa fa-envelope"></i></a>
+                                            <a href="https://www.linkedin.com/in/mitali-potnis-b34821193"><i
+                                                    class="fa fa-linkedin"></i></a>
+                                            <a href="mailto:mitali.potnis@somaiya.edu"><i
+                                                    class="fa fa-envelope"></i></a>
                                         </div>
                                     </div>
                                 </div>
@@ -216,8 +239,10 @@
                                         <div class="link">
                                             <h5 class="name">Sushant Bansal</h5>
                                             <p class="branch-name">ETRX</p>
-                                            <a href="https://www.linkedin.com/in/sushant-bansal-0263b0192"><i class="fa fa-linkedin"></i></a>
-                                            <a href="mailto:sushant.bansal@somaiya.edu"><i class="fa fa-envelope"></i></a>
+                                            <a href="https://www.linkedin.com/in/sushant-bansal-0263b0192"><i
+                                                    class="fa fa-linkedin"></i></a>
+                                            <a href="mailto:sushant.bansal@somaiya.edu"><i
+                                                    class="fa fa-envelope"></i></a>
                                         </div>
                                     </div>
                                 </div>
@@ -228,13 +253,15 @@
                         <div class="col-md-3">
                             <div class="card card-body">
                                 <div class="teamcard">
-                                    <img class="img1" src="../../media/images/aboutus/phase1_raghvendra.jpg" alt="raghvendra">
+                                    <img class="img1" src="../../media/images/aboutus/phase1_raghvendra.jpg"
+                                        alt="raghvendra">
                                     <div class="overlay">
 
                                         <div class="link">
                                             <h5 class="name">Raghvendra Shinde</h5>
                                             <p class="branch-name">EXTC</p>
-                                            <a href="https://www.linkedin.com/in/raghvendra-shinde-38b140138"><i class="fa fa-linkedin"></i></a>
+                                            <a href="https://www.linkedin.com/in/raghvendra-shinde-38b140138"><i
+                                                    class="fa fa-linkedin"></i></a>
                                             <a href="mailto:raghvendra.s@somaiya.edu"><i class="fa fa-envelope"></i></a>
                                         </div>
                                     </div>
@@ -252,7 +279,8 @@
                                         <div class="link">
                                             <h5 class="name">Rohit Singh</h5>
                                             <p class="branch-name">ETRX</p>
-                                            <a href="https://www.linkedin.com/in/rohit-singh-1811061b6/"><i class="fa fa-linkedin"></i></a>
+                                            <a href="https://www.linkedin.com/in/rohit-singh-1811061b6/"><i
+                                                    class="fa fa-linkedin"></i></a>
                                             <a href="mailto:rohit.ss@somaiya.edu"><i class="fa fa-envelope"></i></a>
                                         </div>
                                     </div>
@@ -262,889 +290,960 @@
                     </div>
                 </div>
                 <a class="carousel-control-prev w-auto" href="#sim" role="button" data-slide="prev">
-                    <span class="carousel-control-prev-icon bg-dark border border-dark rounded-circle" aria-hidden="true"></span>
+                    <span class="carousel-control-prev-icon bg-dark border border-dark rounded-circle"
+                        aria-hidden="true"></span>
                     <span class="sr-only">Previous</span>
                 </a>
                 <a class="carousel-control-next w-auto" href="#sim" role="button" data-slide="next">
-                    <span class="carousel-control-next-icon bg-dark border border-dark rounded-circle" aria-hidden="true"></span>
+                    <span class="carousel-control-next-icon bg-dark border border-dark rounded-circle"
+                        aria-hidden="true"></span>
                     <span class="sr-only">Next</span>
                 </a>
             </div>
         </div>
     </div>
-<!-- Simulation Core Project end -->
-<br><br>
- <!-- Digitization Project start-->
- <div class="container text-center my-3">
-    <h2 class="font-weight-light timelinehead">Digitization Project</h2>
-    <h7 class="font-weight-light">To digitize the handouts in phase 1, and create high quality pdfs using LaTeX typesetting</h7>
+    <!-- Simulation Core Project end -->
+    <br><br>
+    <!-- Digitization Project start-->
+    <div class="container text-center my-3">
+        <h2 class="font-weight-light timelinehead">Digitization Project</h2>
+        <h7 class="font-weight-light">To digitize the handouts in phase 1, and create high quality pdfs using LaTeX
+            typesetting</h7>
 
-    <div class="row mx-auto my-auto">
-        <div id="dig" class="carousel slide w-100" data-ride="carousel">
-            <div class="carousel-inner w-100" role="listbox">
-                <div class="carousel-item active">
-                    <div class="col-md-3">
-                        <div class="card card-body">
-                            <div class="teamcard">
-                                <img class="img1" src="../../media/images/aboutus/phase2_suparshwa.png" alt="suparshwa">
-                                <div class="overlay">
+        <div class="row mx-auto my-auto">
+            <div id="dig" class="carousel slide w-100" data-ride="carousel">
+                <div class="carousel-inner w-100" role="listbox">
+                    <div class="carousel-item active">
+                        <div class="col-md-3">
+                            <div class="card card-body">
+                                <div class="teamcard">
+                                    <img class="img1" src="../../media/images/aboutus/phase2_suparshwa.png"
+                                        alt="suparshwa">
+                                    <div class="overlay">
 
-                                    <div class="link">
-                                        <h5 class="name">Suparshwa Patil</h5>
-                                        <p class="branch-name">EXTC</p>
-                                        <a href="https://www.linkedin.com/in/suparshwa-patil-69b7ab16b"><i class="fa fa-linkedin"></i></a>
-                                        <a href="mailto:suparshwa.p@somaiya.edu"><i class="fa fa-envelope"></i></a>
+                                        <div class="link">
+                                            <h5 class="name">Suparshwa Patil</h5>
+                                            <p class="branch-name">EXTC</p>
+                                            <a href="https://www.linkedin.com/in/suparshwa-patil-69b7ab16b"><i
+                                                    class="fa fa-linkedin"></i></a>
+                                            <a href="mailto:suparshwa.p@somaiya.edu"><i class="fa fa-envelope"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="col-md-3">
+                            <div class="card card-body">
+                                <div class="teamcard">
+                                    <img class="img1" src="../../media/images/aboutus/phase2_ajinkya.png" alt="ajinkya">
+                                    <div class="overlay">
+
+                                        <div class="link">
+                                            <h5 class="name">Ajinkya Kirkire</h5>
+                                            <p class="branch-name">EXTC</p>
+                                            <a href="https://www.linkedin.com/in/ajinkya-kirkire"><i
+                                                    class="fa fa-linkedin"></i></a>
+                                            <a href="mailto:ajinkya.kirkire@somaiya.edu"><i
+                                                    class="fa fa-envelope"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="col-md-3">
+                            <div class="card card-body">
+                                <div class="teamcard">
+                                    <img class="img1" src="../../media/images/aboutus/phase2_esha.png" alt="esha">
+                                    <div class="overlay">
+
+                                        <div class="link">
+                                            <h5 class="name">Esha Gupta</h5>
+                                            <p class="branch-name">IT</p>
+                                            <a href="https://www.linkedin.com/in/esha-gupta-5989951a3"><i
+                                                    class="fa fa-linkedin"></i></a>
+                                            <a href="mailto:esha.gupta@somaiya.edu"><i class="fa fa-envelope"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="col-md-3">
+                            <div class="card card-body">
+                                <div class="teamcard">
+                                    <img class="img1" src="../../media/images/aboutus/phase2_rohit.jpg" alt="rohit">
+                                    <div class="overlay">
+
+                                        <div class="link">
+                                            <h5 class="name">Rohit Padia</h5>
+                                            <p class="branch-name">ETRX</p>
+                                            <a href="#"><i class="fa fa-linkedin"></i></a>
+                                            <a href="#"><i class="fa fa-envelope"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="col-md-3">
+                            <div class="card card-body">
+                                <div class="teamcard">
+                                    <img class="img1" src="../../media/images/aboutus/phase2_shreyasi.png"
+                                        alt="shreyasi">
+                                    <div class="overlay">
+
+                                        <div class="link">
+                                            <h5 class="name">Shreyasi Hatwalne</h5>
+                                            <p class="branch-name">EXTC</p>
+                                            <a href="https://www.linkedin.com/in/shreyasi-hatwalne-7689891b5"><i
+                                                    class="fa fa-linkedin"></i></a>
+                                            <a href="mailto:shreyasi.h@somaiya.edu"><i class="fa fa-envelope"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="col-md-3">
+                            <div class="card card-body">
+                                <div class="teamcard">
+                                    <img class="img1" src="../../media/images/aboutus/phase2_kunj.png" alt="kunj">
+                                    <div class="overlay">
+
+                                        <div class="link">
+                                            <h5 class="name">Kunj Gala</h5>
+                                            <p class="branch-name">IT</p>
+                                            <a href="https://www.linkedin.com/in/kunj-gala-7368aa193"><i
+                                                    class="fa fa-linkedin"></i></a>
+                                            <a href="mailto:kunj.gala@somaiya.edu"><i class="fa fa-envelope"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="col-md-3">
+                            <div class="card card-body">
+                                <div class="teamcard">
+                                    <img class="img1" src="../../media/images/aboutus/phase2_mitwa.png" alt="mitwa">
+                                    <div class="overlay">
+
+                                        <div class="link">
+                                            <h5 class="name">Mitwa Bhagat</h5>
+                                            <p class="branch-name">ETRX</p>
+                                            <a href="https://www.linkedin.com/in/mitva-bhagat/"><i
+                                                    class="fa fa-linkedin"></i></a>
+                                            <a href="mailto:mitva.bhagat@somaiya.edu"><i class="fa fa-envelope"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="col-md-3">
+                            <div class="card card-body">
+                                <div class="teamcard">
+                                    <img class="img1" src="../../media/images/aboutus/phase2_shreyans.png"
+                                        alt="shreyans">
+                                    <div class="overlay">
+
+                                        <div class="link">
+                                            <h5 class="name">Shreyans Suraliya</h5>
+                                            <p class="branch-name">ETRX</p>
+                                            <a href="https://www.linkedin.com/in/shreyans-suraliya-6626241a0"><i
+                                                    class="fa fa-linkedin"></i></a>
+                                            <a href="mailto:s.suraliya@somaiya.edu"><i class="fa fa-envelope"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="col-md-3">
+                            <div class="card card-body">
+                                <div class="teamcard">
+                                    <img class="img1" src="../../media/images/aboutus/phase2_pankti.png" alt="pankti">
+                                    <div class="overlay">
+
+                                        <div class="link">
+                                            <h5 class="name">Pankti Nanavati</h5>
+                                            <p class="branch-name">IT</p>
+                                            <a href="https://www.linkedin.com/in/pankti-nanavati-b23ba7190/"><i
+                                                    class="fa fa-linkedin"></i></a>
+                                            <a href="mailto:pankti.n@somaiya.edu "><i class="fa fa-envelope"></i></a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="carousel-item">
-                    <div class="col-md-3">
-                        <div class="card card-body">
-                            <div class="teamcard">
-                                <img class="img1" src="../../media/images/aboutus/phase2_ajinkya.png" alt="ajinkya">
-                                <div class="overlay">
+                <a class="carousel-control-prev w-auto" href="#dig" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon bg-dark border border-dark rounded-circle"
+                        aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next w-auto" href="#dig" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon bg-dark border border-dark rounded-circle"
+                        aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </div>
+    </div>
+    <!-- Digitization Project end-->
+    <br><br>
+    <!-- Website Development Team start -->
+    <div class="container text-center my-3">
+        <h2 class="font-weight-light timelinehead">Website Development Team </h2>
+        <h7 class="font-weight-light">To develop a website which provides numericals pdf solutions and LTspice files for
+            a variety of Electronic circuits in Engineering curriculum</h7>
 
-                                    <div class="link">
-                                        <h5 class="name">Ajinkya Kirkire</h5>
-                                        <p class="branch-name">EXTC</p>
-                                        <a href="https://www.linkedin.com/in/ajinkya-kirkire"><i class="fa fa-linkedin"></i></a>
-                                        <a href="mailto:ajinkya.kirkire@somaiya.edu"><i class="fa fa-envelope"></i></a>
+        <div class="row mx-auto my-auto">
+            <div id="webdev" class="carousel slide w-100" data-ride="carousel">
+                <div class="carousel-inner w-100" role="listbox">
+                    <div class="carousel-item active">
+                        <div class="col-md-3">
+                            <div class="card card-body">
+                                <div class="teamcard">
+                                    <img class="img1" src="../../media/images/aboutus/phase3_yash.PNG" alt="yash">
+                                    <div class="overlay">
+
+                                        <div class="link">
+                                            <h5 class="name">Yash Deorah</h5>
+                                            <p class="branch-name">IT</p>
+                                            <a href="https://www.linkedin.com/in/yash-deorah-8213111aa/"><i
+                                                    class="fa fa-linkedin"></i></a>
+                                            <a href="mailto:yash.deorah@somaiya.edu"><i class="fa fa-envelope"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="col-md-3">
+                            <div class="card card-body">
+                                <div class="teamcard">
+                                    <img class="img1" src="../../media/images/aboutus/phase3_param.png" alt="param">
+                                    <div class="overlay">
+
+                                        <div class="link">
+                                            <h5 class="name">Param Shendekar</h5>
+                                            <p class="branch-name">IT</p>
+                                            <a href="https://www.linkedin.com/in/param-s-8101babb/"><i
+                                                    class="fa fa-linkedin"></i></a>
+                                            <a href="mailto:param.shendekar@somaiya.edu"><i
+                                                    class="fa fa-envelope"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="col-md-3">
+                            <div class="card card-body">
+                                <div class="teamcard">
+                                    <img class="img1" src="../../media/images/aboutus/phase3_nandini.png" alt="nandini">
+                                    <div class="overlay">
+
+                                        <div class="link">
+                                            <h5 class="name">Nandini Dey</h5>
+                                            <p class="branch-name">EXTC</p>
+                                            <a href="https://www.linkedin.com/in/nandini-dey-ba9392195"><i
+                                                    class="fa fa-linkedin"></i></a>
+                                            <a href="mailto:nandini.dey@somaiya.edu"><i class="fa fa-envelope"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="col-md-3">
+                            <div class="card card-body">
+                                <div class="teamcard">
+                                    <img class="img1" src="../../media/images/aboutus/phase3_suparshwa.png"
+                                        alt="suparshwa">
+                                    <div class="overlay">
+
+                                        <div class="link">
+                                            <h5 class="name">Suparshwa Patil</h5>
+                                            <p class="branch-name">EXTC</p>
+                                            <a href="https://www.linkedin.com/in/suparshwa-patil-69b7ab16b"><i
+                                                    class="fa fa-linkedin"></i></a>
+                                            <a href="mailto:suparshwa.p@somaiya.edu"><i class="fa fa-envelope"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="col-md-3">
+                            <div class="card card-body">
+                                <div class="teamcard">
+                                    <img class="img1" src="../../media/images/aboutus/phase3_ajinkya.png" alt="ajinkya">
+                                    <div class="overlay">
+
+                                        <div class="link">
+                                            <h5 class="name">Ajinkya Kirkire</h5>
+                                            <p class="branch-name">EXTC</p>
+                                            <a href="https://wwww.linkedin.com/in/ajinkya-kirkire"><i
+                                                    class="fa fa-linkedin"></i></a>
+                                            <a href="mailto:ajinkya.kirkire@somaiya.edu"><i
+                                                    class="fa fa-envelope"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="col-md-3">
+                            <div class="card card-body">
+                                <div class="teamcard">
+                                    <img class="img1" src="../../media/images/aboutus/phase3_esha.png" alt="esha">
+                                    <div class="overlay">
+                                        <div class="link">
+                                            <h5 class="name">Esha Gupta</h5>
+                                            <p class="branch-name">IT</p>
+                                            <a href="https://www.linkedin.com/in/esha-gupta-5989951a3"><i
+                                                    class="fa fa-linkedin"></i></a>
+                                            <a href="mailto:esha.gupta@somaiya.edu"><i class="fa fa-envelope"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="col-md-3">
+                            <div class="card card-body">
+                                <div class="teamcard">
+                                    <img class="img1" src="../../media/images/aboutus/phase3_kunj.png" alt="kunj">
+                                    <div class="overlay">
+
+                                        <div class="link">
+                                            <h5 class="name">Kunj Gala</h5>
+                                            <p class="branch-name">IT</p>
+                                            <a href="https://www.linkedin.com/in/kunj-gala-7368aa193"><i
+                                                    class="fa fa-linkedin"></i></a>
+                                            <a href="mailto:kunj.gala@somaiya.edu"><i class="fa fa-envelope"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="col-md-3">
+                            <div class="card card-body">
+                                <div class="teamcard">
+                                    <img class="img1" src="../../media/images/aboutus/phase3_pankti.png" alt="pankti">
+                                    <div class="overlay">
+
+                                        <div class="link">
+                                            <h5 class="name">Pankti Nanavati</h5>
+                                            <p class="branch-name">IT</p>
+                                            <a href="https://www.linkedin.com/in/pankti-nanavati-b23ba7190/"><i
+                                                    class="fa fa-linkedin"></i></a>
+                                            <a href="mailto:pankti.n@somaiya.edu "><i class="fa fa-envelope"></i></a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="carousel-item">
-                    <div class="col-md-3">
-                        <div class="card card-body">
-                            <div class="teamcard">
-                                <img class="img1" src="../../media/images/aboutus/phase2_esha.png" alt="esha">
-                                <div class="overlay">
+                <a class="carousel-control-prev w-auto" href="#webdev" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon bg-dark border border-dark rounded-circle"
+                        aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next w-auto" href="#webdev" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon bg-dark border border-dark rounded-circle"
+                        aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </div>
+    </div>
+    <!-- Website Development Team end -->
+    <br><br>
+    <!-- EEEE Team start-->
+    <div class="container text-center my-3">
+        <h2 class="font-weight-light timelinehead">EEEE Team</h2>
+        <div class="row mx-auto my-auto">
+            <div id="eeee" class="carousel slide w-100" data-ride="carousel">
+                <div class="carousel-inner w-100" role="listbox">
+                    <div class="carousel-item active">
+                        <div class="col-md-3">
+                            <div class="card card-body">
+                                <div class="teamcard">
+                                    <img class="img1" src="../../media/images/aboutus/eeee_aakash.jpg" alt="sharvari">
+                                    <div class="overlay">
+                                        <div class="link">
+                                            <h5 class="name">Aakash Divakar</h5>
+                                            <p class="branch-name">ETRX</p>
+                                            <a href="https://www.linkedin.com/in/aakash-divakar-5211051b6/"><i
+                                                    class="fa fa-linkedin"></i></a>
+                                            <a href="mailto:aakash.divakar@somaiya.edu"><i
+                                                    class="fa fa-envelope"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="col-md-3">
+                            <div class="card card-body">
+                                <div class="teamcard">
+                                    <img class="img1" src="../../media/images/aboutus/eeee_abhishek.jpg" alt="swetha">
+                                    <div class="overlay">
 
-                                    <div class="link">
-                                        <h5 class="name">Esha Gupta</h5>
-                                        <p class="branch-name">IT</p>
-                                        <a href="https://www.linkedin.com/in/esha-gupta-5989951a3"><i class="fa fa-linkedin"></i></a>
-                                        <a href="mailto:esha.gupta@somaiya.edu"><i class="fa fa-envelope"></i></a>
+                                        <div class="link">
+                                            <h5 class="name">Abhishek Mazumdar</h5>
+                                            <p class="branch-name">EXTC</p>
+                                            <a href="https://www.linkedin.com/in/abhishek-mazumdar-11a313192"><i
+                                                    class="fa fa-linkedin"></i></a>
+                                            <a href="mailto:a.mazumdar@somaiya.edu"><i class="fa fa-envelope"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="col-md-3">
+                            <div class="card card-body">
+                                <div class="teamcard">
+                                    <img class="img1" src="../../media/images/aboutus/eeee_aditya.jpg" alt="chinmay">
+                                    <div class="overlay">
+
+                                        <div class="link">
+                                            <h5 class="name">Aditya Anekar</h5>
+                                            <p class="branch-name">ETRX</p>
+                                            <a href="https://www.linkedin.com/in/aditya-anekar-5840a6192"><i
+                                                    class="fa fa-linkedin"></i></a>
+                                            <a href="mailto:aditya.anekar@somaiya.edu"><i
+                                                    class="fa fa-envelope"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="col-md-3">
+                            <div class="card card-body">
+                                <div class="teamcard">
+                                    <img class="img1" src="../../media/images/aboutus/eeee_jyoti.jpg" alt="vruksha">
+                                    <div class="overlay">
+
+                                        <div class="link">
+                                            <h5 class="name">Jyoti Patel</h5>
+                                            <p class="branch-name">EXTC</p>
+                                            <a href="#"><i class="fa fa-linkedin"></i></a>
+                                            <a href="#"><i class="fa fa-envelope"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="col-md-3">
+                            <div class="card card-body">
+                                <div class="teamcard">
+                                    <img class="img1" src="../../media/images/aboutus/eeee_keyur.jpg" alt="gayatri">
+                                    <div class="overlay">
+
+                                        <div class="link">
+                                            <h5 class="name">Keyur Kulkarni</h5>
+                                            <p class="branch-name">ETRX</p>
+                                            <a href="https://www.linkedin.com/in/keyur-kulkarni-b975b61a3"><i
+                                                    class="fa fa-linkedin"></i></a>
+                                            <a href="mailto:keyur.k@somaiya.edu"><i class="fa fa-envelope"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="col-md-3">
+                            <div class="card card-body">
+                                <div class="teamcard">
+                                    <img class="img1" src="../../media/images/aboutus/eeee_nachiket.png" alt="abhishek">
+                                    <div class="overlay">
+
+                                        <div class="link">
+                                            <h5 class="name">Nachiket Naik</h5>
+                                            <p class="branch-name">ETRX</p>
+                                            <a href="https://www.linkedin.com/in/nachiket-naik-b25110192"><i
+                                                    class="fa fa-linkedin"></i></a>
+                                            <a href="mailto:nachiket.n@somaiya.edu"><i class="fa fa-envelope"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="col-md-3">
+                            <div class="card card-body">
+                                <div class="teamcard">
+                                    <img class="img1" src="../../media/images/aboutus/eeee_sahil.jpg" alt="mitali">
+                                    <div class="overlay">
+
+                                        <div class="link">
+                                            <h5 class="name">Sahil Ramane</h5>
+                                            <p class="branch-name">ETRX</p>
+                                            <a href="https://www.linkedin.com/in/sahil-ramane-9527031b0"><i
+                                                    class="fa fa-linkedin"></i></a>
+                                            <a href="mailto:sahil.ramane@somaiya.edu"><i class="fa fa-envelope"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="col-md-3">
+                            <div class="card card-body">
+                                <div class="teamcard">
+                                    <img class="img1" src="../../media/images/aboutus/eeee_saumya.jpg" alt="sushant">
+                                    <div class="overlay">
+
+                                        <div class="link">
+                                            <h5 class="name">Saumya Shah</h5>
+                                            <p class="branch-name">EXTC</p>
+                                            <a href="https://www.linkedin.com/in/saumya-shah-b964731b2"><i
+                                                    class="fa fa-linkedin"></i></a>
+                                            <a href="mailto:saumya.hs@somaiya.edu"><i class="fa fa-envelope"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="col-md-3">
+                            <div class="card card-body">
+                                <div class="teamcard">
+                                    <img class="img1" src="../../media/images/aboutus/eeee_akshara.png" alt="sharvari">
+                                    <div class="overlay">
+                                        <div class="link">
+                                            <h5 class="name">Akshara Mehta</h5>
+                                            <p class="branch-name">EXTC</p>
+                                            <a href="https://www.linkedin.com/in/akshara-mehta-b759271b2"><i
+                                                    class="fa fa-linkedin"></i></a>
+                                            <a href="mailto:akshara.m@somaiya.edu"><i class="fa fa-envelope"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="col-md-3">
+                            <div class="card card-body">
+                                <div class="teamcard">
+                                    <img class="img1" src="../../media/images/aboutus/eeee_chetana.png" alt="swetha">
+                                    <div class="overlay">
+
+                                        <div class="link">
+                                            <h5 class="name">Chetana Kunapareddy</h5>
+                                            <p class="branch-name">ETRX</p>
+                                            <a href="https://www.linkedin.com/in/sai-chetana-kunapareddy-4341051b6/"><i
+                                                    class="fa fa-linkedin"></i></a>
+                                            <a href="mailto:sai.k@somaiya.edu"><i class="fa fa-envelope"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="col-md-3">
+                            <div class="card card-body">
+                                <div class="teamcard">
+                                    <img class="img1" src="../../media/images/aboutus/eeee_dhrumil.png" alt="chinmay">
+                                    <div class="overlay">
+
+                                        <div class="link">
+                                            <h5 class="name">Dhrumil Patel</h5>
+                                            <p class="branch-name">EXTC</p>
+                                            <a href="http://linkedin.com/in/dhrumil-patel-02b92a1b2"><i
+                                                    class="fa fa-linkedin"></i></a>
+                                            <a href="mailto:dhrumil.patel@somaiya.edu"><i
+                                                    class="fa fa-envelope"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="col-md-3">
+                            <div class="card card-body">
+                                <div class="teamcard">
+                                    <img class="img1" src="../../media/images/aboutus/eeee_jas.jpg" alt="vruksha">
+                                    <div class="overlay">
+
+                                        <div class="link">
+                                            <h5 class="name">Jas Mehta</h5>
+                                            <p class="branch-name">EXTC</p>
+                                            <a href="http://linkedin.com/in/jas-mehta-b530291b3"><i
+                                                    class="fa fa-linkedin"></i></a>
+                                            <a href="mailto:jas.cm@somaiya.edu"><i class="fa fa-envelope"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="col-md-3">
+                            <div class="card card-body">
+                                <div class="teamcard">
+                                    <img class="img1" src="../../media/images/aboutus/eeee_kashish.jpg" alt="sharvari">
+                                    <div class="overlay">
+                                        <div class="link">
+                                            <h5 class="name">Kashish shah</h5>
+                                            <p class="branch-name">EXTC</p>
+                                            <a href="https://www.linkedin.com/in/kashish-shah-2804"><i
+                                                    class="fa fa-linkedin"></i></a>
+                                            <a href="mailto:kashish.hs@somaiya.edu"><i class="fa fa-envelope"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="col-md-3">
+                            <div class="card card-body">
+                                <div class="teamcard">
+                                    <img class="img1" src="../../media/images/aboutus/eeee_manas.png" alt="swetha">
+                                    <div class="overlay">
+
+                                        <div class="link">
+                                            <h5 class="name">Manas Kulkarni</h5>
+                                            <p class="branch-name">EXTC</p>
+                                            <a href="https://www.linkedin.com/in/manas-kulkarni-1930501b5"><i
+                                                    class="fa fa-linkedin"></i></a>
+                                            <a href="mailto:manas.k@somaiya.edu"><i class="fa fa-envelope"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="col-md-3">
+                            <div class="card card-body">
+                                <div class="teamcard">
+                                    <img class="img1" src="../../media/images/aboutus/eeee_sanika.png" alt="chinmay">
+                                    <div class="overlay">
+
+                                        <div class="link">
+                                            <h5 class="name">Sanika Pandit</h5>
+                                            <p class="branch-name">ETRX</p>
+                                            <a href="https://www.linkedin.com/in/sanika-pandit-9b87341b5"><i
+                                                    class="fa fa-linkedin"></i></a>
+                                            <a href="mailto:sanika.pandit@somaiya.edu"><i
+                                                    class="fa fa-envelope"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="col-md-3">
+                            <div class="card card-body">
+                                <div class="teamcard">
+                                    <img class="img1" src="../../media/images/aboutus/eeee_suryansh.png" alt="vruksha">
+                                    <div class="overlay">
+
+                                        <div class="link">
+                                            <h5 class="name">Suryansh Soni</h5>
+                                            <p class="branch-name">EXTC</p>
+                                            <a href="https://www.linkedin.com/in/suryansh-soni-8b9a92185"><i
+                                                    class="fa fa-linkedin"></i></a>
+                                            <a href="mailto:suryansh.s@somaiya.edu "><i class="fa fa-envelope"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="col-md-3">
+                            <div class="card card-body">
+                                <div class="teamcard">
+                                    <img class="img1" src="../../media/images/aboutus/eeee_advait.jpg" alt="sharvari">
+                                    <div class="overlay">
+                                        <div class="link">
+                                            <h5 class="name">Advait Narsikar</h5>
+                                            <p class="branch-name">ETRX</p>
+                                            <a href="https://www.linkedin.com/in/advait-narsiker-255821193"><i
+                                                    class="fa fa-linkedin"></i></a>
+                                            <a href="mailto:advait.narsikar@somaiya.edu "><i
+                                                    class="fa fa-envelope"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="col-md-3">
+                            <div class="card card-body">
+                                <div class="teamcard">
+                                    <img class="img1" src="../../media/images/aboutus/eeee_anoushka.jpg" alt="swetha">
+                                    <div class="overlay">
+
+                                        <div class="link">
+                                            <h5 class="name">Anoushka Bhat</h5>
+                                            <p class="branch-name">EXTC</p>
+                                            <a href="https://www.linkedin.com/in/anoushka-bhat-78a04b1b5"><i
+                                                    class="fa fa-linkedin"></i></a>
+                                            <a href="mailto:anoushka.b@somaiya.edu"><i class="fa fa-envelope"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="col-md-3">
+                            <div class="card card-body">
+                                <div class="teamcard">
+                                    <img class="img1" src="../../media/images/aboutus/eeee_aruna.jpg" alt="chinmay">
+                                    <div class="overlay">
+
+                                        <div class="link">
+                                            <h5 class="name">Aruna Jayarajan</h5>
+                                            <p class="branch-name">EXTC</p>
+                                            <a href="https://www.linkedin.com/in/aruna-jayarajan-521454129"><i
+                                                    class="fa fa-linkedin"></i></a>
+                                            <a href="mailto:aruna.j@somiaya.edu"><i class="fa fa-envelope"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="col-md-3">
+                            <div class="card card-body">
+                                <div class="teamcard">
+                                    <img class="img1" src="../../media/images/aboutus/eeee_avanthika.png" alt="vruksha">
+                                    <div class="overlay">
+
+                                        <div class="link">
+                                            <h5 class="name">Avanthika Nayak</h5>
+                                            <p class="branch-name">EXTC</p>
+                                            <a href="https://www.linkedin.com/in/avanthika-nayak-a239631b3/"><i
+                                                    class="fa fa-linkedin"></i></a>
+                                            <a href="mailto:avanthika.n@somaiya.edu"><i class="fa fa-envelope"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="col-md-3">
+                            <div class="card card-body">
+                                <div class="teamcard">
+                                    <img class="img1" src="../../media/images/aboutus/eeee_harshal.png" alt="sharvari">
+                                    <div class="overlay">
+                                        <div class="link">
+                                            <h5 class="name">Harshal Sooman</h5>
+                                            <p class="branch-name">EXTC</p>
+                                            <a href="https://www.linkedin.com/in/harshal-soman-ab21b3192"><i
+                                                    class="fa fa-linkedin"></i></a>
+                                            <a href="mailto:harshal.soman@somaiya.edu"><i
+                                                    class="fa fa-envelope"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="col-md-3">
+                            <div class="card card-body">
+                                <div class="teamcard">
+                                    <img class="img1" src="../../media/images/aboutus/eeee_manoj.jpg" alt="swetha">
+                                    <div class="overlay">
+
+                                        <div class="link">
+                                            <h5 class="name">Manoj SReddy</h5>
+                                            <p class="branch-name">EXTC</p>
+                                            <a href="https://www.linkedin.com/in/manoj-sreddy-3973081b5/"><i
+                                                    class="fa fa-linkedin"></i></a>
+                                            <a href="mailto:manoj.sreddy@somaiya.edu"><i class="fa fa-envelope"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="col-md-3">
+                            <div class="card card-body">
+                                <div class="teamcard">
+                                    <img class="img1" src="../../media/images/aboutus/eeee_pranay.png" alt="chinmay">
+                                    <div class="overlay">
+
+                                        <div class="link">
+                                            <h5 class="name">Pranay Lendave</h5>
+                                            <p class="branch-name">ETRX</p>
+                                            <a href="https://www.linkedin.com/in/pranay-lendave/"><i
+                                                    class="fa fa-linkedin"></i></a>
+                                            <a href="mailto:pranay.lendave@somaiya.edu"><i
+                                                    class="fa fa-envelope"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="col-md-3">
+                            <div class="card card-body">
+                                <div class="teamcard">
+                                    <img class="img1" src="../../media/images/aboutus/eeee_sakshi.png" alt="vruksha">
+                                    <div class="overlay">
+
+                                        <div class="link">
+                                            <h5 class="name">Sakshi Tripathi</h5>
+                                            <p class="branch-name">ETRX</p>
+                                            <a href="https://www.linkedin.com/in/sakshi-tripathi-24b7a21b5"><i
+                                                    class="fa fa-linkedin"></i></a>
+                                            <a href="mailto:tripathi.s@somaiya.edu "><i class="fa fa-envelope"></i></a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="carousel-item">
-                    <div class="col-md-3">
-                        <div class="card card-body">
-                            <div class="teamcard">
-                                <img class="img1" src="../../media/images/aboutus/phase2_rohit.jpg" alt="rohit">
-                                <div class="overlay">
+                <a class="carousel-control-prev w-auto" href="#eeee" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon bg-dark border border-dark rounded-circle"
+                        aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next w-auto" href="#eeee" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon bg-dark border border-dark rounded-circle"
+                        aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </div>
+    </div>
+    <!-- EEEE Team end-->
+    <br><br>
+    <!--footer-->
 
-                                    <div class="link">
-                                        <h5 class="name">Rohit Padia</h5>
-                                        <p class="branch-name">ETRX</p>
-                                        <a href="#"><i class="fa fa-linkedin"></i></a>
-                                        <a href="#"><i class="fa fa-envelope"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="column col-xl-3 col-md-3 col-sm-12 offset-md-1 side">
+                    <h6 style="font-weight:bold">Register for free</h5>
+                        <br>
+                        <a href="{% url 'signup' %}">
+                            <!-- <button class="button button1">Sign Up!</button> -->
+                            <button type="button" style="color:white;" class="btn  footer-btn">Sign Up</button>
+                        </a>
                 </div>
-                <div class="carousel-item">
-                    <div class="col-md-3">
-                        <div class="card card-body">
-                            <div class="teamcard">
-                                <img class="img1" src="../../media/images/aboutus/phase2_shreyasi.png" alt="shreyasi">
-                                <div class="overlay">
 
-                                    <div class="link">
-                                        <h5 class="name">Shreyasi Hatwalne</h5>
-                                        <p class="branch-name">EXTC</p>
-                                        <a href="https://www.linkedin.com/in/shreyasi-hatwalne-7689891b5"><i class="fa fa-linkedin"></i></a>
-                                        <a href="mailto:shreyasi.h@somaiya.edu"><i class="fa fa-envelope"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <div class="column col-xl-2 col-md-2 col-sm-12 side">
+                    <h6 style="font-weight:bold">Useful links</h5>
+                        <br>
+                        <ul class="bb">
+                            <li><a href="{% url 'index' %}" style="text-decoration: none;color:#2d9cc2;"
+                                    class="fa fa-home"></a><a href="{% url 'index' %}"
+                                    style="text-decoration: none;color:white"> Home</a></li>
+                            <br>
+                            <li><a href="{% url 'aboutus' %}" class="fa fa-users"
+                                    style="text-decoration: none;color:#2d9cc2;"></a><a href="{% url 'aboutus' %}"
+                                    style="text-decoration: none;color:white"> About</a></li>
+                            <br>
+                            <li>
+                                {% if user.is_authenticated %}
+                                <a href="{% url 'logout' %}" style="text-decoration: none;color:#2d9cc2;"
+                                    class="fa fa-sign-in"></a><a href="{% url 'logout' %}"
+                                    style="text-decoration: none;color:white"> Logout</a>
+                                {% else %}
+                                <a href="{% url 'login' %}" style="text-decoration: none;color:#2d9cc2;"
+                                    class="fa fa-sign-in"></a><a href="{% url 'login' %}"
+                                    style="text-decoration: none;color:white"> Login</a>
+                                {% endif %}
+                            </li>
+                        </ul>
                 </div>
-                <div class="carousel-item">
-                    <div class="col-md-3">
-                        <div class="card card-body">
-                            <div class="teamcard">
-                                <img class="img1" src="../../media/images/aboutus/phase2_kunj.png" alt="kunj">
-                                <div class="overlay">
 
-                                    <div class="link">
-                                        <h5 class="name">Kunj Gala</h5>
-                                        <p class="branch-name">IT</p>
-                                        <a href="https://www.linkedin.com/in/kunj-gala-7368aa193"><i class="fa fa-linkedin"></i></a>
-                                        <a href="mailto:kunj.gala@somaiya.edu"><i class="fa fa-envelope"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <div class="column col-xl-3 col-md-3 col-sm-12 side">
+                    <h6 style="font-weight:bold">Contact Us</h5>
+                        <br>
+                        <p style="font-size: 14px;"><a class="fa fa-map-marker"
+                                style="font-size:18px;color:#2d9cc2;"></a> K.J.
+                            Somaiya College of Engineering
+                            <br> Vidyanagar, Vidyavihar<br>
+                            Mumbai, India </p>
+                        <p><a class="fa fa-envelope" style="font-size:14px;color:#2d9cc2;"
+                                href="mailto:inderjitsingh@somaiya.edu"> inderjitsingh@somaiya.edu</a></p>
                 </div>
-                <div class="carousel-item">
-                    <div class="col-md-3">
-                        <div class="card card-body">
-                            <div class="teamcard">
-                                <img class="img1" src="../../media/images/aboutus/phase2_mitwa.png" alt="mitwa">
-                                <div class="overlay">
 
-                                    <div class="link">
-                                        <h5 class="name">Mitwa Bhagat</h5>
-                                        <p class="branch-name">ETRX</p>
-                                        <a href="https://www.linkedin.com/in/mitva-bhagat/"><i class="fa fa-linkedin"></i></a>
-                                        <a href="mailto:mitva.bhagat@somaiya.edu"><i class="fa fa-envelope"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="col-md-3">
-                        <div class="card card-body">
-                            <div class="teamcard">
-                                <img class="img1" src="../../media/images/aboutus/phase2_shreyans.png" alt="shreyans">
-                                <div class="overlay">
+                <div class="column col-xl-3 col-md-3 col-sm-12 side">
+                    <h6 style="font-weight:bold">Number of Visitors</h5>
+                        <br>
+                        <div class="counter" style="zoom:75%;">
 
-                                    <div class="link">
-                                        <h5 class="name">Shreyans Suraliya</h5>
-                                        <p class="branch-name">ETRX</p>
-                                        <a href="https://www.linkedin.com/in/shreyans-suraliya-6626241a0"><i class="fa fa-linkedin"></i></a>
-                                        <a href="mailto:s.suraliya@somaiya.edu"><i class="fa fa-envelope"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="col-md-3">
-                        <div class="card card-body">
-                            <div class="teamcard">
-                                <img class="img1" src="../../media/images/aboutus/phase2_pankti.png" alt="pankti">
-                                <div class="overlay">
+                            <!-- Start of WebFreeCounter Code -->
+                            <a href="https://www.webfreecounter.com/" target="_blank"><img
+                                    src="https://www.webfreecounter.com/hit.php?id=geaqcfp&nd=6&style=10" border="0"
+                                    alt="hit counter"></a>
+                            <!-- End of WebFreeCounter Code -->
 
-                                    <div class="link">
-                                        <h5 class="name">Pankti Nanavati</h5>
-                                        <p class="branch-name">IT</p>
-                                        <a href="https://www.linkedin.com/in/pankti-nanavati-b23ba7190/"><i class="fa fa-linkedin"></i></a>
-                                        <a href="mailto:pankti.n@somaiya.edu "><i class="fa fa-envelope"></i></a>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
-                    </div>
+                        <br>
+
                 </div>
             </div>
-            <a class="carousel-control-prev w-auto" href="#dig" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon bg-dark border border-dark rounded-circle" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next w-auto" href="#dig" role="button" data-slide="next">
-                <span class="carousel-control-next-icon bg-dark border border-dark rounded-circle" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-            </a>
         </div>
     </div>
-</div>
- <!-- Digitization Project end-->
-<br><br>
- <!-- Website Development Team start -->
- <div class="container text-center my-3">
-    <h2 class="font-weight-light timelinehead">Website Development Team </h2>
-    <h7 class="font-weight-light">To develop a website which provides numericals pdf solutions and LTspice files for a variety of Electronic circuits in Engineering curriculum</h7>
+    <!--footer-->
 
-    <div class="row mx-auto my-auto">
-        <div id="webdev" class="carousel slide w-100" data-ride="carousel">
-            <div class="carousel-inner w-100" role="listbox">
-                <div class="carousel-item active">
-                    <div class="col-md-3">
-                        <div class="card card-body">
-                            <div class="teamcard">
-                                <img class="img1" src="../../media/images/aboutus/phase3_yash.PNG" alt="yash">
-                                <div class="overlay">
+    <!-- Bootstrap core JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
 
-                                    <div class="link">
-                                        <h5 class="name">Yash Deorah</h5>
-                                        <p class="branch-name">IT</p>
-                                        <a href="https://www.linkedin.com/in/yash-deorah-8213111aa/"><i class="fa fa-linkedin"></i></a>
-                                        <a href="mailto:yash.deorah@somaiya.edu"><i class="fa fa-envelope"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="col-md-3">
-                        <div class="card card-body">
-                            <div class="teamcard">
-                                <img class="img1" src="../../media/images/aboutus/phase3_param.png" alt="param">
-                                <div class="overlay">
+    <!-- Plugin JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
 
-                                    <div class="link">
-                                        <h5 class="name">Param Shendekar</h5>
-                                        <p class="branch-name">IT</p>
-                                        <a href="https://www.linkedin.com/in/param-s-8101babb/"><i class="fa fa-linkedin"></i></a>
-                                        <a href="mailto:param.shendekar@somaiya.edu"><i class="fa fa-envelope"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="col-md-3">
-                        <div class="card card-body">
-                            <div class="teamcard">
-                                <img class="img1" src="../../media/images/aboutus/phase3_nandini.png" alt="nandini">
-                                <div class="overlay">
+    <!-- Custom scripts for this template -->
+    <script src="grayscale.min.js"></script>
 
-                                    <div class="link">
-                                        <h5 class="name">Nandini Dey</h5>
-                                        <p class="branch-name">EXTC</p>
-                                        <a href="https://www.linkedin.com/in/nandini-dey-ba9392195"><i class="fa fa-linkedin"></i></a>
-                                        <a href="mailto:nandini.dey@somaiya.edu"><i class="fa fa-envelope"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="col-md-3">
-                        <div class="card card-body">
-                            <div class="teamcard">
-                                <img class="img1" src="../../media/images/aboutus/phase3_suparshwa.png" alt="suparshwa">
-                                <div class="overlay">
-
-                                    <div class="link">
-                                        <h5 class="name">Suparshwa Patil</h5>
-                                        <p class="branch-name">EXTC</p>
-                                        <a href="https://www.linkedin.com/in/suparshwa-patil-69b7ab16b"><i class="fa fa-linkedin"></i></a>
-                                        <a href="mailto:suparshwa.p@somaiya.edu"><i class="fa fa-envelope"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="col-md-3">
-                        <div class="card card-body">
-                            <div class="teamcard">
-                                <img class="img1" src="../../media/images/aboutus/phase3_ajinkya.png" alt="ajinkya">
-                                <div class="overlay">
-
-                                    <div class="link">
-                                        <h5 class="name">Ajinkya Kirkire</h5>
-                                        <p class="branch-name">EXTC</p>
-                                        <a href="https://wwww.linkedin.com/in/ajinkya-kirkire"><i class="fa fa-linkedin"></i></a>
-                                        <a href="mailto:ajinkya.kirkire@somaiya.edu"><i class="fa fa-envelope"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="col-md-3">
-                        <div class="card card-body">
-                            <div class="teamcard">
-                                <img class="img1" src="../../media/images/aboutus/phase3_esha.png" alt="esha">
-                                <div class="overlay">
-                                    <div class="link">
-                                        <h5 class="name">Esha Gupta</h5>
-                                        <p class="branch-name">IT</p>
-                                        <a href="https://www.linkedin.com/in/esha-gupta-5989951a3"><i class="fa fa-linkedin"></i></a>
-                                        <a href="mailto:esha.gupta@somaiya.edu"><i class="fa fa-envelope"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="col-md-3">
-                        <div class="card card-body">
-                            <div class="teamcard">
-                                <img class="img1" src="../../media/images/aboutus/phase3_kunj.png" alt="kunj">
-                                <div class="overlay">
-
-                                    <div class="link">
-                                        <h5 class="name">Kunj Gala</h5>
-                                        <p class="branch-name">IT</p>
-                                        <a href="https://www.linkedin.com/in/kunj-gala-7368aa193"><i class="fa fa-linkedin"></i></a>
-                                        <a href="mailto:kunj.gala@somaiya.edu"><i class="fa fa-envelope"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="col-md-3">
-                        <div class="card card-body">
-                            <div class="teamcard">
-                                <img class="img1" src="../../media/images/aboutus/phase3_pankti.png" alt="pankti">
-                                <div class="overlay">
-
-                                    <div class="link">
-                                        <h5 class="name">Pankti Nanavati</h5>
-                                        <p class="branch-name">IT</p>
-                                        <a href="https://www.linkedin.com/in/pankti-nanavati-b23ba7190/"><i class="fa fa-linkedin"></i></a>
-                                        <a href="mailto:pankti.n@somaiya.edu "><i class="fa fa-envelope"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <a class="carousel-control-prev w-auto" href="#webdev" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon bg-dark border border-dark rounded-circle" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next w-auto" href="#webdev" role="button" data-slide="next">
-                <span class="carousel-control-next-icon bg-dark border border-dark rounded-circle" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-            </a>
-        </div>
-    </div>
-</div>
- <!-- Website Development Team end -->
-<br><br>
- <!-- EEEE Team start-->
- <div class="container text-center my-3">
-    <h2 class="font-weight-light timelinehead">EEEE Team</h2>
-    <div class="row mx-auto my-auto">
-        <div id="eeee" class="carousel slide w-100" data-ride="carousel">
-            <div class="carousel-inner w-100" role="listbox">
-                <div class="carousel-item active">
-                    <div class="col-md-3">
-                        <div class="card card-body">
-                            <div class="teamcard">
-                                <img class="img1" src="../../media/images/aboutus/eeee_aakash.jpg" alt="sharvari">
-                                <div class="overlay">
-                                    <div class="link">
-                                        <h5 class="name">Aakash Divakar</h5>
-                                        <p class="branch-name">ETRX</p>
-                                        <a href="https://www.linkedin.com/in/aakash-divakar-5211051b6/"><i class="fa fa-linkedin"></i></a>
-                                        <a href="mailto:aakash.divakar@somaiya.edu"><i class="fa fa-envelope"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="col-md-3">
-                        <div class="card card-body">
-                            <div class="teamcard">
-                                <img class="img1" src="../../media/images/aboutus/eeee_abhishek.jpg" alt="swetha">
-                                <div class="overlay">
-
-                                    <div class="link">
-                                        <h5 class="name">Abhishek Mazumdar</h5>
-                                        <p class="branch-name">EXTC</p>
-                                        <a href="https://www.linkedin.com/in/abhishek-mazumdar-11a313192"><i class="fa fa-linkedin"></i></a>
-                                        <a href="mailto:a.mazumdar@somaiya.edu"><i class="fa fa-envelope"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="col-md-3">
-                        <div class="card card-body">
-                            <div class="teamcard">
-                                <img class="img1" src="../../media/images/aboutus/eeee_aditya.jpg" alt="chinmay">
-                                <div class="overlay">
-
-                                    <div class="link">
-                                        <h5 class="name">Aditya Anekar</h5>
-                                        <p class="branch-name">ETRX</p>
-                                        <a href="https://www.linkedin.com/in/aditya-anekar-5840a6192"><i class="fa fa-linkedin"></i></a>
-                                        <a href="mailto:aditya.anekar@somaiya.edu"><i class="fa fa-envelope"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="col-md-3">
-                        <div class="card card-body">
-                            <div class="teamcard">
-                                <img class="img1" src="../../media/images/aboutus/eeee_jyoti.jpg" alt="vruksha">
-                                <div class="overlay">
-
-                                    <div class="link">
-                                        <h5 class="name">Jyoti Patel</h5>
-                                        <p class="branch-name">EXTC</p>
-                                        <a href="#"><i class="fa fa-linkedin"></i></a>
-                                        <a href="#"><i class="fa fa-envelope"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="col-md-3">
-                        <div class="card card-body">
-                            <div class="teamcard">
-                                <img class="img1" src="../../media/images/aboutus/eeee_keyur.jpg" alt="gayatri">
-                                <div class="overlay">
-
-                                    <div class="link">
-                                        <h5 class="name">Keyur Kulkarni</h5>
-                                        <p class="branch-name">ETRX</p>
-                                        <a href="https://www.linkedin.com/in/keyur-kulkarni-b975b61a3"><i class="fa fa-linkedin"></i></a>
-                                        <a href="mailto:keyur.k@somaiya.edu"><i class="fa fa-envelope"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="col-md-3">
-                        <div class="card card-body">
-                            <div class="teamcard">
-                                <img class="img1" src="../../media/images/aboutus/eeee_nachiket.png" alt="abhishek">
-                                <div class="overlay">
-
-                                    <div class="link">
-                                        <h5 class="name">Nachiket Naik</h5>
-                                        <p class="branch-name">ETRX</p>
-                                        <a href="https://www.linkedin.com/in/nachiket-naik-b25110192"><i class="fa fa-linkedin"></i></a>
-                                        <a href="mailto:nachiket.n@somaiya.edu"><i class="fa fa-envelope"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="col-md-3">
-                        <div class="card card-body">
-                            <div class="teamcard">
-                                <img class="img1" src="../../media/images/aboutus/eeee_sahil.jpg" alt="mitali">
-                                <div class="overlay">
-
-                                    <div class="link">
-                                        <h5 class="name">Sahil Ramane</h5>
-                                        <p class="branch-name">ETRX</p>
-                                        <a href="https://www.linkedin.com/in/sahil-ramane-9527031b0"><i class="fa fa-linkedin"></i></a>
-                                        <a href="mailto:sahil.ramane@somaiya.edu"><i class="fa fa-envelope"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="col-md-3">
-                        <div class="card card-body">
-                            <div class="teamcard">
-                                <img class="img1" src="../../media/images/aboutus/eeee_saumya.jpg" alt="sushant">
-                                <div class="overlay">
-
-                                    <div class="link">
-                                        <h5 class="name">Saumya Shah</h5>
-                                        <p class="branch-name">EXTC</p>
-                                        <a href="https://www.linkedin.com/in/saumya-shah-b964731b2"><i class="fa fa-linkedin"></i></a>
-                                        <a href="mailto:saumya.hs@somaiya.edu"><i class="fa fa-envelope"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="col-md-3">
-                        <div class="card card-body">
-                            <div class="teamcard">
-                                <img class="img1" src="../../media/images/aboutus/eeee_akshara.png" alt="sharvari">
-                                <div class="overlay">
-                                    <div class="link">
-                                        <h5 class="name">Akshara Mehta</h5>
-                                        <p class="branch-name">EXTC</p>
-                                        <a href="https://www.linkedin.com/in/akshara-mehta-b759271b2"><i class="fa fa-linkedin"></i></a>
-                                        <a href="mailto:akshara.m@somaiya.edu"><i class="fa fa-envelope"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="col-md-3">
-                        <div class="card card-body">
-                            <div class="teamcard">
-                                <img class="img1" src="../../media/images/aboutus/eeee_chetana.png" alt="swetha">
-                                <div class="overlay">
-
-                                    <div class="link">
-                                        <h5 class="name">Chetana Kunapareddy</h5>
-                                        <p class="branch-name">ETRX</p>
-                                        <a href="https://www.linkedin.com/in/sai-chetana-kunapareddy-4341051b6/"><i class="fa fa-linkedin"></i></a>
-                                        <a href="mailto:sai.k@somaiya.edu"><i class="fa fa-envelope"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="col-md-3">
-                        <div class="card card-body">
-                            <div class="teamcard">
-                                <img class="img1" src="../../media/images/aboutus/eeee_dhrumil.png" alt="chinmay">
-                                <div class="overlay">
-
-                                    <div class="link">
-                                        <h5 class="name">Dhrumil Patel</h5>
-                                        <p class="branch-name">EXTC</p>
-                                        <a href="http://linkedin.com/in/dhrumil-patel-02b92a1b2"><i class="fa fa-linkedin"></i></a>
-                                        <a href="mailto:dhrumil.patel@somaiya.edu"><i class="fa fa-envelope"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="col-md-3">
-                        <div class="card card-body">
-                            <div class="teamcard">
-                                <img class="img1" src="../../media/images/aboutus/eeee_jas.jpg" alt="vruksha">
-                                <div class="overlay">
-
-                                    <div class="link">
-                                        <h5 class="name">Jas Mehta</h5>
-                                        <p class="branch-name">EXTC</p>
-                                        <a href="http://linkedin.com/in/jas-mehta-b530291b3"><i class="fa fa-linkedin"></i></a>
-                                        <a href="mailto:jas.cm@somaiya.edu"><i class="fa fa-envelope"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="col-md-3">
-                        <div class="card card-body">
-                            <div class="teamcard">
-                                <img class="img1" src="../../media/images/aboutus/eeee_kashish.jpg" alt="sharvari">
-                                <div class="overlay">
-                                    <div class="link">
-                                        <h5 class="name">Kashish shah</h5>
-                                        <p class="branch-name">EXTC</p>
-                                        <a href="https://www.linkedin.com/in/kashish-shah-2804"><i class="fa fa-linkedin"></i></a>
-                                        <a href="mailto:kashish.hs@somaiya.edu"><i class="fa fa-envelope"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="col-md-3">
-                        <div class="card card-body">
-                            <div class="teamcard">
-                                <img class="img1" src="../../media/images/aboutus/eeee_manas.png" alt="swetha">
-                                <div class="overlay">
-
-                                    <div class="link">
-                                        <h5 class="name">Manas Kulkarni</h5>
-                                        <p class="branch-name">EXTC</p>
-                                        <a href="https://www.linkedin.com/in/manas-kulkarni-1930501b5"><i class="fa fa-linkedin"></i></a>
-                                        <a href="mailto:manas.k@somaiya.edu"><i class="fa fa-envelope"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="col-md-3">
-                        <div class="card card-body">
-                            <div class="teamcard">
-                                <img class="img1" src="../../media/images/aboutus/eeee_sanika.png" alt="chinmay">
-                                <div class="overlay">
-
-                                    <div class="link">
-                                        <h5 class="name">Sanika Pandit</h5>
-                                        <p class="branch-name">ETRX</p>
-                                        <a href="https://www.linkedin.com/in/sanika-pandit-9b87341b5"><i class="fa fa-linkedin"></i></a>
-                                        <a href="mailto:sanika.pandit@somaiya.edu"><i class="fa fa-envelope"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="col-md-3">
-                        <div class="card card-body">
-                            <div class="teamcard">
-                                <img class="img1" src="../../media/images/aboutus/eeee_suryansh.png" alt="vruksha">
-                                <div class="overlay">
-
-                                    <div class="link">
-                                        <h5 class="name">Suryansh Soni</h5>
-                                        <p class="branch-name">EXTC</p>
-                                        <a href="https://www.linkedin.com/in/suryansh-soni-8b9a92185"><i class="fa fa-linkedin"></i></a>
-                                        <a href="mailto:suryansh.s@somaiya.edu "><i class="fa fa-envelope"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="col-md-3">
-                        <div class="card card-body">
-                            <div class="teamcard">
-                                <img class="img1" src="../../media/images/aboutus/eeee_advait.jpg" alt="sharvari">
-                                <div class="overlay">
-                                    <div class="link">
-                                        <h5 class="name">Advait Narsikar</h5>
-                                        <p class="branch-name">ETRX</p>
-                                        <a href="https://www.linkedin.com/in/advait-narsiker-255821193"><i class="fa fa-linkedin"></i></a>
-                                        <a href="mailto:advait.narsikar@somaiya.edu "><i class="fa fa-envelope"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="col-md-3">
-                        <div class="card card-body">
-                            <div class="teamcard">
-                                <img class="img1" src="../../media/images/aboutus/eeee_anoushka.jpg" alt="swetha">
-                                <div class="overlay">
-
-                                    <div class="link">
-                                        <h5 class="name">Anoushka Bhat</h5>
-                                        <p class="branch-name">EXTC</p>
-                                        <a href="https://www.linkedin.com/in/anoushka-bhat-78a04b1b5"><i class="fa fa-linkedin"></i></a>
-                                        <a href="mailto:anoushka.b@somaiya.edu"><i class="fa fa-envelope"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="col-md-3">
-                        <div class="card card-body">
-                            <div class="teamcard">
-                                <img class="img1" src="../../media/images/aboutus/eeee_aruna.jpg" alt="chinmay">
-                                <div class="overlay">
-
-                                    <div class="link">
-                                        <h5 class="name">Aruna Jayarajan</h5>
-                                        <p class="branch-name">EXTC</p>
-                                        <a href="https://www.linkedin.com/in/aruna-jayarajan-521454129"><i class="fa fa-linkedin"></i></a>
-                                        <a href="mailto:aruna.j@somiaya.edu"><i class="fa fa-envelope"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="col-md-3">
-                        <div class="card card-body">
-                            <div class="teamcard">
-                                <img class="img1" src="../../media/images/aboutus/eeee_avanthika.png" alt="vruksha">
-                                <div class="overlay">
-
-                                    <div class="link">
-                                        <h5 class="name">Avanthika Nayak</h5>
-                                        <p class="branch-name">EXTC</p>
-                                        <a href="https://www.linkedin.com/in/avanthika-nayak-a239631b3/"><i class="fa fa-linkedin"></i></a>
-                                        <a href="mailto:avanthika.n@somaiya.edu"><i class="fa fa-envelope"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="col-md-3">
-                        <div class="card card-body">
-                            <div class="teamcard">
-                                <img class="img1" src="../../media/images/aboutus/eeee_harshal.png" alt="sharvari">
-                                <div class="overlay">
-                                    <div class="link">
-                                        <h5 class="name">Harshal Sooman</h5>
-                                        <p class="branch-name">EXTC</p>
-                                        <a href="https://www.linkedin.com/in/harshal-soman-ab21b3192"><i class="fa fa-linkedin"></i></a>
-                                        <a href="mailto:harshal.soman@somaiya.edu"><i class="fa fa-envelope"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="col-md-3">
-                        <div class="card card-body">
-                            <div class="teamcard">
-                                <img class="img1" src="../../media/images/aboutus/eeee_manoj.jpg" alt="swetha">
-                                <div class="overlay">
-
-                                    <div class="link">
-                                        <h5 class="name">Manoj SReddy</h5>
-                                        <p class="branch-name">EXTC</p>
-                                        <a href="https://www.linkedin.com/in/manoj-sreddy-3973081b5/"><i class="fa fa-linkedin"></i></a>
-                                        <a href="mailto:manoj.sreddy@somaiya.edu"><i class="fa fa-envelope"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="col-md-3">
-                        <div class="card card-body">
-                            <div class="teamcard">
-                                <img class="img1" src="../../media/images/aboutus/eeee_pranay.png" alt="chinmay">
-                                <div class="overlay">
-
-                                    <div class="link">
-                                        <h5 class="name">Pranay Lendave</h5>
-                                        <p class="branch-name">ETRX</p>
-                                        <a href="https://www.linkedin.com/in/pranay-lendave/"><i class="fa fa-linkedin"></i></a>
-                                        <a href="mailto:pranay.lendave@somaiya.edu"><i class="fa fa-envelope"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="col-md-3">
-                        <div class="card card-body">
-                            <div class="teamcard">
-                                <img class="img1" src="../../media/images/aboutus/eeee_sakshi.png" alt="vruksha">
-                                <div class="overlay">
-
-                                    <div class="link">
-                                        <h5 class="name">Sakshi Tripathi</h5>
-                                        <p class="branch-name">ETRX</p>
-                                        <a href="https://www.linkedin.com/in/sakshi-tripathi-24b7a21b5"><i class="fa fa-linkedin"></i></a>
-                                        <a href="mailto:tripathi.s@somaiya.edu "><i class="fa fa-envelope"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <a class="carousel-control-prev w-auto" href="#eeee" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon bg-dark border border-dark rounded-circle" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next w-auto" href="#eeee" role="button" data-slide="next">
-                <span class="carousel-control-next-icon bg-dark border border-dark rounded-circle" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-            </a>
-        </div>
-    </div>
-</div>
- <!-- EEEE Team end-->
-<br><br>
-<!--footer-->
-    
-<div class="footer" >
-    <div class="container">
-    <div class="row">
-        <div class="column col-xl-3 col-md-3 col-sm-12 offset-md-1 side">
-        <h6 style="font-weight:bold">Register for free</h5>
-        <br>
-          <a href="{% url 'signup' %}">
-            <!-- <button class="button button1">Sign Up!</button> -->
-            <button type="button" style="color:white;" class="btn  footer-btn">Sign Up</button>
-          </a>
-        </div>
-        
-        <div class="column col-xl-2 col-md-2 col-sm-12 side">
-          <h6  style="font-weight:bold">Useful links</h5>
-          <br>
-          <ul class="bb">
-              <li><a href="{% url 'index' %}" style="text-decoration: none;color:#2d9cc2;" class="fa fa-home" ></a><a href="{% url 'index' %}" style="text-decoration: none;color:white"> Home</a></li>
-              <br>
-              <li><a href="{% url 'aboutus' %}" class="fa fa-users" style="text-decoration: none;color:#2d9cc2;" ></a><a href="{% url 'aboutus' %}" style="text-decoration: none;color:white"> About</a></li>
-              <br>
-              <li>
-                  {% if user.is_authenticated %}
-                  <a href="{% url 'logout' %}" style="text-decoration: none;color:#2d9cc2;" class="fa fa-sign-in"></a><a href="{% url 'logout' %}" style="text-decoration: none;color:white"> Logout</a> 
-                  {% else %}
-                  <a href="{% url 'login' %}" style="text-decoration: none;color:#2d9cc2;" class="fa fa-sign-in"></a><a href="{% url 'login' %}" style="text-decoration: none;color:white"> Login</a>
-                  {% endif %}
-              </li>
-          </ul>
-        </div>
-  
-          
-        <div class="column col-xl-3 col-md-3 col-sm-12 side">
-          <h6 style="font-weight:bold">Contact Us</h5>
-          <br>
-          <p style="font-size: 14px;"><a class="fa fa-map-marker" style="font-size:18px;color:#2d9cc2;"></a> K.J.
-            Somaiya College of Engineering
-            <br> Vidyanagar, Vidyavihar<br>
-            Mumbai, India </p>
-          <p><a class="fa fa-envelope" style="font-size:14px;color:#2d9cc2;" href="mailto:inderjitsingh@somaiya.edu"> inderjitsingh@somaiya.edu</a></p>
-        </div>
-  
-          
-        
-        
-        <div class="column col-xl-3 col-md-3 col-sm-12 side" >
-          <h6 style="font-weight:bold">Number of Visitors</h5>
-              <br>
-              <div class="counter" style="zoom:75%;">
-              
-          <!-- Start of WebFreeCounter Code -->
-<a href="https://www.webfreecounter.com/" target="_blank"><img src="https://www.webfreecounter.com/hit.php?id=geaqcfp&nd=6&style=10" border="0" alt="hit counter"></a>
-<!-- End of WebFreeCounter Code -->                         
-                                      
-              </div>               
-              <br>
-            
-        </div>
-    </div>
-      </div>
-      </div>
-  <!--footer-->
-
-       <!-- Bootstrap core JavaScript -->
-  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
-
-  <!-- Plugin JavaScript -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
-
-  <!-- Custom scripts for this template -->
-  <script src="grayscale.min.js"></script>   
-  
-  <script type="text/javascript" src="{% static 'js/aboutus.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/aboutus.js' %}"></script>
 </body>
 
 </html>

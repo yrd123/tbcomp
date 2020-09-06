@@ -46,11 +46,11 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item underlinehover">
-                        <a class="nav-link" href="/">Home <span class="fa fa-home"></span><span
+                        <a class="nav-link" href="{% url 'index' %}">Home <span class="fa fa-home"></span><span
                                 class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item underlinehover">
-                        <a class="nav-link" href="#">About Us <span class="fa fa-phone"></span></a>
+                        <a class="nav-link" href="{% url 'aboutus' %}">About Us <span class="fa fa-phone"></span></a>
                     </li>
                 </ul>
 
@@ -511,13 +511,13 @@
                     <h6 style="font-weight:bold">Useful links</h5>
                         <br>
                         <ul class="bb">
-                            <li><a href="/" style="text-decoration: none;color:#2d9cc2;" class="fa fa-home"></a><a
-                                    href="/" style="text-decoration: none;color:white"> Home</a></li>
+                            <li><a href="{% url 'index' %}" style="text-decoration: none;color:#2d9cc2;" class="fa fa-home"></a><a
+                                    href="{% url 'index' %}" style="text-decoration: none;color:white"> Home</a></li>
                             <br>
                             <li><a href="{% url 'aboutus' %}" class="fa fa-users" style="text-decoration: none;color:#2d9cc2;" ></a>
                                 <a href="{% url 'aboutus' %}" style="text-decoration: none;color:white"> About</a></li>
                             <br>
-                            <li><a href="{% url 'login' %}" style="text-decoration: none;color:#2d9cc2;"
+                            <li><a href="{% url 'logout' %}" style="text-decoration: none;color:#2d9cc2;"
                                     class="fa fa-sign-in"></a><a href="{% url 'logout' %}"
                                     style="text-decoration: none;color:white"> Logout</a> </li>
                         </ul>
@@ -534,9 +534,6 @@
                             <p><a class="fa fa-envelope" style="font-size:14px;color:#2d9cc2; text-decoration: none;" href="mailto:inderjitsingh@somaiya.edu"> inderjitsingh@somaiya.edu</a> </p>
                 </div>
 
-
-
-
                 <div class="column col-xl-3 col-md-3 col-sm-12 side">
                     <h6 style="font-weight:bold">Number of Visitors</h5>
                         <br>
@@ -550,7 +547,6 @@
 
                         </div>
                         <br>
-
                 </div>
             </div>
         </div>
