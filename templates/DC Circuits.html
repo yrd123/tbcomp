@@ -35,59 +35,105 @@
         <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
         <!--template CSS-->
         <link rel="stylesheet" type="text/css" href="{% static 'css/eeee.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/navbar.css' %}">
     </head>
     <body>
         <!-- Navbar start -->
-        <nav class="navbar navbar-dark navbar-expand-lg fixed-top">
-            <a class="navbar-brand" href="#">Inderjit Singh</a>
-            <button
-                class="navbar-toggler"
-                type="button"
-                data-toggle="collapse"
-                data-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent"
-                aria-expanded="false"
-                aria-label="Toggle navigation"
-            >
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item underlinehover">
-                        <a class="nav-link" href="{% url 'index' %}">
-                            Home
-                            <span class="fa fa-home"></span>
-                            <span class="sr-only">(current)</span>
-                        </a>
-                    </li>
-                    <li class="nav-item underlinehover">
-                        <a class="nav-link" href="{% url 'aboutus' %}">
-                            About Us
-                            <span class="fa fa-phone"></span>
-                        </a>
-                    </li>
-                </ul>
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item underlinehover ">
-                        <a class="nav-link" href="#">
-                            Profile
-                            <span class="fa fa-user"></span>
-                        </a>
-                    </li>
-                    <li class="nav-item underlinehover ">
-                        <a class="nav-link" href="{% url 'logout' %}">
-                            Logout
-                            <span class="fa fa-sign-in"></span>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
+        <div class='our-navbar'>
+            <nav class="navbar navbar-dark navbar-expand-lg fixed-top">
+                <a class="navbar-brand" href="#">Inderjit Singh</a>
+                <button
+                    class="navbar-toggler"
+                    type="button"
+                    data-toggle="collapse"
+                    data-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+                >
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item underlinehover">
+                            <a class="nav-link" href="{% url 'index' %}">
+                                Home
+                                <span class="fa fa-home"></span>
+                                <span class="sr-only">(current)</span>
+                            </a>
+                        </li>
+                        <li class="nav-item underlinehover">
+                            <a class="nav-link" href="{% url 'aboutus' %}">
+                                About Us
+                                <i class="fa fa-users" aria-hidden="true"></i>
+                            </a>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item underlinehover ">
+                            <a class="nav-link " href="#" id="btnLogin" data-toggle="modal"
+                            data-target="#profileModal">Profile <span class="fa fa-user"></span></a>
+                        </li>
+                        <li class="nav-item underlinehover ">
+                            <a class="nav-link" href="{% url 'logout' %}">
+                                Logout
+                                <span class="fa fa-sign-in"></span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        
         <!-- navbar ends -->
+        <div class="modal fade show" data-easein="slideDownIn" id="profileModal" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-profile modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Profile</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form class="profileForm">
+                            <div class="form-group">
+                                <label for="fullName">Full Name</label>
+                                <input type="text" class="form-control" placeholder="Full Name" name="fullName"
+                                    id="fullName" value="{{student.fullname}}" readonly>
+                            </div>
+                            <div class="form-group">
+                                <label for="emailId">Email</label>
+                                <input type="email " class="form-control" placeholder="Email" name="emailId"
+                                    id="emailId" value="{{student.email}}" readonly>
+                            </div>
+                            <div class="form-group">
+                                <label for="collegeName">Name of College/University</label>
+                                <input type="text" class="form-control" placeholder="Name of College/University"
+                                    name="collegeName" value="{{student.college}}" readonly>
+                            </div>
+                            <div class="form-group">
+                                <label for="branch">Branch</label>
+                                <input type="text" class="form-control" placeholder="Branch" name="branch" id="branch"
+                                    value="{{student.branch}}" readonly>
+                            </div>
+                            <div class="form-group">
+                                <label for="yearOfStudy">Year of Study</label>
+                                <input type="text" class="form-control" placeholder="Year of Study" id="yearOfStudy"
+                                    name="yearOfStudy" value="{{student.year}}" readonly>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
         <br>
         <br>
         <div class='container text-center'>
-            <h3 class="heading text-center" style="align-content:left;"><a href="{% url 'subjects' %}"> {{subject}} </a> > {{topic}}</h3>
+            <h3 class="heading"> <a href="{% url 'subjects' %}"><span class="badge badge-warning">{{subject}}</span></a> > {{topic}} </h3>
         </div>
         
         <!--  1st row Begin-->
@@ -289,7 +335,7 @@
               <ul class="bb">
                   <li><a href="{% url 'index' %}" style="text-decoration: none;color:#2d9cc2;" class="fa fa-home" ></a><a href="{% url 'index' %}" style="text-decoration: none;color:white"> Home</a></li>
                   <br>
-                  <li><a href="{% url 'aboutus' %}" class="fa fa-phone" style="text-decoration: none;color:#2d9cc2;" ></a><a href="{% url 'aboutus' %}" style="text-decoration: none;color:white"> About</a></li>
+                  <li><a href="{% url 'aboutus' %}" class="fa fa-users" style="text-decoration: none;color:#2d9cc2;" ></a><a href="{% url 'aboutus' %}" style="text-decoration: none;color:white"> About</a></li>
                   <br>
                   <li>
                     {% if user.is_authenticated %}
@@ -308,7 +354,7 @@
               <p style="font-size: 14px;"><a class="fa fa-map-marker" style="font-size:18px;color:#2d9cc2;"></a> K.J. Somaiya College of Engineering
               <br> Vidyanagar, Vidyavihar<br>
               Mumbai, India </p>
-              <p><a class="fa fa-envelope" style="font-size:14px;color:#2d9cc2;"></a> Email</p>
+              <p><a class="fa fa-envelope" style="font-size:14px;color:#2d9cc2; text-decoration: none;" href="mailto:inderjitsingh@somaiya.edu"> inderjitsingh@somaiya.edu</a> </p>
             </div>
       
               

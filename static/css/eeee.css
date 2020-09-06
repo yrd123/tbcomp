@@ -1,66 +1,4 @@
-/*navbar*/
 
-.navbar-nav>li {
-    padding-left: 30px;
-    padding-right: 30px;
-    font-size: 1.1em;
-}
-  
-.navbar-brand {
-    padding-left: 20px;
-    padding-right: 30px;
-    margin-bottom: 0;
-}
-  
-.navbar {
-    background-color: rgb(0, 0, 0);
-    opacity: 0.88;
-    box-shadow: 0px 1px 50px #999;
-    padding-top: 0px;
-    padding-bottom: 0px;
-    margin-bottom: 0px;
-}
-  
-.navbar-brand {
-    font-size: 1.5em;
-}
-  
-.ml-auto .nav-link {
-    margin-right: 20px;
-}
-  
-.glypicon {
-    padding-left: 10px;
-}
-  
-.nav-link:hover {
-    background-color: #1a1a1a;
-    font-size: 19px;
-}
-  
-.active .nav-link {
-    border-bottom: 2px solid #2d9cc2;
-}
-  
-.underlinehover {
-    display: inline-block;
-}
-  
-.underlinehover:after {
-    content: '';
-    display: block;
-    height: 1px;
-    width: 0;
-    background: transparent;
-    transition: width .5s ease, background-color .5s ease;
-}
-  
-.underlinehover:hover:after {
-    width: 100%;
-    background: #2d9cc2;
-}
-  
-/*navbar ends*/
 /*heading*/
 
 .heading {
@@ -84,6 +22,10 @@
   padding-left: 25px;
   text-align: left;
   font-family: Arial, Helvetica, sans-serif;
+}
+
+.heading .badge:hover{
+  background-color: #b8bb11;
 }
 
 /*heading*/
@@ -183,6 +125,51 @@
     margin-left: 0px;
   }
 }
+
+ /*Profile Modal Begin*/
+ .modal {
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.modal-header{
+  background: #2d9cc2;
+  color:white;
+}
+.close{
+  color:white;
+  opacity:1.6;
+  border: none;
+}
+.close:hover{
+  color:white;
+ border: none;
+}
+.form-group input{
+  box-shadow: none !important;
+  border-top-style: hidden;
+  border-right-style: hidden;
+  border-left-style: hidden;
+  border-bottom-style: groove;
+  background-color: #eee;
+  background: white;
+}
+.form-control[readonly] {
+  background-color: white;
+  opacity: 1;
+}
+.profileForm label{
+  font-weight: 600;
+  font-size: 18px;
+}
+.profileForm .form-group input{
+  box-shadow: none !important;
+  border-top-style: hidden;
+  border-right-style: hidden;
+  border-left-style: hidden;
+  border-bottom-style: groove;
+  background-color: #eee;
+  background: white;
+}
+/*Profile Modal Ends*/
 
 /*footer css*/
 
