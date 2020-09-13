@@ -32,6 +32,7 @@ class Activity(models.Model):
     name = models.CharField(max_length = 20)
     topic = models.ForeignKey(Topic, on_delete = models.CASCADE, related_name = "Activity")
     files = models.FileField(upload_to = 'activities', null = True, blank = True)
+    driveLink=models.URLField(max_length=500)
 
     def __str__(self):
         return self.name+"_"+self.topic.name
